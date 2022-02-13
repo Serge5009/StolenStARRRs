@@ -8,12 +8,21 @@ public class Player : MonoBehaviour
     [SerializeField]
     GameObject ProjectilePrefab;
 
+    [SerializeField]
+    float bulletSpeed = 6.0f;    
+    [SerializeField]
+    float fireRate = 1.0f;
+
+    //  Private:
+    Vector3 moveDirection;
     Vector3 shootDirection;
-    float bulletSpeed;
+
+    float cooldown;
 
     void Start()
     {
-        
+        moveDirection = new Vector3(0.0f, 0.0f, 0.0f);
+        shootDirection = new Vector3(0.0f, 0.0f, 0.0f);
     }
 
     void Update()
@@ -21,11 +30,12 @@ public class Player : MonoBehaviour
         CheckInput();
     }
 
-    void SpawnProjectile()
+    void SpawnProjectile(Vector3 direction) 
+        //  I'm using Vector3 here to leave space for possible diagonal shooting in future
     {
         GameObject proj = Instantiate(ProjectilePrefab, transform.position, Quaternion.identity);
         Projectile bullet = proj.GetComponent<Projectile>();
-        bullet.SetSpeed(new Vector3(1.0f, 0.0f, 0.0f));
+        bullet.SetSpeed(direction * bulletSpeed + moveDirection * speed);
 
     }
 
@@ -35,7 +45,7 @@ public class Player : MonoBehaviour
         float x = Input.GetAxis("Horizontal"); //  Get input
         float y = Input.GetAxis("Vertical");
 
-        Vector3 moveDirection = new Vector3(x, y, 0);   //  Get direction vector
+        moveDirection = new Vector3(x, y, 0);   //  Get direction vector
 
         if(moveDirection.magnitude > 1) //  Limit this vector magnitude to 1
         {
@@ -47,12 +57,32 @@ public class Player : MonoBehaviour
 
         transform.position += moveDirection * speed * Time.deltaTime;    //  Apply movement
 
-        
-        if(Input.GetButtonDown("Jump"))
+
+        float sx = Input.GetAxis("ShootHorizontal"); //  Get input
+        float sy = Input.GetAxis("ShootVertical");
+
+
+        if (sx != 0 || sy != 0)
         {
-            SpawnProjectile();
-            Debug.Log("Pew");
-        }    
+            if (sx > 0)
+            {
+                shootDirection = new Vector3(1.0f, 0.0f, 0.0f);
+            }
+            else if(sx < 0)
+            {
+                shootDirection = new Vector3(-1.0f, 0.0f, 0.0f);
+            }
+            if (sy > 0)
+            {
+                shootDirection = new Vector3(0.0f, 1.0f, 0.0f);
+            }
+            else if (sy < 0)
+            {
+                shootDirection = new Vector3(0.0f, -1.0f, 0.0f);
+            }
+            Debug.Log(shootDirection);
+            SpawnProjectile(shootDirection);
+        }
 
     }
 }
