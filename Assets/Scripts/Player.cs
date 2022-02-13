@@ -5,6 +5,12 @@ public class Player : MonoBehaviour
     [SerializeField]
     float speed = 6.0f;
 
+    [SerializeField]
+    GameObject ProjectilePrefab;
+
+    Vector3 shootDirection;
+    float bulletSpeed;
+
     void Start()
     {
         
@@ -13,6 +19,14 @@ public class Player : MonoBehaviour
     void Update()
     {
         CheckInput();
+    }
+
+    void SpawnProjectile()
+    {
+        GameObject proj = Instantiate(ProjectilePrefab, transform.position, Quaternion.identity);
+        Projectile bullet = proj.GetComponent<Projectile>();
+        bullet.SetSpeed(new Vector3(1.0f, 0.0f, 0.0f));
+
     }
 
     void CheckInput()
@@ -32,6 +46,13 @@ public class Player : MonoBehaviour
         //Debug.Log(moveDirection.magnitude);
 
         transform.position += moveDirection * speed * Time.deltaTime;    //  Apply movement
+
+        
+        if(Input.GetButtonDown("Jump"))
+        {
+            SpawnProjectile();
+            Debug.Log("Pew");
+        }    
 
     }
 }
