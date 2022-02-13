@@ -9,9 +9,9 @@ public class Player : MonoBehaviour
     GameObject ProjectilePrefab;
 
     [SerializeField]
-    float bulletSpeed = 6.0f;    
+    float bulletSpeed = 10.0f;    
     [SerializeField]
-    float fireRate = 1.0f;
+    float fireRate = 1.0f;  //  Bullets per second
 
     //  Private:
     Vector3 moveDirection;
@@ -61,9 +61,17 @@ public class Player : MonoBehaviour
         float sx = Input.GetAxis("ShootHorizontal"); //  Get input
         float sy = Input.GetAxis("ShootVertical");
 
-
-        if (sx != 0 || sy != 0)
+        cooldown -= Time.deltaTime; //  Tick cooldown timer
+        if (sx != 0 || sy != 0) //  Check for shooting input
         {
+            if (sy > 0) //  Set shooting direction vector
+            {
+                shootDirection = new Vector3(0.0f, 1.0f, 0.0f);
+            }
+            else if (sy < 0)
+            {
+                shootDirection = new Vector3(0.0f, -1.0f, 0.0f);
+            }
             if (sx > 0)
             {
                 shootDirection = new Vector3(1.0f, 0.0f, 0.0f);
@@ -72,16 +80,13 @@ public class Player : MonoBehaviour
             {
                 shootDirection = new Vector3(-1.0f, 0.0f, 0.0f);
             }
-            if (sy > 0)
+            //Debug.Log(shootDirection);
+
+            if(cooldown < 0)
             {
-                shootDirection = new Vector3(0.0f, 1.0f, 0.0f);
+                cooldown += 1/fireRate;             //  Reset cooldown
+                SpawnProjectile(shootDirection);    //  Shoot
             }
-            else if (sy < 0)
-            {
-                shootDirection = new Vector3(0.0f, -1.0f, 0.0f);
-            }
-            Debug.Log(shootDirection);
-            SpawnProjectile(shootDirection);
         }
 
     }
