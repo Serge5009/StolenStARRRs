@@ -23,11 +23,15 @@ public class Projectile : MonoBehaviour
             Destroy(gameObject);
     }
 
-    void OnTriggerEnter2D(Collider2D coll)
+    void OnTriggerEnter2D(Collider2D coll)  //  Triger callback
     {
-        if(coll.transform.tag == "Enemy")
+        if(coll.transform.tag == "Enemy")   //  If hitted the enemy
         {
             Debug.Log("Boom!");
+
+
         }
+
+        Destroy(gameObject);    //  Destroy this bullet
     }
 }

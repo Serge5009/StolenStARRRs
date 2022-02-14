@@ -61,7 +61,14 @@ public class Player : MonoBehaviour
         float sx = Input.GetAxis("ShootHorizontal"); //  Get input
         float sy = Input.GetAxis("ShootVertical");
 
+
+
         cooldown -= Time.deltaTime; //  Tick cooldown timer
+
+        if (cooldown < 0)
+            cooldown = 0;   //  Prevent negative values
+
+
         if (sx != 0 || sy != 0) //  Check for shooting input
         {
             if (sy > 0) //  Set shooting direction vector
@@ -82,7 +89,7 @@ public class Player : MonoBehaviour
             }
             //Debug.Log(shootDirection);
 
-            if(cooldown < 0)
+            if(cooldown == 0)
             {
                 cooldown += 1/fireRate;             //  Reset cooldown
                 SpawnProjectile(shootDirection);    //  Shoot
