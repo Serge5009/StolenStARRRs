@@ -24,6 +24,7 @@ public class Projectile : MonoBehaviour
             Destroy(gameObject);
     }
 
+    /*
     void OnTriggerEnter2D(Collider2D coll)  //  Triger callback
     {
         if(coll.transform.tag == "Enemy")   //  If hitted the enemy
@@ -35,4 +36,5 @@ public class Projectile : MonoBehaviour
 
         Destroy(gameObject);    //  Destroy this bullet
     }
+    */
 }
