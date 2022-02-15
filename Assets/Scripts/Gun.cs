@@ -14,8 +14,6 @@ public class Gun : MonoBehaviour
     [SerializeField]
     float fireRate = 1.0f;  //  Bullets per second
 
-
-
     //  Private:
 
     Vector3 shootDirection;
@@ -33,14 +31,12 @@ public class Gun : MonoBehaviour
 
         if (cooldown < 0)
             cooldown = 0;   //  Prevent negative values
-
-
-
     }
 
     public void Shoot(float shootX, float shootY)
     //  I'm using Vector3 here to leave space for possible diagonal shooting in future
     {
+        RotateGun();
         if (shootY > 0) //  Set shooting direction vector
         {
             shootDirection = new Vector3(0.0f, 1.0f, 0.0f);
@@ -65,9 +61,6 @@ public class Gun : MonoBehaviour
 
             SpawnProjectile(shootDirection);    //  Shoot
         }
-
-
-
     }
 
     void SpawnProjectile(Vector3 direction)
@@ -77,8 +70,13 @@ public class Gun : MonoBehaviour
         Player parent = player.GetComponent<Player>();
 
         bullet.SetSpeed(direction * bulletSpeed + parent.moveDirection * parent.speed);
-
-
     }
+
+    void RotateGun()
+    {   //  Rotates gun in the direction of a shoot
+        Quaternion toRotation = Quaternion.LookRotation(Vector3.forward, shootDirection);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, 500.0f);      //  Source: https://www.youtube.com/watch?v=gs7y2b0xthU
+    }
+
 
 }
