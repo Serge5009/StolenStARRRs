@@ -27,6 +27,14 @@ public class Projectile : MonoBehaviour
         speed = startVelocity;
     }
 
+    public void SetInteraction(bool dmgPlayer, bool dmgEnemy, bool destPlayer, bool destEnemy)
+    {
+        damagePlayer = dmgPlayer;
+        damageEnemy = dmgEnemy;
+        destroyByPlayer = destPlayer;
+        destroyByEnemy = destEnemy;
+    }
+
     void Update()
     {
         transform.position += speed * Time.deltaTime;
