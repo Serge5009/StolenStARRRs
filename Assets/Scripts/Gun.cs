@@ -14,10 +14,15 @@ public class Gun : MonoBehaviour
     [SerializeField]
     float fireRate = 1.0f;  //  Bullets per second
 
+    [SerializeField]
+    GameObject bulletSpawn; //  Place where projectiles start their movement from (barrel end)
+
     //  Private:
 
     Vector3 shootDirection;
     float cooldown;
+
+    int shootHeat = -1; //  Countdown used to fire gun 1 frame after rotation. Prevents bullet from spawning on old barrel location
 
 
     void Start()
@@ -31,6 +36,13 @@ public class Gun : MonoBehaviour
 
         if (cooldown < 0)
             cooldown = 0;   //  Prevent negative values
+
+        shootHeat -= 1;
+        if (shootHeat == 0)
+        {
+            SpawnProjectile(shootDirection);    //  Shoot
+            shootHeat = -1;
+        }
     }
 
     public void Shoot(float shootX, float shootY)
@@ -59,13 +71,13 @@ public class Gun : MonoBehaviour
         {
             cooldown += 1 / fireRate;             //  Reset cooldown
 
-            SpawnProjectile(shootDirection);    //  Shoot
+            shootHeat = 2;   //  On the next frame gun will shoot
         }
     }
 
     void SpawnProjectile(Vector3 direction)
     {
-        GameObject proj = Instantiate(ProjectilePrefab, transform.position, Quaternion.identity);
+        GameObject proj = Instantiate(ProjectilePrefab, bulletSpawn.transform.position, Quaternion.identity);
         Projectile bullet = proj.GetComponent<Projectile>();
         Player parent = player.GetComponent<Player>();
 
