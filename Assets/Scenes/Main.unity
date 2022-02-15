@@ -279,6 +279,18 @@ PrefabInstance:
       propertyPath: m_BodyType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7765704687353541732, guid: b4c9f4ab9b98e954b8b8e452d053a3fa, type: 3}
+      propertyPath: m_Color.b
+      value: 0.0292809
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765704687353541732, guid: b4c9f4ab9b98e954b8b8e452d053a3fa, type: 3}
+      propertyPath: m_Color.g
+      value: 0.0292809
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765704687353541732, guid: b4c9f4ab9b98e954b8b8e452d053a3fa, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8867924
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4c9f4ab9b98e954b8b8e452d053a3fa, type: 3}
 --- !u!1 &963194225
@@ -496,8 +508,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   locations:
-  - {x: -2.49, y: 4.78, z: 0}
-  - {x: -2.49, y: -3.28, z: 0}
+  - {x: -2.49, y: 3.78, z: 0}
+  - {x: -2.49, y: -4.28, z: 0}
 --- !u!1001 &7765704687523518375
 PrefabInstance:
   m_ObjectHideFlags: 0
