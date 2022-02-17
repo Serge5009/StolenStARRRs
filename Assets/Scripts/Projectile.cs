@@ -3,7 +3,8 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public Vector3 speed;
-    float lifetime = 5.0f;  //  Self destruct timer
+    float lifetime = 0.0f;      //  Self destruct timer
+    float lifeExpect = 5.0f;    //  Over this time bullet will die
     float damage = 10.0f;
 
 
@@ -39,8 +40,8 @@ public class Projectile : MonoBehaviour
     {
         transform.position += speed * Time.deltaTime;
 
-        lifetime -= Time.deltaTime; //  Countdown to self destruct
-        if(lifetime <= 0)
+        lifetime += Time.deltaTime; //  Bullet life timer cound
+        if(lifetime >= lifeExpect)
             Destroy(gameObject);
     }
 
@@ -56,7 +57,7 @@ public class Projectile : MonoBehaviour
             {
                 other.GetDamage(damage);        //  Dealing damage to the enemy
             }
-            if(destroyByEnemy)
+            if(destroyByEnemy && lifetime > 0.2f)  //  Bullet is immortal first fraction of a second
             {
                 Destroy(gameObject);    //  Destroy this bullet
             }
@@ -71,7 +72,7 @@ public class Projectile : MonoBehaviour
                 Debug.Log("PlaceHolder for player damage");
             }
 
-            if(destroyByPlayer)
+            if(destroyByPlayer && lifetime > 0.2f)  //  Bullet is immortal first fraction of a second
             {
                 Destroy(gameObject);    //  Destroy this bullet
             }

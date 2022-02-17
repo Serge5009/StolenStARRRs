@@ -576,7 +576,7 @@ MonoBehaviour:
   locations:
   - {x: -2.49, y: 3.78, z: 0}
   - {x: -2.49, y: -4.28, z: 0}
-  ProjectilePrefab: {fileID: 0}
+  ProjectilePrefab: {fileID: 8274613288791820710, guid: 6b1123ecd6ee2fc4590b836339b04633, type: 3}
   ProjectileSpeed: 5
 --- !u!1001 &7765704687523518375
 PrefabInstance:
