@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  speed: 0
+  lootDrop: {fileID: 0}
 --- !u!61 &7765704686394764510
 BoxCollider2D:
   m_ObjectHideFlags: 0
