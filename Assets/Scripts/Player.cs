@@ -2,26 +2,18 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField]
-    float speed = 6.0f;
     public static Player player;
-
 
     public float speed = 6.0f;
 
     [SerializeField]
-    GameObject ProjectilePrefab;
+    Gun gun;
 
-    [SerializeField]
-    float bulletSpeed = 10.0f;    
-    [SerializeField]
-    float fireRate = 1.0f;  //  Bullets per second
 
-    //  Private:
-    Vector3 moveDirection;
+    //  Directions:
+    public Vector3 moveDirection;
     Vector3 shootDirection;
 
-    float cooldown;
     // loot mechanic
     public int coins;
 
@@ -48,15 +40,6 @@ public class Player : MonoBehaviour
         CheckInput();
     }
 
-    void SpawnProjectile(Vector3 direction) 
-        //  I'm using Vector3 here to leave space for possible diagonal shooting in future
-    {
-        GameObject proj = Instantiate(ProjectilePrefab, transform.position, Quaternion.identity);
-        Projectile bullet = proj.GetComponent<Projectile>();
-        bullet.SetSpeed(direction * bulletSpeed + moveDirection * speed);
-
-    }
-
     void CheckInput()
     {
 
@@ -65,7 +48,7 @@ public class Player : MonoBehaviour
 
         moveDirection = new Vector3(x, y, 0);   //  Get direction vector
 
-        if(moveDirection.magnitude > 1) //  Limit this vector magnitude to 1
+        if (moveDirection.magnitude > 1) //  Limit this vector magnitude to 1
         {
             moveDirection = moveDirection / moveDirection.magnitude;
         }
@@ -78,40 +61,9 @@ public class Player : MonoBehaviour
 
         float sx = Input.GetAxis("ShootHorizontal"); //  Get input
         float sy = Input.GetAxis("ShootVertical");
-
-
-
-        cooldown -= Time.deltaTime; //  Tick cooldown timer
-
-        if (cooldown < 0)
-            cooldown = 0;   //  Prevent negative values
-
-
         if (sx != 0 || sy != 0) //  Check for shooting input
         {
-            if (sy > 0) //  Set shooting direction vector
-            {
-                shootDirection = new Vector3(0.0f, 1.0f, 0.0f);
-            }
-            else if (sy < 0)
-            {
-                shootDirection = new Vector3(0.0f, -1.0f, 0.0f);
-            }
-            if (sx > 0)
-            {
-                shootDirection = new Vector3(1.0f, 0.0f, 0.0f);
-            }
-            else if(sx < 0)
-            {
-                shootDirection = new Vector3(-1.0f, 0.0f, 0.0f);
-            }
-            //Debug.Log(shootDirection);
-
-            if(cooldown == 0)
-            {
-                cooldown += 1/fireRate;             //  Reset cooldown
-                SpawnProjectile(shootDirection);    //  Shoot
-            }
+            gun.Shoot(sx, sy);
         }
 
     }

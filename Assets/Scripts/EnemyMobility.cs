@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 public class EnemyMobility : MonoBehaviour
@@ -51,7 +50,6 @@ public class EnemyMobility : MonoBehaviour
             nextFireTime = Time.time + cooldownTime;
 
         }
-        
     }
 
   
