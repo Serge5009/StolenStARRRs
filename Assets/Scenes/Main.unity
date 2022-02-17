@@ -123,11 +123,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &121103295
+
+--- !u!1 &81724535 stripped
+
 GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 7765704686394764498, guid: b4c9f4ab9b98e954b8b8e452d053a3fa, type: 3}
+  m_PrefabInstance: {fileID: 7765704687523518375}
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
@@ -144,6 +145,7 @@ GameObject:
   m_IsActive: 1
 --- !u!4 &121103296
 Transform:
+
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -694,6 +696,7 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -798,6 +801,10 @@ PrefabInstance:
       propertyPath: speed
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7765704686394764496, guid: b4c9f4ab9b98e954b8b8e452d053a3fa, type: 3}
+      propertyPath: lootDrop
+      value: 
+      objectReference: {fileID: 8858896780154246167, guid: d1467711022d13e40b0d90d0ffc08864, type: 3}
     - target: {fileID: 7765704686394764497, guid: b4c9f4ab9b98e954b8b8e452d053a3fa, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -844,7 +851,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7765704686394764498, guid: b4c9f4ab9b98e954b8b8e452d053a3fa, type: 3}
       propertyPath: m_Name
-      value: ComplexGuy
+      value: VerticalEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 7765704686394764511, guid: b4c9f4ab9b98e954b8b8e452d053a3fa, type: 3}
       propertyPath: m_BodyType
@@ -3946,6 +3953,7 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+
 --- !u!1001 &7765704687523518375
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3957,6 +3965,10 @@ PrefabInstance:
       propertyPath: speed
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7765704686394764496, guid: b4c9f4ab9b98e954b8b8e452d053a3fa, type: 3}
+      propertyPath: lootDrop
+      value: 
+      objectReference: {fileID: 8858896780154246167, guid: d1467711022d13e40b0d90d0ffc08864, type: 3}
     - target: {fileID: 7765704686394764497, guid: b4c9f4ab9b98e954b8b8e452d053a3fa, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -4003,7 +4015,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7765704686394764498, guid: b4c9f4ab9b98e954b8b8e452d053a3fa, type: 3}
       propertyPath: m_Name
-      value: Enemy
+      value: ChasingEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 7765704686394764511, guid: b4c9f4ab9b98e954b8b8e452d053a3fa, type: 3}
       propertyPath: m_BodyType
@@ -4011,3 +4023,4 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4c9f4ab9b98e954b8b8e452d053a3fa, type: 3}
+
