@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-public class ComplexEnemy : MonoBehaviour
+public class EnemyMobility : MonoBehaviour
 {
     [SerializeField]
     public float speed;
@@ -15,8 +15,8 @@ public class ComplexEnemy : MonoBehaviour
     [SerializeField]
     float ProjectileSpeed = 5.0f;
 
-    float cooldown;
-    float fireRate = 1.0f;
+    float cooldownTime = 2.0f;
+    float nextFireTime;
     private int offset;
     // Start is called before the first frame update
     void Start()
@@ -27,7 +27,7 @@ public class ComplexEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        cooldown -= Time.deltaTime;
+        
        
         transform.position = Vector2.MoveTowards(transform.position, locations[offset], Time.deltaTime * speed); // move to the pre determined points
 
@@ -44,10 +44,11 @@ public class ComplexEnemy : MonoBehaviour
         }
 
         
-        if (cooldown != 0)
+        if (Time.time > nextFireTime)
         {
-            cooldown -= 1 / fireRate;
+
             RangeAttack();
+            nextFireTime = Time.time + cooldownTime;
 
         }
         
@@ -57,7 +58,7 @@ public class ComplexEnemy : MonoBehaviour
     void RangeAttack()
     {
         GameObject ready = Instantiate(ProjectilePrefab, transform.position, Quaternion.identity);
-        Vector3 direction = new Vector3(1.0f, 0.0f, 0.0f);
+        //Vector3 direction = new Vector3(1.0f, 0.0f, 0.0f);
     }
     
     
