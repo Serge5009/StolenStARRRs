@@ -4,6 +4,10 @@ public class Player : MonoBehaviour
 {
     [SerializeField]
     float speed = 6.0f;
+    public static Player player;
+
+
+    public float speed = 6.0f;
 
     [SerializeField]
     GameObject ProjectilePrefab;
@@ -18,6 +22,20 @@ public class Player : MonoBehaviour
     Vector3 shootDirection;
 
     float cooldown;
+    // loot mechanic
+    public int coins;
+
+    void Awake()
+    {
+        if(player != null)
+        {
+            Destroy(player);
+        }
+        else
+        {
+            player = this;
+        }
+    }
 
     void Start()
     {
