@@ -57,7 +57,7 @@ public class Projectile : MonoBehaviour
             {
                 other.GetDamage(damage);        //  Dealing damage to the enemy
             }
-            if(destroyByEnemy && lifetime > 0.2f)  //  Bullet is immortal first fraction of a second
+            if(destroyByEnemy && lifetime > 0.05f)  //  Bullet is immortal first fraction of a second
             {
                 Destroy(gameObject);    //  Destroy this bullet
             }
@@ -69,10 +69,10 @@ public class Projectile : MonoBehaviour
 
             if(damagePlayer)
             {
-                Debug.Log("PlaceHolder for player damage");
+                other.GetDamage(damage);
             }
 
-            if(destroyByPlayer && lifetime > 0.2f)  //  Bullet is immortal first fraction of a second
+            if(destroyByPlayer && lifetime > 0.05f)  //  Bullet is immortal first fraction of a second
             {
                 Destroy(gameObject);    //  Destroy this bullet
             }

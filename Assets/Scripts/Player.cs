@@ -8,7 +8,8 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     Gun gun;
-
+    [SerializeField]
+    float health = 100.0f;
 
     //  Directions:
     public Vector3 moveDirection;
@@ -38,6 +39,11 @@ public class Player : MonoBehaviour
     void Update()
     {
         CheckInput();
+
+        if (health <= 0)
+        {
+            Destroy(gameObject);    //  RIP F
+        }
     }
 
     void CheckInput()
@@ -67,4 +73,12 @@ public class Player : MonoBehaviour
         }
 
     }
+
+    
+
+    public void GetDamage(float hp)
+    {
+        health -= hp;   // Does it need any explanation? 
+    }
+
 }
