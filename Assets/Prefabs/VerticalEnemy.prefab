@@ -208,5 +208,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   locations:
-  - {x: -2.49, y: 3.78, z: 0}
-  - {x: -2.49, y: -3.25, z: 0}
+  - {x: -2.49, y: 2.5, z: 0}
+  - {x: -2.49, y: -2.5, z: 0}

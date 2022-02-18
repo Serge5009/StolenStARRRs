@@ -9,11 +9,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
-  - 
+  - Obstacle
+  - Enemy
   - 
   - 
   - 
@@ -42,9 +42,9 @@ TagManager:
   - name: BG
     uniqueID: 4251556953
     locked: 0
-  - name: Environment
-    uniqueID: 1040688221
-    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Environment
+    uniqueID: 1040688221
     locked: 0
