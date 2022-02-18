@@ -440,6 +440,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8211571826770355692, guid: 9b17df04abc863a4aba91a61ceba63fb, type: 3}
+      propertyPath: ProjectilePrefab
+      value: 
+      objectReference: {fileID: 8274613288791820710, guid: 724d468bd8f4e2f42a18c7e0890e642b, type: 3}
     m_RemovedComponents:
     - {fileID: 8147820335979402412, guid: 9b17df04abc863a4aba91a61ceba63fb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9b17df04abc863a4aba91a61ceba63fb, type: 3}
@@ -1014,6 +1018,40 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1915052358 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7765704686394764498, guid: b4c9f4ab9b98e954b8b8e452d053a3fa, type: 3}
+  m_PrefabInstance: {fileID: 7765704687523518375}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1915052363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915052358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a98d8aa61fe54a24291b46e3774b4e5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stopDistance: 1
+  speed: 2
+--- !u!114 &1915052364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915052358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60a7c6d89d81c8945974ebd08ad85f33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ProjectilePrefab: {fileID: 2633034724039367268, guid: 949226d810d9c0b4083473358b9e893b, type: 3}
+  bulletSpeed: 3
+  fireRate: 2
 --- !u!1 &1942153776 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7765704686394764498, guid: b4c9f4ab9b98e954b8b8e452d053a3fa, type: 3}
@@ -1028,15 +1066,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 1942153776}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57d2ed9fdcb93c84a9387fc20b4414aa, type: 3}
+  m_Script: {fileID: 11500000, guid: 0875e120fe9831649966e22b4ede1a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
   locations:
   - {x: -2.49, y: 3.78, z: 0}
   - {x: -2.49, y: -4.28, z: 0}
-  ProjectilePrefab: {fileID: 0}
-  ProjectileSpeed: 5
+--- !u!114 &1942153782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942153776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60a7c6d89d81c8945974ebd08ad85f33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ProjectilePrefab: {fileID: 2633034724039367268, guid: 949226d810d9c0b4083473358b9e893b, type: 3}
+  bulletSpeed: 6
+  fireRate: 0.5
 --- !u!1001 &3421450895063476872
 PrefabInstance:
   m_ObjectHideFlags: 0
