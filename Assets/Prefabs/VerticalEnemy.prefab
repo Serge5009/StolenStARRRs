@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8211945988027551463}
   - component: {fileID: 8211945988027551461}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sprite
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 8211945989125035614}
   - component: {fileID: 1888101272751632584}
   - component: {fileID: 1888101272751632591}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: VerticalEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
