@@ -256,6 +256,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 43269294}
   m_CullTransparentMesh: 1
+--- !u!1 &66643342 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7765704686394764498, guid: b4c9f4ab9b98e954b8b8e452d053a3fa, type: 3}
+  m_PrefabInstance: {fileID: 7765704687523518375}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &66643343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66643342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f2fd7e6897f81f489316e74c3b5eff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentObject: 0
+  quantity: 1
 --- !u!1 &697826721
 GameObject:
   m_ObjectHideFlags: 0
@@ -907,6 +926,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8147820335979402412, guid: 9b17df04abc863a4aba91a61ceba63fb, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8211571826743374633, guid: 9b17df04abc863a4aba91a61ceba63fb, type: 3}
       propertyPath: m_Name
       value: Player
@@ -959,8 +982,7 @@ PrefabInstance:
       propertyPath: ProjectilePrefab
       value: 
       objectReference: {fileID: 8274613288791820710, guid: 724d468bd8f4e2f42a18c7e0890e642b, type: 3}
-    m_RemovedComponents:
-    - {fileID: 8147820335979402412, guid: 9b17df04abc863a4aba91a61ceba63fb, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b17df04abc863a4aba91a61ceba63fb, type: 3}
 --- !u!1 &1378960974
 GameObject:
@@ -1980,6 +2002,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7765704686394764498, guid: b4c9f4ab9b98e954b8b8e452d053a3fa, type: 3}
   m_PrefabInstance: {fileID: 784900219}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1942153777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942153776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f2fd7e6897f81f489316e74c3b5eff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentObject: 0
+  quantity: 1
 --- !u!114 &1942153781
 MonoBehaviour:
   m_ObjectHideFlags: 0
