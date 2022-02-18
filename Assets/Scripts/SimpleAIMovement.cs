@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyMobility : MonoBehaviour
+public class SimpleAIMovement : MonoBehaviour
 {
     [SerializeField]
     public float speed;
@@ -8,22 +8,13 @@ public class EnemyMobility : MonoBehaviour
     [SerializeField]
     private Vector3[] locations;
 
-    [SerializeField]
-    GameObject ProjectilePrefab;
-
-    [SerializeField]
-    float ProjectileSpeed = 5.0f;
-
-    float cooldownTime = 2.0f;
-    float nextFireTime;
     private int offset;
-    // Start is called before the first frame update
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -41,23 +32,8 @@ public class EnemyMobility : MonoBehaviour
                 offset++; // otherwise follow queue
             }
         }
-
-        
-        if (Time.time > nextFireTime)
-        {
-
-            RangeAttack();
-            nextFireTime = Time.time + cooldownTime;
-
-        }
     }
 
-  
-    void RangeAttack()
-    {
-        GameObject ready = Instantiate(ProjectilePrefab, transform.position, Quaternion.identity);
-        //Vector3 direction = new Vector3(1.0f, 0.0f, 0.0f);
-    }
     
     
 }

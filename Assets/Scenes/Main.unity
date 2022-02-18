@@ -241,6 +241,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2640515058634883534, guid: b4c9f4ab9b98e954b8b8e452d053a3fa, type: 3}
+      propertyPath: fireRate
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640515058634883534, guid: b4c9f4ab9b98e954b8b8e452d053a3fa, type: 3}
+      propertyPath: bulletSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640515058634883534, guid: b4c9f4ab9b98e954b8b8e452d053a3fa, type: 3}
+      propertyPath: ProjectilePrefab
+      value: 
+      objectReference: {fileID: 2633034724039367268, guid: 949226d810d9c0b4083473358b9e893b, type: 3}
     - target: {fileID: 7765704686394764496, guid: b4c9f4ab9b98e954b8b8e452d053a3fa, type: 3}
       propertyPath: speed
       value: 0
@@ -532,8 +544,6 @@ MonoBehaviour:
   locations:
   - {x: -2.49, y: 3.78, z: 0}
   - {x: -2.49, y: -4.28, z: 0}
-  ProjectilePrefab: {fileID: 8274613288791820710, guid: 6b1123ecd6ee2fc4590b836339b04633, type: 3}
-  ProjectileSpeed: 5
 --- !u!1001 &7765704687523518375
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -541,6 +551,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2640515058634883534, guid: b4c9f4ab9b98e954b8b8e452d053a3fa, type: 3}
+      propertyPath: fireRate
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640515058634883534, guid: b4c9f4ab9b98e954b8b8e452d053a3fa, type: 3}
+      propertyPath: bulletSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2640515058634883534, guid: b4c9f4ab9b98e954b8b8e452d053a3fa, type: 3}
       propertyPath: ProjectilePrefab
       value: 

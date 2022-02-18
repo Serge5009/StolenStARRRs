@@ -29,8 +29,6 @@ public class EnemyShooting : MonoBehaviour
 
         if (cooldown <= 0)
             Shoot();
-
-
     }
 
     void Shoot()
