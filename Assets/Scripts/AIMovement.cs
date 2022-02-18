@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class AIMovement : MonoBehaviour
 {
+    [SerializeField]
+    float stopDistance = 1.0f;
+
     public float speed = 0.0f; // tokyo drift?
     private Transform target;
     // Start is called before the first frame update
@@ -15,7 +18,7 @@ public class AIMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector2.Distance(transform.position, target.position) > 0.3)  // in order to avaoid collapsing with player
+        if (Vector2.Distance(transform.position, target.position) > stopDistance)  // in order to avaoid collapsing with player
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime); // imma chase the poor player guy endlessly
     }
 }
