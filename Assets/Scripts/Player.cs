@@ -8,8 +8,8 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     Gun gun;
-    [SerializeField]
-    float health = 100.0f;
+
+    public float health = 100.0f;
 
     //  Directions:
     public Vector3 moveDirection;
