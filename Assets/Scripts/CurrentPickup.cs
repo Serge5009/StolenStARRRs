@@ -5,7 +5,7 @@ using UnityEngine;
 public class CurrentPickup : MonoBehaviour
 {
     // if we have something more to pick up, here is the enum ^-^
-    public enum PickupObject { COIN, };
+    public enum PickupObject { COIN, HP };
     public PickupObject currentObject;
     public int quantity;
 
@@ -19,6 +19,13 @@ public class CurrentPickup : MonoBehaviour
                 Player.player.coins += quantity;
                 Debug.Log(Player.player.coins);
             }
+
+            if (currentObject == PickupObject.HP)
+            {
+                Player.player.health += quantity;
+                Debug.Log(Player.player.health);
+            }
+
             Destroy(gameObject);
         }
     }
