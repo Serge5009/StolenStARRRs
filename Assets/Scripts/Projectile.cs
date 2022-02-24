@@ -62,7 +62,7 @@ public class Projectile : MonoBehaviour
                 Destroy(gameObject);    //  Destroy this bullet
             }
         }
-        if (coll.transform.tag == "Player")
+        else if (coll.transform.tag == "Player")
         {
             Player other = coll.gameObject.GetComponent<Player>();  //  Getting the player object of our hit target
 
@@ -76,6 +76,12 @@ public class Projectile : MonoBehaviour
             {
                 Destroy(gameObject);    //  Destroy this bullet
             }
+        }
+        else
+        {
+
+            Destroy(gameObject);    //  Destroy this bullet
+
         }
     }
     
