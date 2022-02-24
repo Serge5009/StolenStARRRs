@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6223763387992830858}
   m_Layer: 7
   m_Name: EnemyBullet
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,6 +49,8 @@ MonoBehaviour:
   speed: {x: 0, y: 0, z: 0}
   damagePlayer: 1
   destroyByPlayer: 1
+  destroyByObstacle: 1
+  destroyByBullet: 0
   damageEnemy: 0
   destroyByEnemy: 0
 --- !u!61 &6223763387992830853
