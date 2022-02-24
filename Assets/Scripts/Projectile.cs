@@ -13,6 +13,8 @@ public class Projectile : MonoBehaviour
     bool damagePlayer = false;      //  Will deal damage to the player?
     [SerializeField]
     bool destroyByPlayer = true;    //  Will dissapear after colliding with player?
+    [SerializeField]
+    bool destroyByObstacle = true;    //  Will dissapear after colliding with obstacle?
 
     [SerializeField]
     bool damageEnemy = true;        //  Will deal damage to the enemy?
@@ -66,7 +68,6 @@ public class Projectile : MonoBehaviour
         {
             Player other = coll.gameObject.GetComponent<Player>();  //  Getting the player object of our hit target
 
-
             if(damagePlayer)
             {
                 other.GetDamage(damage);
@@ -77,11 +78,13 @@ public class Projectile : MonoBehaviour
                 Destroy(gameObject);    //  Destroy this bullet
             }
         }
+        else if (coll.transform.tag == "Obstacle" && destroyByObstacle) //  This one is for future!!!
+        {
+            Destroy(gameObject);    //  Destroy this bullet
+        }
         else
         {
-
             Destroy(gameObject);    //  Destroy this bullet
-
         }
     }
     
