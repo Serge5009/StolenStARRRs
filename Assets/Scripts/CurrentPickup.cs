@@ -5,7 +5,7 @@ using UnityEngine;
 public class CurrentPickup : MonoBehaviour
 {
     // if we have something more to pick up, here is the enum ^-^
-    public enum PickupObject { COIN, HP };
+    public enum PickupObject { COIN, HP,};
     public PickupObject currentObject;
     public int quantity;
 
