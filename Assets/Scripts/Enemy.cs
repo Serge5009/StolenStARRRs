@@ -1,17 +1,22 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-
 
 public class Enemy : MonoBehaviour
 {
+
+
     [SerializeField]
     float health = 100.0f;
    
-    public GameObject lootDrop;
+    public GameObject coinDrop;
+    public GameObject healthDrop;
 
+    public int itemWeight;
     
     void Start()
     {
-       
+        itemWeight = Random.Range(0, 11);
     }
 
     void Update()
@@ -19,10 +24,26 @@ public class Enemy : MonoBehaviour
         if(health <= 0)
         {
             Destroy(gameObject);    //  RIP F
-            Instantiate(lootDrop, transform.position, Quaternion.identity);
-        }
             
-       
+            if(itemWeight <= 6)
+            {
+              Instantiate(coinDrop, transform.position, Quaternion.identity);
+            }
+            else if(itemWeight >= 8)
+            {
+             Instantiate(healthDrop, transform.position, Quaternion.identity);
+            }
+           else if(itemWeight == 7)
+            {
+             Instantiate(coinDrop, transform.position, Quaternion.identity);
+             Instantiate(healthDrop, transform.position, Quaternion.identity);
+                
+            }
+
+            Debug.Log(itemWeight);
+        }
+
+
     }
 
     public void GetDamage(float hp)

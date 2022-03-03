@@ -5,7 +5,7 @@ using UnityEngine;
 public class CurrentPickup : MonoBehaviour
 {
     // if we have something more to pick up, here is the enum ^-^
-    public enum PickupObject { COIN, HP,};
+    public enum PickupObject { COIN, HP, };
     public PickupObject currentObject;
     public int quantity;
 
@@ -13,7 +13,7 @@ public class CurrentPickup : MonoBehaviour
     {
         if(collision.name == "Player")
         {
-            // continue with else if whne we have more to pick up 
+            // continue with else if when we have more to pick up 
             if(currentObject == PickupObject.COIN)
             {
                 Player.player.coins += quantity;
