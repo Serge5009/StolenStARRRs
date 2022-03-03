@@ -9,15 +9,22 @@ public class Projectile : MonoBehaviour
 
 
     //  Interaction settings:
+
+    [SerializeField]
+    bool destroyByPlayer = true;    //  Will dissapear after colliding with player?
+    [SerializeField]
+    bool destroyByEnemy = true;     //  Will dissapear after colliding with enemy?
+    [SerializeField]
+    bool destroyByObstacle = true;    //  Will dissapear after colliding with obstacle?
+    [SerializeField]
+    bool destroyByBullet = false;    //  Will dissapear after colliding with another bullet?
+
     [SerializeField]
     bool damagePlayer = false;      //  Will deal damage to the player?
     [SerializeField]
-    bool destroyByPlayer = true;    //  Will dissapear after colliding with player?
-
-    [SerializeField]
     bool damageEnemy = true;        //  Will deal damage to the enemy?
     [SerializeField]
-    bool destroyByEnemy = true;     //  Will dissapear after colliding with enemy?
+    bool destroyOtherBullets = false;    //  Will delete another bullet on collision?
 
     void Start()
     {
@@ -62,10 +69,9 @@ public class Projectile : MonoBehaviour
                 Destroy(gameObject);    //  Destroy this bullet
             }
         }
-        if (coll.transform.tag == "Player")
+        else if (coll.transform.tag == "Player")
         {
             Player other = coll.gameObject.GetComponent<Player>();  //  Getting the player object of our hit target
-
 
             if(damagePlayer)
             {
@@ -76,6 +82,26 @@ public class Projectile : MonoBehaviour
             {
                 Destroy(gameObject);    //  Destroy this bullet
             }
+        }
+        else if (coll.transform.tag == "Obstacle" && destroyByObstacle) //  This one is for future!!!
+        {
+            Destroy(gameObject);    //  Destroy this bullet
+        }
+        else if (coll.transform.tag == "Projectile")
+        {
+            if(destroyOtherBullets)
+            {
+                Destroy(coll.gameObject);
+            }
+
+            if (destroyByBullet)
+            {
+                Destroy(gameObject);    //  Destroy this bullet
+            }
+        }
+        else
+        {
+            Destroy(gameObject);    //  Destroy this bullet
         }
     }
     
