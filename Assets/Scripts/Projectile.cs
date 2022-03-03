@@ -5,6 +5,8 @@ public class Projectile : MonoBehaviour
     public Vector3 speed;
     float lifetime = 0.0f;      //  Self destruct timer
     float lifeExpect = 5.0f;    //  Over this time bullet will die
+
+    [SerializeField]
     float damage = 10.0f;
 
 

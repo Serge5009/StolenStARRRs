@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 418357319}
   - component: {fileID: 418357320}
   m_Layer: 3
-  m_Name: PlayerBullet
+  m_Name: RifleBullet
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: {x: 0, y: 0, z: 0}
+  damage: 15
   destroyByPlayer: 1
   destroyByEnemy: 1
   destroyByObstacle: 1
@@ -173,7 +174,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -7175227951558988857, guid: 4a74cbbec522e8340a8ec714bbad41db, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.30176523, g: 0.9716981, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
