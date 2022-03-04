@@ -1006,7 +1006,7 @@ PrefabInstance:
     - target: {fileID: 8211571826743374639, guid: 9b17df04abc863a4aba91a61ceba63fb, type: 3}
       propertyPath: GunPrefab
       value: 
-      objectReference: {fileID: 3459668417817309518, guid: e9e02d255324a0749a642801ae1cdeaa, type: 3}
+      objectReference: {fileID: 3459668417817309518, guid: c69f24b5f60117842994a867ba32937f, type: 3}
     - target: {fileID: 8211571826770355694, guid: 9b17df04abc863a4aba91a61ceba63fb, type: 3}
       propertyPath: m_Layer
       value: 3
