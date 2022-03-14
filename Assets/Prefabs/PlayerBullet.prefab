@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 418357320}
   m_Layer: 3
   m_Name: PlayerBullet
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,10 +47,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: {x: 0, y: 0, z: 0}
-  damagePlayer: 0
   destroyByPlayer: 1
-  damageEnemy: 1
   destroyByEnemy: 1
+  destroyByObstacle: 1
+  destroyByBullet: 0
+  damagePlayer: 0
+  damageEnemy: 1
+  destroyOtherBullets: 0
 --- !u!61 &418357319
 BoxCollider2D:
   m_ObjectHideFlags: 0
