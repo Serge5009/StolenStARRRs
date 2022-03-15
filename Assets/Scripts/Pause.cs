@@ -44,7 +44,9 @@ public class Pause : MonoBehaviour
 
     public void LoadScene(string name)
     {
+        // this is the ticket for PirateHub
         SceneManager.LoadScene(name);
+        ResumeGame();
     }
     public void QuitGame()
     {
