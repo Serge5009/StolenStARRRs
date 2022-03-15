@@ -57,12 +57,14 @@ public class Explosive : Projectile
 
             if(distane < explosionTriggerRad)               //  If close enough
             {
+                Debug.Log("Enemy in range");
                 Explode();                                  //  Bullet go boooom
+                return;     //We dont want multiple explosions 
             }
         }
     }
 
-    void Explode()
+    public void Explode()
     {
         Debug.Log("Boom?");
     }

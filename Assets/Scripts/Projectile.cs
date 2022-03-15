@@ -61,9 +61,12 @@ public class Projectile : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D coll)  //  Triger callback
     {
-        if(isExplosive)
+        if(isExplosive) //  For other bullet type
         {
-            Debug.Log("Boom!");
+            //Debug.Log("Boom!");
+            Explosive explScript = GetComponent<Explosive>();
+            explScript.Explode();
+
             return;
         }
 
