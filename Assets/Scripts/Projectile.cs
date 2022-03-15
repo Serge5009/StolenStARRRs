@@ -3,7 +3,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public Vector3 speed;
-    float lifetime = 0.0f;      //  Self destruct timer
+    public float lifetime = 0.0f;      //  Self destruct timer
     float lifeExpect = 5.0f;    //  Over this time bullet will die
 
     [SerializeField]
@@ -27,6 +27,10 @@ public class Projectile : MonoBehaviour
     bool damageEnemy = true;        //  Will deal damage to the enemy?
     [SerializeField]
     bool destroyOtherBullets = false;    //  Will delete another bullet on collision?
+
+    //  Other types
+    [HideInInspector]
+    public bool isExplosive = false;    //  Will be automatically set to true if explosive script is attached
 
     protected void Start()
     {
@@ -57,6 +61,12 @@ public class Projectile : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D coll)  //  Triger callback
     {
+        if(isExplosive)
+        {
+            Debug.Log("Boom!");
+            return;
+        }
+
         if(coll.transform.tag == "Enemy")   //  If hitted the enemy
         {
             //Debug.Log("Boom!");
