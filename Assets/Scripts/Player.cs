@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class Player : MonoBehaviour
 
     public float health = 100.0f;
 
+    [SerializeField]
+    public string Scenename;
 
     //  Directions:
     public Vector3 moveDirection;
@@ -28,11 +31,13 @@ public class Player : MonoBehaviour
         else
         {
             player = this;
+            
         }
     }
 
     void Start()
     {
+        
         moveDirection = new Vector3(0.0f, 0.0f, 0.0f);
         shootDirection = new Vector3(0.0f, 0.0f, 0.0f);
     }
@@ -41,12 +46,18 @@ public class Player : MonoBehaviour
     {
         CheckInput();
 
-        if (health <= 0)
-        {
-            Destroy(gameObject);    //  RIP F
-        }
+        death();
     }
 
+    public void death()
+    {
+        if (health <= 0)
+        {
+            //Destroy(gameObject);    //  RIP F
+            //respawn in Hub
+            SceneManager.LoadScene(Scenename);
+        }
+    }
     void CheckInput()
     {
 
@@ -75,11 +86,10 @@ public class Player : MonoBehaviour
 
     }
 
-    
-
     public void GetDamage(float hp)
     {
         health -= hp;   // Does it need any explanation? 
     }
 
+  
 }
