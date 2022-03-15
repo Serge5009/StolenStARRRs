@@ -27,7 +27,7 @@ public class Gun : MonoBehaviour
 
     void Start()
     {
-        
+        player = transform.parent.gameObject;
     }
 
     void Update()

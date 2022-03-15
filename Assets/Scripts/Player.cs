@@ -10,6 +10,9 @@ public class Player : MonoBehaviour
     [SerializeField]
     Gun gun;
 
+    [SerializeField]
+    GameObject GunPrefab;
+
     public float health = 100.0f;
 
     [SerializeField]
@@ -33,6 +36,10 @@ public class Player : MonoBehaviour
             player = this;
             
         }
+
+        GameObject gunObj = Instantiate(GunPrefab, transform.position, Quaternion.identity);    //  Create a gun from prefab
+        gunObj.transform.parent = gameObject.transform;                                         //  Make it as a child of the player
+        gun = gunObj.GetComponent<Gun>();                                                       //  Get reference to gun script
     }
 
     void Start()

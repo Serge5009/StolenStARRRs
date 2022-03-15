@@ -3,8 +3,10 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public Vector3 speed;
-    float lifetime = 0.0f;      //  Self destruct timer
+    public float lifetime = 0.0f;      //  Self destruct timer
     float lifeExpect = 5.0f;    //  Over this time bullet will die
+
+    [SerializeField]
     float damage = 10.0f;
 
 
@@ -17,7 +19,7 @@ public class Projectile : MonoBehaviour
     [SerializeField]
     bool destroyByObstacle = true;    //  Will dissapear after colliding with obstacle?
     [SerializeField]
-    bool destroyByBullet = false;    //  Will dissapear after colliding with another bullet?
+    protected bool destroyByBullet = false;    //  Will dissapear after colliding with another bullet?
 
     [SerializeField]
     bool damagePlayer = false;      //  Will deal damage to the player?
@@ -26,7 +28,11 @@ public class Projectile : MonoBehaviour
     [SerializeField]
     bool destroyOtherBullets = false;    //  Will delete another bullet on collision?
 
-    void Start()
+    //  Other types
+    [HideInInspector]
+    public bool isExplosive = false;    //  Will be automatically set to true if explosive script is attached
+
+    protected void Start()
     {
     }
 
@@ -43,7 +49,7 @@ public class Projectile : MonoBehaviour
         destroyByEnemy = destEnemy;
     }
 
-    void Update()
+    protected void Update()
     {
         transform.position += speed * Time.deltaTime;
 
@@ -55,6 +61,15 @@ public class Projectile : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D coll)  //  Triger callback
     {
+        if(isExplosive) //  For other bullet type
+        {
+            //Debug.Log("Boom!");
+            Explosive explScript = GetComponent<Explosive>();
+            explScript.Explode();
+
+            return;
+        }
+
         if(coll.transform.tag == "Enemy")   //  If hitted the enemy
         {
             //Debug.Log("Boom!");
