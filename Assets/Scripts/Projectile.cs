@@ -19,7 +19,7 @@ public class Projectile : MonoBehaviour
     [SerializeField]
     bool destroyByObstacle = true;    //  Will dissapear after colliding with obstacle?
     [SerializeField]
-    bool destroyByBullet = false;    //  Will dissapear after colliding with another bullet?
+    protected bool destroyByBullet = false;    //  Will dissapear after colliding with another bullet?
 
     [SerializeField]
     bool damagePlayer = false;      //  Will deal damage to the player?
@@ -28,7 +28,7 @@ public class Projectile : MonoBehaviour
     [SerializeField]
     bool destroyOtherBullets = false;    //  Will delete another bullet on collision?
 
-    void Start()
+    protected void Start()
     {
     }
 
@@ -45,7 +45,7 @@ public class Projectile : MonoBehaviour
         destroyByEnemy = destEnemy;
     }
 
-    void Update()
+    protected void Update()
     {
         transform.position += speed * Time.deltaTime;
 

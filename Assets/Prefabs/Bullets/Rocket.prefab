@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8274613288791820708}
-  - component: {fileID: 8274613288791820709}
+  - component: {fileID: 417400421342335115}
   - component: {fileID: 418357319}
   - component: {fileID: 418357320}
   m_Layer: 3
@@ -34,7 +34,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8274613288791820709
+--- !u!114 &417400421342335115
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,7 +43,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8274613288791820710}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdb64ca823fa72446b3cb3a4903cadad, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d21701c99d987d49a5402e1e7ab37be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: {x: 0, y: 0, z: 0}
@@ -52,9 +52,10 @@ MonoBehaviour:
   destroyByEnemy: 1
   destroyByObstacle: 1
   destroyByBullet: 1
-  damagePlayer: 1
+  damagePlayer: 0
   damageEnemy: 1
   destroyOtherBullets: 0
+  safeTime: 0.4
 --- !u!61 &418357319
 BoxCollider2D:
   m_ObjectHideFlags: 0
