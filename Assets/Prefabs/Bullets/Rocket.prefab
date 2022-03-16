@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: {x: 0, y: 0, z: 0}
-  lifetime: 0
-  damage: 60
+  lifeExpect: 5
+  damage: 100
   destroyByPlayer: 1
   destroyByEnemy: 1
   destroyByObstacle: 1
@@ -57,6 +57,7 @@ MonoBehaviour:
   damagePlayer: 0
   damageEnemy: 1
   destroyOtherBullets: 0
+  isExplosive: 0
 --- !u!114 &417400421342335115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,19 +70,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d21701c99d987d49a5402e1e7ab37be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: {x: 0, y: 0, z: 0}
-  lifetime: 0
-  damage: 60
-  destroyByPlayer: 1
-  destroyByEnemy: 1
-  destroyByObstacle: 1
-  destroyByBullet: 1
-  damagePlayer: 0
-  damageEnemy: 1
-  destroyOtherBullets: 0
   safeTime: 0.2
-  explosionTriggerRad: 1.5
+  explosionTriggerRad: 2.5
   explosionTriggerDelay: 0.5
+  explosionRad: 3
 --- !u!61 &418357319
 BoxCollider2D:
   m_ObjectHideFlags: 0
