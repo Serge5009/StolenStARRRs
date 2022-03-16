@@ -3,7 +3,8 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public Vector3 speed;
-    public float lifetime = 0.0f;      //  Self destruct timer
+    float lifetime = 0.0f;      //  Self destruct timer
+    [SerializeField]
     float lifeExpect = 5.0f;    //  Over this time bullet will die
 
     [SerializeField]
