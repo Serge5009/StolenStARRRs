@@ -24,6 +24,9 @@ public class Explosive : MonoBehaviour
 
     GameObject[] enemies;
 
+    //  Other
+    bool exploded = false;
+
 
     void Start()
     {
@@ -31,11 +34,15 @@ public class Explosive : MonoBehaviour
         if (!projScript)
             Debug.Log("Error connecting script");
         damage = projScript.damage;
+
     }
 
     float timer = 0.0f;
     void Update()
     {
+        if (exploded)
+            return;
+
         timer += Time.deltaTime;
         if (timer >= safeTime && !isTriggerActive)  //  Handles time before 
         {
@@ -92,17 +99,43 @@ public class Explosive : MonoBehaviour
                     Vector3 direction = AI.transform.position - transform.position;
                     direction = Vector3.Normalize(direction);
 
-                    Vector2 dirrr = direction;
+                    Vector2 knockback = direction * dmg / target.basicHealth * 4;
 
                     Rigidbody2D rb = AI.gameObject.GetComponent<Rigidbody2D>();
-                    rb.velocity += dirrr;
+                    rb.velocity += knockback;
+                    StartCoroutine(KnockbackFix(rb));   //  SOS
                     //rb.AddForce(direction * damage);
                 }
             }
         }
 
 
+        StartCoroutine(RemoveBullet());
 
-        Destroy(gameObject);
+    }
+
+    IEnumerator KnockbackFix(Rigidbody2D rb)    //SOS
+    {
+        Debug.Log("111111");
+        yield return new WaitForSeconds(0.5f);
+
+        Debug.Log("222222");
+        rb.velocity = new Vector2(0.0f, 0.0f);
+
+        Debug.Log("333333");
+
+    }
+
+    IEnumerator RemoveBullet()
+    {
+        //turn off bullet functionality here but leave object itself
+        exploded = true;
+        projScript.SetSpeed(new Vector3(0, 0, 0));
+
+        GameObject sprite = gameObject.transform.GetChild(0).gameObject;
+        Destroy(sprite);    //  Remove sprite
+
+        yield return new WaitForSeconds(1); //give it some time
+        Destroy(gameObject);    //actually destroy the bullet
     }
 }
