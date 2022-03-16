@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8211945988027551461}
   m_Layer: 7
   m_Name: Sprite
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132,7 +132,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  lootDrop: {fileID: 8858896780154246167, guid: e995ce978507a7e44993ab469ed90819, type: 3}
+  coinDrop: {fileID: 0}
+  healthDrop: {fileID: 0}
+  itemWeight: 0
 --- !u!61 &8211945989125035615
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -7,7 +7,6 @@ public class Player : MonoBehaviour
 
     public float speed = 6.0f;
 
-    [SerializeField]
     Gun gun;
 
     [SerializeField]

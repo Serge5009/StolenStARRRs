@@ -3,11 +3,11 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public Vector3 speed;
-    public float lifetime = 0.0f;      //  Self destruct timer
+    float lifetime = 0.0f;      //  Self destruct timer
+    [SerializeField]
     float lifeExpect = 5.0f;    //  Over this time bullet will die
 
-    [SerializeField]
-    float damage = 10.0f;
+    public float damage = 10.0f;
 
 
     //  Interaction settings:
@@ -21,10 +21,8 @@ public class Projectile : MonoBehaviour
     [SerializeField]
     protected bool destroyByBullet = false;    //  Will dissapear after colliding with another bullet?
 
-    [SerializeField]
-    bool damagePlayer = false;      //  Will deal damage to the player?
-    [SerializeField]
-    bool damageEnemy = true;        //  Will deal damage to the enemy?
+    public bool damagePlayer = false;      //  Will deal damage to the player?
+    public bool damageEnemy = true;        //  Will deal damage to the enemy?
     [SerializeField]
     bool destroyOtherBullets = false;    //  Will delete another bullet on collision?
 
