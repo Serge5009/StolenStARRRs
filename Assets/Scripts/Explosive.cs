@@ -87,12 +87,20 @@ public class Explosive : MonoBehaviour
                     float dmg = damage * ((explosionRad - distance) / explosionRad);    //  Linear equation of damage from distance
                     target.GetDamage(dmg);
                     Debug.Log(dmg);
+
+                    //  Knock AI from epicenter                         !!! NEEDS REWORK !!!
+                    Vector3 direction = AI.transform.position - transform.position;
+                    direction = Vector3.Normalize(direction);
+
+                    Vector2 dirrr = direction;
+
+                    Rigidbody2D rb = AI.gameObject.GetComponent<Rigidbody2D>();
+                    rb.velocity += dirrr;
+                    //rb.AddForce(direction * damage);
                 }
             }
         }
 
-
-        //Debug.Log("Boom?");
 
 
         Destroy(gameObject);
