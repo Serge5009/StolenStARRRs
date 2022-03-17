@@ -46,6 +46,7 @@ public class EnemyShooting : MonoBehaviour
     void Aim()
     {
         shootDirection = player.transform.position - transform.position;
+        shootDirection = Vector3.Normalize(shootDirection);
 
     }
 }

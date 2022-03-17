@@ -5,9 +5,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
 
-
-    [SerializeField]
-    float health = 100.0f;
+    public float basicHealth = 100.0f;
+    public float health;
    
     public GameObject coinDrop;
     public GameObject healthDrop;
@@ -17,6 +16,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         itemWeight = Random.Range(0, 11);
+        health = basicHealth;
     }
 
     void Update()

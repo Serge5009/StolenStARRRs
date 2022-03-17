@@ -9,12 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8274613288791820708}
-  - component: {fileID: -505931324894796236}
-  - component: {fileID: 417400421342335115}
+  - component: {fileID: 8274613288791820709}
   - component: {fileID: 418357319}
   - component: {fileID: 418357320}
   m_Layer: 3
-  m_Name: Rocket
+  m_Name: AKBullet
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,7 +34,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-505931324894796236
+--- !u!114 &8274613288791820709
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -48,32 +47,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: {x: 0, y: 0, z: 0}
-  lifeExpect: 5
-  damage: 100
+  lifetime: 0
+  damage: 12
   destroyByPlayer: 1
   destroyByEnemy: 1
   destroyByObstacle: 1
-  destroyByBullet: 1
+  destroyByBullet: 0
   damagePlayer: 0
   damageEnemy: 1
   destroyOtherBullets: 0
   isExplosive: 0
---- !u!114 &417400421342335115
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8274613288791820710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d21701c99d987d49a5402e1e7ab37be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  safeTime: 0.2
-  explosionTriggerRad: 2.5
-  explosionTriggerDelay: 0.5
-  explosionRad: 3
 --- !u!61 &418357319
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -147,7 +130,7 @@ Transform:
   m_GameObject: {fileID: 8274613290685077544}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8274613288791820708}
   m_RootOrder: 0
@@ -193,7 +176,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -7175227951558988857, guid: 4a74cbbec522e8340a8ec714bbad41db, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.30352375, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
