@@ -106,7 +106,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fc73ad1361d16e45aca23871d0bc1ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   ProjectilePrefab: {fileID: 8274613288791820710, guid: 724d468bd8f4e2f42a18c7e0890e642b, type: 3}
   bulletSpeed: 16
   fireRate: 2
@@ -136,8 +135,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3459668419346005877}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.9139916, y: -0.050241623, z: 0.12326348}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.9139916, y: -0.050241623, z: -1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 2645055074670364481}
   m_RootOrder: 0
@@ -182,7 +181,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -4949211619211131133, guid: 4a74cbbec522e8340a8ec714bbad41db, type: 3}
+  m_Sprite: {fileID: 2358733683270805929, guid: 4a74cbbec522e8340a8ec714bbad41db, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
