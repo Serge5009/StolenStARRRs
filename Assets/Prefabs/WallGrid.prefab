@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6947668608027849780}
   - component: {fileID: 8723092717925114261}
   - component: {fileID: 1606875731}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: WallMap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 2378300450017192644}
   - component: {fileID: -9025932793695438548}
   - component: {fileID: 5269505593386563566}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: WallGrid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
