@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4269221404043361181}
   - component: {fileID: 4342156718031216791}
   - component: {fileID: 29958142}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: HealthPU
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7145861051032194664}
   - component: {fileID: 390053775135390006}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
