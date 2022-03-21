@@ -14,6 +14,8 @@ public class Spawner : MonoBehaviour
 
     [SerializeField]
     float activationDistance = 10.0f;
+    [SerializeField]
+    int burstSpawn = 4;
 
     [SerializeField]
     GameObject EnemyPrefab;
@@ -35,21 +37,30 @@ public class Spawner : MonoBehaviour
         {
             float distance = Vector3.Distance(Player.player.transform.position, transform.position);
             if (distance < activationDistance)
-                isActivated = true;
+                Activate();
         }    
 
         if(timer <= 0)
         {
             timer = spawnRate;
-            Spawn();
+            StartCoroutine(Spawn());
         }
     }
 
-    void Spawn()
+    IEnumerator Spawn()
     {
+        float delay = Random.Range(0.0f, spawnRate);
+        yield return new WaitForSeconds(delay);
         Debug.Log("New");
         Instantiate(EnemyPrefab, transform.position, Quaternion.identity);
         LevelManager.lManager.OnNewSpawned();
+    }
+
+    void Activate()
+    {
+        isActivated = true;
+        for (int i = 0; i < burstSpawn; i++)    //Spawn first enemies
+            StartCoroutine(Spawn());
     }
 
 }
