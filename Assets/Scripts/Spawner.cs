@@ -15,6 +15,8 @@ public class Spawner : MonoBehaviour
     [SerializeField]
     GameObject EnemyPrefab;
 
+    public bool isWorking = true;
+
     void Start()
     {
         timer = spawnRate;
@@ -22,7 +24,8 @@ public class Spawner : MonoBehaviour
 
     void Update()
     {
-        timer -= Time.deltaTime;
+        if(isWorking)
+            timer -= Time.deltaTime;    //  Timer works only if spawner is activated
 
         if(timer <= 0)
         {
@@ -35,6 +38,7 @@ public class Spawner : MonoBehaviour
     {
         Debug.Log("New");
         Instantiate(EnemyPrefab, transform.position, Quaternion.identity);
+        LevelManager.lManager.OnNewSpawned();
     }
 
 }

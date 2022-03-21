@@ -8,6 +8,16 @@ public class LevelManager : MonoBehaviour
 
     GameObject[] spawners;
 
+    //  Tracking
+
+    int totalSpawned;
+    int alive;
+
+    [SerializeField]
+    int toSpawn = 20;
+    [SerializeField]
+    int maxAlive = 10;
+
     void Awake()
     {
         if (lManager != null)
@@ -28,5 +38,36 @@ public class LevelManager : MonoBehaviour
         Debug.Log(spawners.Length);
     }
 
+    void Update()
+    {
+        if(alive >= maxAlive || totalSpawned >= toSpawn)    //  Controls pausing/unpausing for enemy spawners                        
+        {
+            PauseSpawners();
+        }
+        if(alive < maxAlive && totalSpawned <= toSpawn)
+        {
+            UnauseSpawners();
+        }
 
+    }
+
+    void PauseSpawners()
+    {
+        foreach(GameObject spawn in spawners)
+        {
+            Spawner sp = spawn.GetComponent<Spawner>();
+            sp.isWorking = false;
+        }
+    }
+
+    void UnauseSpawners()
+    {
+
+    }
+
+    public void OnNewSpawned()
+    {
+        totalSpawned += 1;
+        //alive += 1;
+    }
 }
