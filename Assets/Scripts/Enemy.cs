@@ -24,6 +24,9 @@ public class Enemy : MonoBehaviour
         // if AI health less then 0
         if(health <= 0)
         {
+            //Telling level manager that it's one enemy less
+            LevelManager.lManager.OnEnemyDeath();
+
             Destroy(gameObject);    //  RIP F
             
             if(itemWeight <= 6) //if random value less or equal then 6 drop coin

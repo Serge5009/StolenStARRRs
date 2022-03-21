@@ -68,6 +68,11 @@ public class LevelManager : MonoBehaviour
     public void OnNewSpawned()
     {
         totalSpawned += 1;
-        //alive += 1;
+        alive += 1;
+    }
+
+    public void OnEnemyDeath()
+    {
+        alive -= 1;
     }
 }
