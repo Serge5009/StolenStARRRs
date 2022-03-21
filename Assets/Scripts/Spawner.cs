@@ -13,9 +13,13 @@ public class Spawner : MonoBehaviour
     static int currentEnemies = 0;  //  We start with 2 now
 
     [SerializeField]
+    float activationDistance = 10.0f;
+
+    [SerializeField]
     GameObject EnemyPrefab;
 
     public bool isWorking = true;
+    bool isActivated = false;
 
     void Start()
     {
@@ -24,8 +28,15 @@ public class Spawner : MonoBehaviour
 
     void Update()
     {
-        if(isWorking)
+        if(isWorking && isActivated)
             timer -= Time.deltaTime;    //  Timer works only if spawner is activated
+
+        if(!isActivated)
+        {
+            float distance = Vector3.Distance(Player.player.transform.position, transform.position);
+            if (distance < activationDistance)
+                isActivated = true;
+        }    
 
         if(timer <= 0)
         {

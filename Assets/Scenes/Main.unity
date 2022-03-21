@@ -13262,6 +13262,14 @@ PrefabInstance:
       propertyPath: isWorking
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9050965660049943171, guid: 7da2297cf96aad34290297a6022573ff, type: 3}
+      propertyPath: spawnRate
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050965660049943171, guid: 7da2297cf96aad34290297a6022573ff, type: 3}
+      propertyPath: activationDistance
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 9050965660049943172, guid: 7da2297cf96aad34290297a6022573ff, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -13315,6 +13323,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3817187759447553190, guid: 0fc2a1d892fedc54e9765911bf03d03a, type: 3}
+      propertyPath: toSpawn
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3817187759447553190, guid: 0fc2a1d892fedc54e9765911bf03d03a, type: 3}
+      propertyPath: maxAlive
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4047320331941465378, guid: 0fc2a1d892fedc54e9765911bf03d03a, type: 3}
       propertyPath: m_RootOrder
       value: 9
