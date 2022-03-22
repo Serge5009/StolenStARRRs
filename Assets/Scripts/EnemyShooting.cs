@@ -22,6 +22,7 @@ public class EnemyShooting : MonoBehaviour
 
     void Start()
     {
+        fireRate += Random.Range(fireRate / -5, fireRate / 5);  //  Randomizing firerate
         cooldown = 1 / fireRate;
         player = GameObject.FindGameObjectWithTag("Player");
     }

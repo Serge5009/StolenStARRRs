@@ -13,6 +13,7 @@ public class AIMovement : MonoBehaviour
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>(); // here we are getting players location
+        speed += Random.Range(speed / -5, speed / 5);  //  Randomizing speed
     }
 
     // Update is called once per frame
