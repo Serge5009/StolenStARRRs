@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9050965660049943171}
   m_Layer: 0
   m_Name: SpawnPoint
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,4 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRate: 10
+  activationDistance: 10
+  burstSpawn: 4
   EnemyPrefab: {fileID: 7765704686394764498, guid: b4c9f4ab9b98e954b8b8e452d053a3fa, type: 3}
+  isWorking: 1
