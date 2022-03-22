@@ -317,7 +317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  GunPrefab: {fileID: 3459668417817309518, guid: a656a5fcfd30acf40ba6af63c79097d0, type: 3}
+  GunPrefab: {fileID: 3459668417817309518, guid: cac5d9d913ad67b4081c49c91b33e8d9, type: 3}
   health: 100
   Scenename: PirateHub
   moveDirection: {x: 0, y: 0, z: 0}
