@@ -16,6 +16,9 @@ public class Spawner : MonoBehaviour
     float activationDistance = 10.0f;
     [SerializeField]
     int burstSpawn = 4;
+    [SerializeField]
+    int spawnLimit = 10;
+    int spawned = 0;
 
     [SerializeField]
     GameObject EnemyPrefab;
@@ -30,7 +33,7 @@ public class Spawner : MonoBehaviour
 
     void Update()
     {
-        if(isWorking && isActivated)
+        if(isWorking && isActivated && spawned < spawnLimit)
             timer -= Time.deltaTime;    //  Timer works only if spawner is activated
 
         if(!isActivated)
@@ -51,9 +54,10 @@ public class Spawner : MonoBehaviour
     {
         float delay = Random.Range(0.0f, spawnRate);
         yield return new WaitForSeconds(delay);
-        Debug.Log("New");
+        //Debug.Log("New");
         Instantiate(EnemyPrefab, transform.position, Quaternion.identity);
         LevelManager.lManager.OnNewSpawned();
+        spawned += 1;
     }
 
     void Activate()
