@@ -110,7 +110,7 @@ public class Gun : MonoBehaviour
         Player parent = player.GetComponent<Player>();
 
         bullet.SetSpeed(direction * bulletSpeed + parent.moveDirection * parent.speed);
-        bullet.SetInteraction(false, true, true, true);
+        //bullet.SetInteraction(false, true, true, true);
     }
 
     void RotateGun()
