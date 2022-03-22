@@ -17,6 +17,11 @@ public class Gun : MonoBehaviour
     float scatter = 0.01f;  //  Reccomended values between 0 and 0.3
 
     [SerializeField]
+    float burstTime = 0.0f; //  0 - all burst bullets at the same time
+    [SerializeField]
+    float burstShoots = 1;  //  1 for regular shooting
+
+    [SerializeField]
     GameObject bulletSpawn; //  Place where projectiles start their movement from (barrel end)
 
     //  Private:
@@ -42,8 +47,20 @@ public class Gun : MonoBehaviour
         shootHeat -= 1;
         if (shootHeat == 0)
         {
-            SpawnProjectile(shootDirection);    //  Shoot
+
+            StartCoroutine(Fire());
+
+
             shootHeat = -1;
+        }
+    }
+
+    IEnumerator Fire()
+    {
+        for (int i = 0; i < burstShoots; i++)
+        {
+            SpawnProjectile(shootDirection);    //  Shoot
+            yield return new WaitForSeconds(burstTime / burstShoots);
         }
     }
 
