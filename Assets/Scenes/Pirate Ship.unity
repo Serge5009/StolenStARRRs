@@ -255,7 +255,7 @@ PrefabInstance:
     - target: {fileID: 8211571826743374639, guid: 9b17df04abc863a4aba91a61ceba63fb, type: 3}
       propertyPath: GunPrefab
       value: 
-      objectReference: {fileID: 3459668417817309518, guid: 33a7a63d00860a84788bee7b9e794f27, type: 3}
+      objectReference: {fileID: 3459668417817309518, guid: cac5d9d913ad67b4081c49c91b33e8d9, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b17df04abc863a4aba91a61ceba63fb, type: 3}
 --- !u!213 &155422299
