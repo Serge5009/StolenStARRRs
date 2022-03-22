@@ -11,6 +11,9 @@ public class EnemyShooting : MonoBehaviour
     [SerializeField]
     float fireRate = 1.0f;  //  Bullets per second
 
+    [SerializeField]        //  0 - all bullets fly in one direction | 1 - 360 degree scatter
+    float scatter = 0.01f;  //  Reccomended values between 0 and 0.3
+
     GameObject player;
 
     Vector3 shootDirection;
@@ -47,6 +50,11 @@ public class EnemyShooting : MonoBehaviour
     {
         shootDirection = player.transform.position - transform.position;
         shootDirection = Vector3.Normalize(shootDirection);
+
+        //  Apply scatter
+        float x = Random.Range(scatter * -1, scatter);
+        float y = Random.Range(scatter * -1, scatter);
+        shootDirection += new Vector3(x, y, 0.0f);
 
     }
 }
