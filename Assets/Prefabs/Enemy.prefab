@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40c31abb24c6a17449a126ce09980a64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  basicHealth: 100
   health: 100
   coinDrop: {fileID: 8858896780154246167, guid: d1467711022d13e40b0d90d0ffc08864, type: 3}
   healthDrop: {fileID: 2976462168705380571, guid: 2fcbee4fe6961f44a9c25d156f8f5151, type: 3}
@@ -129,6 +130,7 @@ MonoBehaviour:
   ProjectilePrefab: {fileID: 2633034724039367268, guid: 949226d810d9c0b4083473358b9e893b, type: 3}
   bulletSpeed: 2
   fireRate: 1
+  scatter: 0.1
 --- !u!212 &1998725433
 SpriteRenderer:
   m_ObjectHideFlags: 0
