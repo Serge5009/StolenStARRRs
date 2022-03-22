@@ -252,6 +252,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8211571826743374639, guid: 9b17df04abc863a4aba91a61ceba63fb, type: 3}
+      propertyPath: GunPrefab
+      value: 
+      objectReference: {fileID: 3459668417817309518, guid: ac1b1233a0556ef4bbe7264580dbfb40, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b17df04abc863a4aba91a61ceba63fb, type: 3}
 --- !u!1001 &194082479
@@ -1552,6 +1556,10 @@ PrefabInstance:
     - target: {fileID: 3909371503337672797, guid: 95600e4943756464e8c8b3f59ac46d2f, type: 3}
       propertyPath: m_Name
       value: Obstacles
+      objectReference: {fileID: 0}
+    - target: {fileID: 3909371503337672797, guid: 95600e4943756464e8c8b3f59ac46d2f, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 8909799818083242899, guid: 95600e4943756464e8c8b3f59ac46d2f, type: 3}
       propertyPath: m_RootOrder
