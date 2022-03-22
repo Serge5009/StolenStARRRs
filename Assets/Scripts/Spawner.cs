@@ -13,7 +13,18 @@ public class Spawner : MonoBehaviour
     static int currentEnemies = 0;  //  We start with 2 now
 
     [SerializeField]
+    float activationDistance = 10.0f;
+    [SerializeField]
+    int burstSpawn = 4;
+    [SerializeField]
+    int spawnLimit = 10;
+    int spawned = 0;
+
+    [SerializeField]
     GameObject EnemyPrefab;
+
+    public bool isWorking = true;
+    bool isActivated = false;
 
     void Start()
     {
@@ -22,19 +33,38 @@ public class Spawner : MonoBehaviour
 
     void Update()
     {
-        timer -= Time.deltaTime;
+        if(isWorking && isActivated && spawned < spawnLimit)
+            timer -= Time.deltaTime;    //  Timer works only if spawner is activated
+
+        if(!isActivated)
+        {
+            float distance = Vector3.Distance(Player.player.transform.position, transform.position);
+            if (distance < activationDistance)
+                Activate();
+        }    
 
         if(timer <= 0)
         {
             timer = spawnRate;
-            Spawn();
+            StartCoroutine(Spawn());
         }
     }
 
-    void Spawn()
+    IEnumerator Spawn()
     {
-        Debug.Log("New");
+        float delay = Random.Range(0.0f, spawnRate);
+        yield return new WaitForSeconds(delay);
+        //Debug.Log("New");
         Instantiate(EnemyPrefab, transform.position, Quaternion.identity);
+        LevelManager.lManager.OnNewSpawned();
+        spawned += 1;
+    }
+
+    void Activate()
+    {
+        isActivated = true;
+        for (int i = 0; i < burstSpawn; i++)    //Spawn first enemies
+            StartCoroutine(Spawn());
     }
 
 }

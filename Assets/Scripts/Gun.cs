@@ -13,6 +13,14 @@ public class Gun : MonoBehaviour
     [SerializeField]
     float fireRate = 1.0f;  //  Bullets per second
 
+    [SerializeField]        //  0 - all bullets fly in one direction | 1 - 360 degree scatter
+    float scatter = 0.01f;  //  Reccomended values between 0 and 0.3
+
+    [SerializeField]
+    float burstTime = 0.0f; //  0 - all burst bullets at the same time
+    [SerializeField]
+    float burstShoots = 1;  //  1 for regular shooting
+
     [SerializeField]
     GameObject bulletSpawn; //  Place where projectiles start their movement from (barrel end)
 
@@ -39,8 +47,20 @@ public class Gun : MonoBehaviour
         shootHeat -= 1;
         if (shootHeat == 0)
         {
-            SpawnProjectile(shootDirection);    //  Shoot
+
+            StartCoroutine(Fire());
+
+
             shootHeat = -1;
+        }
+    }
+
+    IEnumerator Fire()
+    {
+        for (int i = 0; i < burstShoots; i++)
+        {
+            SpawnProjectile(shootDirection);    //  Shoot
+            yield return new WaitForSeconds(burstTime / burstShoots);
         }
     }
 
@@ -66,6 +86,8 @@ public class Gun : MonoBehaviour
         }
         //Debug.Log(shootDirection);
 
+
+
         if (cooldown == 0)
         {
             cooldown += 1 / fireRate;             //  Reset cooldown
@@ -76,12 +98,19 @@ public class Gun : MonoBehaviour
 
     void SpawnProjectile(Vector3 direction)
     {
+        //  Apply scatter
+        float x = Random.Range(scatter * -1, scatter);
+        float y = Random.Range(scatter * -1, scatter);
+        direction += new Vector3(x, y, 0.0f);
+
+
+        //  Spawn bullet
         GameObject proj = Instantiate(ProjectilePrefab, bulletSpawn.transform.position, Quaternion.identity);
         Projectile bullet = proj.GetComponent<Projectile>();
         Player parent = player.GetComponent<Player>();
 
         bullet.SetSpeed(direction * bulletSpeed + parent.moveDirection * parent.speed);
-        bullet.SetInteraction(false, true, true, true);
+        //bullet.SetInteraction(false, true, true, true);
     }
 
     void RotateGun()
