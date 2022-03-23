@@ -22,7 +22,7 @@ public class CurrentPickup : MonoBehaviour
                 AudioManager.Instance.Play(CoinPickup);
             }
 
-            if (currentObject == PickupObject.HP)
+            if (currentObject == PickupObject.HP && Player.player.health <= 100)
             {
                 Player.player.health += quantity;
                 Debug.Log(Player.player.health);
