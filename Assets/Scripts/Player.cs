@@ -7,6 +7,9 @@ public class Player : MonoBehaviour
 
     public float speed = 6.0f;
 
+    public AudioClip LowHealth;
+    public AudioClip PlayerDeathSound;
+
     Gun gun;
 
     [SerializeField]
@@ -52,15 +55,16 @@ public class Player : MonoBehaviour
     {
         CheckInput();
 
-        death();
+        Death();
     }
 
-    public void death()
+    public void Death()
     {
         if (health <= 0)
         {
             //Destroy(gameObject);    //  RIP F
             //respawn in Hub
+            AudioManager.Instance.Play(PlayerDeathSound);
             SceneManager.LoadScene(Scenename);
         }
     }
@@ -95,6 +99,10 @@ public class Player : MonoBehaviour
     public void GetDamage(float hp)
     {
         health -= hp;   // Does it need any explanation? 
+        if (health < 25.0f)
+        {
+            AudioManager.Instance.Play(LowHealth);
+        }
     }
 
   
