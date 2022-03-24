@@ -9,8 +9,8 @@ public class Player : MonoBehaviour
 
     Gun gun;
 
-    [SerializeField]
-    GameObject GunPrefab;
+    
+    public GameObject GunPrefab;
 
     public float health = 100.0f;
 
@@ -97,5 +97,9 @@ public class Player : MonoBehaviour
         health -= hp;   // Does it need any explanation? 
     }
 
-  
+    
+    public void equipRocket()
+    {
+
+    }
 }
