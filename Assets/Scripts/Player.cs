@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
 
     
     public GameObject GunPrefab;
+    
+  
 
     public float health = 100.0f;
 
@@ -98,8 +100,15 @@ public class Player : MonoBehaviour
     }
 
     
-    public void equipRocket()
+    public void EquipWeapon()
     {
+        if(gun.gameObject)
+        {
+            Destroy(gun.gameObject);
+        }
 
+        GameObject gunObj = Instantiate(GunPrefab, transform.position, Quaternion.identity);
+        gunObj.transform.parent = gameObject.transform;
+        gun = gunObj.GetComponent<Gun>();
     }
 }

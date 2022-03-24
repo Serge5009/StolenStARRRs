@@ -11,6 +11,9 @@ public class UI_Shop : MonoBehaviour
     Transform container;
     private Transform shopItemTemplate;
 
+    public GameObject RPG;
+    public GameObject shotgun;
+    public GameObject pistol;
    void Awake()
    {/*
         if (shop != null)
@@ -60,6 +63,7 @@ public class UI_Shop : MonoBehaviour
         {
             Debug.Log("qwe");
             container.gameObject.SetActive(true);
+           
         }
 
     }
@@ -72,5 +76,38 @@ public class UI_Shop : MonoBehaviour
             container.gameObject.SetActive(false);
         }
 
+    }
+
+    public void BuyRPG()
+    {
+        if(Player.player.coins >= 500)
+        {
+            Player.player.GunPrefab = RPG;
+            Player.player.EquipWeapon();
+            Player.player.coins -= 500;
+        }
+       
+    }
+
+    public void BuyPistol()
+    {
+        if (Player.player.coins >= 100)
+        {
+            Player.player.GunPrefab = pistol;
+            Player.player.EquipWeapon();
+            Player.player.coins -= 100;
+        }
+        
+    }
+
+    public void BuyShotgun()
+    {
+        if (Player.player.coins >= 200)
+        {
+            Player.player.GunPrefab = shotgun;
+            Player.player.EquipWeapon();
+            Player.player.coins -= 200;
+        }
+       
     }
 }
