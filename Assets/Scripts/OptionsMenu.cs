@@ -2,38 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 
 public class OptionsMenu : MonoBehaviour
 {
- 
-    [SerializeField]
-    public string Scenename;
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            QuitGame();
-        }
-    }
+    public AudioMixer audioMixer;
 
-    public void StartGame()
+    public void SetVolume (float volume)
     {
-        SceneManager.LoadScene(Scenename);
-    }
-
-
-    public void LoadScene(string name)
-    {
-        // this is the ticket for PirateHub
-        SceneManager.LoadScene(name);
-        
-    }
-    public void QuitGame()
-    {
-        Application.Quit();
-
-        Debug.Log("Quit");
+        audioMixer.SetFloat("volume", volume);
     }
     
 
