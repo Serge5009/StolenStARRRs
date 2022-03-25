@@ -29,7 +29,7 @@ public class UI_Shop : MonoBehaviour
        //container = transform.Find("container");
        if(!container)
         {
-            Debug.Log("asd");
+            Debug.Log("Just checking container");
         }
     }
 
@@ -61,7 +61,7 @@ public class UI_Shop : MonoBehaviour
     {
         if (collision.name == "Player")
         {
-            Debug.Log("qwe");
+            Debug.Log("checking player collision");
             container.gameObject.SetActive(true);
            
         }
@@ -72,7 +72,7 @@ public class UI_Shop : MonoBehaviour
     {
         if (collision.name == "Player")
         {
-            Debug.Log("qwe");
+            Debug.Log("checking player collision");
             container.gameObject.SetActive(false);
         }
 
