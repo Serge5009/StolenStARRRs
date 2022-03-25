@@ -8,7 +8,8 @@ public class CurrentPickup : MonoBehaviour
     public enum PickupObject { COIN, HP, };
     public PickupObject currentObject;
     public int quantity;
-
+    public AudioClip CoinPickup;
+    //public AudioClip HealthPickupSound;
     void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.name == "Player")
@@ -18,12 +19,14 @@ public class CurrentPickup : MonoBehaviour
             {
                 Player.player.coins += quantity;
                 Debug.Log(Player.player.coins);
+                AudioManager.Instance.Play(CoinPickup);
             }
 
-            if (currentObject == PickupObject.HP)
+            if (currentObject == PickupObject.HP && Player.player.health <= 100)
             {
                 Player.player.health += quantity;
                 Debug.Log(Player.player.health);
+                //AudioManager.Instance.Play(HealthPickupSound);
             }
 
             Destroy(gameObject);

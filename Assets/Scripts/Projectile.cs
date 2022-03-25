@@ -96,9 +96,10 @@ public class Projectile : MonoBehaviour
                 Destroy(gameObject);    //  Destroy this bullet
             }
         }
-        else if (coll.transform.tag == "Obstacle" && destroyByObstacle) //  This one is for future!!!
+        else if (coll.transform.tag == "Obstacle") //  This one is for future!!!
         {
-            Destroy(gameObject);    //  Destroy this bullet
+            if(destroyByObstacle)
+                Destroy(gameObject);    //  Destroy this bullet
         }
         else if (coll.transform.tag == "Projectile")
         {
