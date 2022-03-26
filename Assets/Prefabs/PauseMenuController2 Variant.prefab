@@ -1,12 +1,12 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!82 &1599074247200388725
+--- !u!82 &624543319
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 787115282635862477}
+  m_GameObject: {fileID: 787115281324366934}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -96,28 +96,13 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1599074247200388726
+--- !u!114 &624543317
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 787115282635862477}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6855f566dbb0cf644b08f68292276342, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myFx: {fileID: 1599074247200388725}
-  hoverFx: {fileID: 8300000, guid: 25e8c64c9d940bf49923529d33807cce, type: 3}
-  clickFx: {fileID: 8300000, guid: 45384e3ae74c6054c997623c0ed2a8ec, type: 3}
---- !u!114 &1599074247200388728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 787115282635862477}
+  m_GameObject: {fileID: 787115281324366934}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
@@ -156,6 +141,21 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &624543318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787115281324366934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6855f566dbb0cf644b08f68292276342, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myFx: {fileID: 1599074247200388725}
+  hoverFx: {fileID: 8300000, guid: 25e8c64c9d940bf49923529d33807cce, type: 3}
+  clickFx: {fileID: 8300000, guid: 45384e3ae74c6054c997623c0ed2a8ec, type: 3}
 --- !u!82 &1080438762
 AudioSource:
   m_ObjectHideFlags: 0
@@ -468,13 +468,13 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!82 &624543319
+--- !u!82 &1599074247200388725
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 787115281324366934}
+  m_GameObject: {fileID: 787115282635862477}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -564,13 +564,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &624543317
+--- !u!114 &1599074247200388726
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 787115281324366934}
+  m_GameObject: {fileID: 787115282635862477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6855f566dbb0cf644b08f68292276342, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myFx: {fileID: 1599074247200388725}
+  hoverFx: {fileID: 8300000, guid: 25e8c64c9d940bf49923529d33807cce, type: 3}
+  clickFx: {fileID: 8300000, guid: 45384e3ae74c6054c997623c0ed2a8ec, type: 3}
+--- !u!114 &1599074247200388728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787115282635862477}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
@@ -609,21 +624,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &624543318
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 787115281324366934}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6855f566dbb0cf644b08f68292276342, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myFx: {fileID: 1599074247200388725}
-  hoverFx: {fileID: 8300000, guid: 25e8c64c9d940bf49923529d33807cce, type: 3}
-  clickFx: {fileID: 8300000, guid: 45384e3ae74c6054c997623c0ed2a8ec, type: 3}
 --- !u!1001 &2079933655853316880
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -685,15 +685,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1599074246852714752, guid: a2618b89b29e762408172150c08d8512, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1599074246852714752, guid: a2618b89b29e762408172150c08d8512, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1599074246852714752, guid: a2618b89b29e762408172150c08d8512, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1599074246852714752, guid: a2618b89b29e762408172150c08d8512, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -717,7 +717,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1599074246852714753, guid: a2618b89b29e762408172150c08d8512, type: 3}
       propertyPath: m_Name
-      value: PauseMenuController2
+      value: PauseMenuController2 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1599074247523362628, guid: a2618b89b29e762408172150c08d8512, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1599074247523362628, guid: a2618b89b29e762408172150c08d8512, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2618b89b29e762408172150c08d8512, type: 3}
