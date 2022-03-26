@@ -2521,7 +2521,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'FPS Limit: 200fps'
+  m_text: Place holder
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 272c952ee3b24f845a9a64153f138885, type: 2}
   m_sharedMaterial: {fileID: 5920524696650492348, guid: 272c952ee3b24f845a9a64153f138885, type: 2}
