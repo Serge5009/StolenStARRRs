@@ -11,8 +11,9 @@ public class Player : MonoBehaviour
     public AudioClip PlayerDeathSound;
 
     Gun gun;
+    public bool diagonalShooting = false;
 
-    
+
     public GameObject GunPrefab;
     
   
