@@ -25,7 +25,11 @@ public class AIMovement : MonoBehaviour
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>(); // here we are getting players location
-        speed += Random.Range(speed / -5, speed / 5);  //  Randomizing speed
+
+
+                                                                                //  Randomization
+        speed += Random.Range(speed / -5, speed / 5);                           //speed
+        stopDistance += Random.Range(stopDistance / -5, stopDistance / 5);      //stop distance
     }
 
     void Update()
