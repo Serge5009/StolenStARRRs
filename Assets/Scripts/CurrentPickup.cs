@@ -12,7 +12,7 @@ public class CurrentPickup : MonoBehaviour
     //public AudioClip HealthPickupSound;
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.name == "Player")
+        if(collision.tag == "Player")
         {
             // continue with else if when we have more to pick up 
             if(currentObject == PickupObject.COIN)
