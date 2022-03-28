@@ -350,14 +350,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 270677736}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: StartGame
-        m_Mode: 1
+        m_MethodName: LoadScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: PirateHub
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &130297853
@@ -712,7 +712,7 @@ AudioSource:
   m_GameObject: {fileID: 812149935}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 715aa8ee2ccc7ae4f8217b4370d80687, type: 2}
   m_audioClip: {fileID: 8300000, guid: 6621b1680af29ed4f8756ef7f9616f4d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.665
