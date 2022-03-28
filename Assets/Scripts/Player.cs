@@ -3,7 +3,31 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    public static Player player;
+    private static Player _instance;
+    public static Player player
+    {
+        get
+        {
+            _instance = GameObject.FindObjectOfType<Player>();
+            if(_instance == null)
+            {
+                GameObject pl = Instantiate(Resources.Load("Player") as GameObject);
+                if(pl != null)
+                {
+                    _instance = pl.GetComponent<Player>();
+
+                }
+                else
+                {
+                    Debug.Log("Error instantiating the player");
+                }
+            }
+            DontDestroyOnLoad(_instance.gameObject);
+            return _instance;
+        }
+    }
+        
+
 
     public float speed = 6.0f;
 
@@ -11,11 +35,12 @@ public class Player : MonoBehaviour
     public AudioClip PlayerDeathSound;
 
     Gun gun;
+    public bool diagonalShooting = false;
 
-    
+
     public GameObject GunPrefab;
-    
-  
+
+    Animator animator;
 
     public float health = 100.0f;
 
@@ -31,19 +56,29 @@ public class Player : MonoBehaviour
 
     void Awake()
     {
-        if(player != null)
-        {
-            Destroy(player);
-        }
-        else
-        {
-            player = this;
+        //if(player != null)
+        //{
+        //    Destroy(player.gameObject);
+        //}
+        //else
+        //{
+        //    player = this;
             
-        }
+        //}
+
+
 
         GameObject gunObj = Instantiate(GunPrefab, transform.position, Quaternion.identity);    //  Create a gun from prefab
         gunObj.transform.parent = gameObject.transform;                                         //  Make it as a child of the player
         gun = gunObj.GetComponent<Gun>();                                                       //  Get reference to gun script
+
+        GameObject sprite = gameObject.transform.GetChild(0).gameObject;
+        animator = sprite.GetComponent<Animator>();
+        if(!animator)
+        {
+            Debug.Log("No animator attached to player");
+        }
+
     }
 
     void Start()
@@ -53,12 +88,14 @@ public class Player : MonoBehaviour
         shootDirection = new Vector3(0.0f, 0.0f, 0.0f);
     }
 
+    
     void Update()
     {
         CheckInput();
 
         Death();
     }
+
 
     public void Death()
     {
@@ -68,6 +105,8 @@ public class Player : MonoBehaviour
             //respawn in Hub
             AudioManager.Instance.Play(PlayerDeathSound);
             SceneManager.LoadScene(Scenename);
+            health = 100;
+
         }
     }
     void CheckInput()
@@ -85,6 +124,15 @@ public class Player : MonoBehaviour
 
         //Debug.Log(moveDirection);
         //Debug.Log(moveDirection.magnitude);
+
+        if(moveDirection.magnitude > 0.1)
+        {
+            animator.SetBool("IsMoving", true);
+        }
+        else
+        {
+            animator.SetBool("IsMoving", false);
+        }
 
         transform.position += moveDirection * speed * Time.deltaTime;    //  Apply movement
 
