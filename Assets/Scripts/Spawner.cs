@@ -12,8 +12,8 @@ public class Spawner : MonoBehaviour
     static int maxEnemies = 10; //  To be implemented
     static int currentEnemies = 0;  //  We start with 2 now
 
-    [SerializeField]
-    float activationDistance = 10.0f;
+    //[SerializeField]
+    //float activationDistance = 10.0f;
     [SerializeField]
     int burstSpawn = 4;
     [SerializeField]

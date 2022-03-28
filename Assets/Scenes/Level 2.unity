@@ -1079,6 +1079,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a82b941bb701c824eada843fc122ad9e, type: 3}
+--- !u!1 &624972889 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7463371427545166843, guid: a82b941bb701c824eada843fc122ad9e, type: 3}
+  m_PrefabInstance: {fileID: 624972888}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &752873085
 GameObject:
   m_ObjectHideFlags: 0
@@ -7721,7 +7726,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8595799261600611515, guid: 079fef773c1ad0f41a0748f301fac8f3, type: 3}
       propertyPath: LevelToStart
-      value: Pirate Hub
+      value: PirateHub
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 079fef773c1ad0f41a0748f301fac8f3, type: 3}
@@ -8235,7 +8240,7 @@ PrefabInstance:
     - target: {fileID: 352216179211884213, guid: 7a0971d6a49b00349a26e59da711ccb7, type: 3}
       propertyPath: SpawnPoint
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 624972889}
     - target: {fileID: 352216179211884214, guid: 7a0971d6a49b00349a26e59da711ccb7, type: 3}
       propertyPath: m_Name
       value: LevelController
