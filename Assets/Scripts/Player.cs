@@ -11,11 +11,12 @@ public class Player : MonoBehaviour
     public AudioClip PlayerDeathSound;
 
     Gun gun;
+    public bool diagonalShooting = false;
 
-    
+
     public GameObject GunPrefab;
-    
-  
+
+    Animator animator;
 
     public float health = 100.0f;
 
@@ -44,6 +45,14 @@ public class Player : MonoBehaviour
         GameObject gunObj = Instantiate(GunPrefab, transform.position, Quaternion.identity);    //  Create a gun from prefab
         gunObj.transform.parent = gameObject.transform;                                         //  Make it as a child of the player
         gun = gunObj.GetComponent<Gun>();                                                       //  Get reference to gun script
+
+        GameObject sprite = gameObject.transform.GetChild(0).gameObject;
+        animator = sprite.GetComponent<Animator>();
+        if(!animator)
+        {
+            Debug.Log("No animator attached to player");
+        }
+
     }
 
     void Start()
@@ -85,6 +94,15 @@ public class Player : MonoBehaviour
 
         //Debug.Log(moveDirection);
         //Debug.Log(moveDirection.magnitude);
+
+        if(moveDirection.magnitude > 0.1)
+        {
+            animator.SetBool("IsMoving", true);
+        }
+        else
+        {
+            animator.SetBool("IsMoving", false);
+        }
 
         transform.position += moveDirection * speed * Time.deltaTime;    //  Apply movement
 

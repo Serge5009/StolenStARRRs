@@ -68,21 +68,45 @@ public class Gun : MonoBehaviour
     //  I'm using Vector3 here to leave space for possible diagonal shooting in future
     {
         RotateGun();
-        if (shootY > 0) //  Set shooting direction vector
+        if (Player.player.diagonalShooting)
         {
-            shootDirection = new Vector3(0.0f, 1.0f, 0.0f);
+            shootDirection = new Vector3(0.0f, 0.0f, 0.0f);
+            if (shootY > 0)
+            {
+                shootDirection += new Vector3(0.0f, 1.0f, 0.0f);
+            }
+            else if (shootY < 0)
+            {
+                shootDirection += new Vector3(0.0f, -1.0f, 0.0f);
+            }
+            if (shootX > 0)
+            {
+                shootDirection += new Vector3(1.0f, 0.0f, 0.0f);
+            }
+            else if (shootX < 0)
+            {
+                shootDirection += new Vector3(-1.0f, 0.0f, 0.0f);
+            }
+
         }
-        else if (shootY < 0)
+        else
         {
-            shootDirection = new Vector3(0.0f, -1.0f, 0.0f);
-        }
-        if (shootX > 0)
-        {
-            shootDirection = new Vector3(1.0f, 0.0f, 0.0f);
-        }
-        else if (shootX < 0)
-        {
-            shootDirection = new Vector3(-1.0f, 0.0f, 0.0f);
+            if (shootY > 0) //  Set shooting direction vector
+            {
+                shootDirection = new Vector3(0.0f, 1.0f, 0.0f);
+            }
+            else if (shootY < 0)
+            {
+                shootDirection = new Vector3(0.0f, -1.0f, 0.0f);
+            }
+            if (shootX > 0)
+            {
+                shootDirection = new Vector3(1.0f, 0.0f, 0.0f);
+            }
+            else if (shootX < 0)
+            {
+                shootDirection = new Vector3(-1.0f, 0.0f, 0.0f);
+            }
         }
         //Debug.Log(shootDirection);
 
