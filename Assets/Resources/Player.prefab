@@ -319,7 +319,8 @@ MonoBehaviour:
   speed: 6
   LowHealth: {fileID: 8300000, guid: 9ace6d869bc49f541ae536b37d4c7364, type: 3}
   PlayerDeathSound: {fileID: 8300000, guid: 01df8c6dce8dd7c4cbcbd7e6ea7eee26, type: 3}
-  GunPrefab: {fileID: 3459668417817309518, guid: a656a5fcfd30acf40ba6af63c79097d0, type: 3}
+  diagonalShooting: 1
+  GunPrefab: {fileID: 3459668417817309518, guid: 33a7a63d00860a84788bee7b9e794f27, type: 3}
   health: 100
   Scenename: PirateHub
   moveDirection: {x: 0, y: 0, z: 0}

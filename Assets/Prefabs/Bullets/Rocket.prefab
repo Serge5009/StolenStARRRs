@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 417400421342335115}
   - component: {fileID: 418357319}
   - component: {fileID: 418357320}
-  m_Layer: 3
+  m_Layer: 11
   m_Name: Rocket
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -131,7 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8274613290685077975}
   - component: {fileID: 8274613290685077974}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}

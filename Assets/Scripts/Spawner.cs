@@ -12,8 +12,8 @@ public class Spawner : MonoBehaviour
     static int maxEnemies = 10; //  To be implemented
     static int currentEnemies = 0;  //  We start with 2 now
 
-    [SerializeField]
-    float activationDistance = 10.0f;
+    //[SerializeField]
+    //float activationDistance = 10.0f;
     [SerializeField]
     int burstSpawn = 4;
     [SerializeField]
@@ -36,18 +36,24 @@ public class Spawner : MonoBehaviour
         if(isWorking && isActivated && spawned < spawnLimit)
             timer -= Time.deltaTime;    //  Timer works only if spawner is activated
 
-        if(!isActivated)
-        {
-            float distance = Vector3.Distance(Player.player.transform.position, transform.position);
-            if (distance < activationDistance)
-                Activate();
-        }    
+        //if(!isActivated)
+        //{
+        //    float distance = Vector3.Distance(Player.player.transform.position, transform.position);
+        //    if (distance < activationDistance)
+        //        Activate();
+        //}
 
-        if(timer <= 0)
+        if (timer <= 0)
         {
             timer = spawnRate;
             StartCoroutine(Spawn());
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player" && !isActivated)
+            isActivated = true;
     }
 
     IEnumerator Spawn()
