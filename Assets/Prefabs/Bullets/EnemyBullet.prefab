@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2633034724039367271}
   - component: {fileID: 6223763387992830853}
   - component: {fileID: 6223763387992830858}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: EnemyBullet
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -47,12 +47,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: {x: 0, y: 0, z: 0}
-  damagePlayer: 1
+  lifeExpect: 5
+  damage: 10
   destroyByPlayer: 1
+  destroyByEnemy: 0
   destroyByObstacle: 1
   destroyByBullet: 0
+  damagePlayer: 1
   damageEnemy: 0
-  destroyByEnemy: 0
+  destroyOtherBullets: 0
+  isExplosive: 0
 --- !u!61 &6223763387992830853
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -110,7 +114,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2633034725900012053}
   - component: {fileID: 2633034725900012052}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8274613288791820709}
   - component: {fileID: 418357319}
   - component: {fileID: 418357320}
-  m_Layer: 3
+  m_Layer: 11
   m_Name: PistolBullet
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: {x: 0, y: 0, z: 0}
+  lifeExpect: 5
   damage: 30
   destroyByPlayer: 1
   destroyByEnemy: 1
@@ -55,6 +56,7 @@ MonoBehaviour:
   damagePlayer: 0
   damageEnemy: 1
   destroyOtherBullets: 0
+  isExplosive: 0
 --- !u!61 &418357319
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -112,7 +114,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8274613290685077975}
   - component: {fileID: 8274613290685077974}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}

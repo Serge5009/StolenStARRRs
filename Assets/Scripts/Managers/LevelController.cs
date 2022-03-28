@@ -6,6 +6,10 @@ public class LevelController : MonoBehaviour
 {
     public static LevelController lController;
 
+    [SerializeField]
+    GameObject SpawnPoint;
+    Vector3 spawnPoint;
+
     //public transform playerSpawn;
 
     void Awake()
@@ -23,10 +27,18 @@ public class LevelController : MonoBehaviour
 
     void Start()
     {
-
-        if(Player.player == null)
+        spawnPoint = SpawnPoint.transform.position;
+        if(!SpawnPoint)
         {
-            //Instantiate(PlayerPrefab, transform.position, Quaternion.identity);
+            Debug.Log("Failed to find the spawnpoint");
+        }
+        if(Player.player != null)
+        {
+            Player.player.transform.position = spawnPoint;
+        }
+        else
+        {
+            Debug.Log("Failed to find the player");
         }
 
     }

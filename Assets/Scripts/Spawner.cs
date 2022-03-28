@@ -36,18 +36,24 @@ public class Spawner : MonoBehaviour
         if(isWorking && isActivated && spawned < spawnLimit)
             timer -= Time.deltaTime;    //  Timer works only if spawner is activated
 
-        if(!isActivated)
-        {
-            float distance = Vector3.Distance(Player.player.transform.position, transform.position);
-            if (distance < activationDistance)
-                Activate();
-        }    
+        //if(!isActivated)
+        //{
+        //    float distance = Vector3.Distance(Player.player.transform.position, transform.position);
+        //    if (distance < activationDistance)
+        //        Activate();
+        //}
 
-        if(timer <= 0)
+        if (timer <= 0)
         {
             timer = spawnRate;
             StartCoroutine(Spawn());
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player" && !isActivated)
+            isActivated = true;
     }
 
     IEnumerator Spawn()
