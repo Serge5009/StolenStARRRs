@@ -25,6 +25,10 @@ public class EnemyShooting : MonoBehaviour
         fireRate += Random.Range(fireRate / -5, fireRate / 5);  //  Randomizing firerate
         cooldown = 1 / fireRate;
         player = GameObject.FindGameObjectWithTag("Player");
+        if(!player)
+        {
+            Debug.Log("Enemy couldn't locate player");
+        }
     }
 
     void Update()
