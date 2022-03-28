@@ -59,7 +59,7 @@ public class UI_Shop : MonoBehaviour
     */
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.name == "Player")
+        if (collision.tag == "Player")
         {
             Debug.Log("checking player collision");
             container.gameObject.SetActive(true);
@@ -70,7 +70,7 @@ public class UI_Shop : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.name == "Player")
+        if (collision.tag == "Player")
         {
             Debug.Log("checking player collision");
             container.gameObject.SetActive(false);
