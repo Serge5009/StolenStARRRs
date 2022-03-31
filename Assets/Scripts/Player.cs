@@ -141,7 +141,12 @@ public class Player : MonoBehaviour
         float sy = Input.GetAxis("ShootVertical");
         if (sx != 0 || sy != 0) //  Check for shooting input
         {
-            gun.Shoot(sx, sy);
+           
+            if (UI_Shop.shop == null || UI_Shop.shop.ShopShown == false)
+            {
+                gun.Shoot(sx, sy);
+            }
+            
         }
 
     }
