@@ -15,6 +15,8 @@ public class UI_Shop : MonoBehaviour
     public GameObject shotgun;
     public GameObject pistol;
     public GameObject AK47;
+
+    public bool ShopShown = false;
     void Awake()
    {
         if (shop != null)
@@ -64,7 +66,7 @@ public class UI_Shop : MonoBehaviour
         {
             Debug.Log("checking player collision");
             container.gameObject.SetActive(true);
-           
+            ShopShown = true;
         }
 
     }
@@ -75,6 +77,7 @@ public class UI_Shop : MonoBehaviour
         {
             Debug.Log("checking player collision");
             container.gameObject.SetActive(false);
+            ShopShown = false;
         }
 
     }
