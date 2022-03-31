@@ -14,7 +14,8 @@ public class UI_Shop : MonoBehaviour
     public GameObject RPG;
     public GameObject shotgun;
     public GameObject pistol;
-   void Awake()
+    public GameObject AK47;
+    void Awake()
    {/*
         if (shop != null)
         {
@@ -80,34 +81,45 @@ public class UI_Shop : MonoBehaviour
 
     public void BuyRPG()
     {
-        if(Player.player.coins >= 500)
+        if(Player.player.coins >= 150)
         {
             Player.player.GunPrefab = RPG;
             Player.player.EquipWeapon();
-            Player.player.coins -= 500;
+            Player.player.coins -= 150;
         }
        
     }
 
     public void BuyPistol()
     {
-        if (Player.player.coins >= 100)
+        if (Player.player.coins >= 50)
         {
             Player.player.GunPrefab = pistol;
             Player.player.EquipWeapon();
-            Player.player.coins -= 100;
+            Player.player.coins -= 50;
         }
         
     }
 
     public void BuyShotgun()
     {
-        if (Player.player.coins >= 200)
+        if (Player.player.coins >= 75)
         {
             Player.player.GunPrefab = shotgun;
             Player.player.EquipWeapon();
-            Player.player.coins -= 200;
+            Player.player.coins -= 75;
         }
        
+    }
+
+    public void BuyAK()
+    {
+        if (Player.player.coins >= 100)
+        {
+            Player.player.GunPrefab = AK47;
+            Player.player.EquipWeapon();
+            Player.player.coins -= 100;
+        }
+
     }
 }
