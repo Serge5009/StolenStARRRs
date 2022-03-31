@@ -16,7 +16,7 @@ public class UI_Shop : MonoBehaviour
     public GameObject pistol;
     public GameObject AK47;
     void Awake()
-   {/*
+   {
         if (shop != null)
         {
             Destroy(shop);
@@ -26,7 +26,7 @@ public class UI_Shop : MonoBehaviour
             shop = this;
 
         }
-        */
+        
        //container = transform.Find("container");
        if(!container)
         {
