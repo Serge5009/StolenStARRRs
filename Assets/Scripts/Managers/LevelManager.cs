@@ -18,6 +18,9 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     int maxAlive = 10;
 
+    [SerializeField]
+    GameObject LazerWalls;
+
     void Awake()
     {
         if (lManager != null)
@@ -29,6 +32,9 @@ public class LevelManager : MonoBehaviour
             lManager = this;
 
         }
+        if (!LazerWalls)
+            Debug.Log("No lazers attached to Level manager!");
+          
     }
 
     void Start()
@@ -48,6 +54,11 @@ public class LevelManager : MonoBehaviour
         {
             UnauseSpawners();
         }
+
+        if (alive > 0)
+            LazerWalls.SetActive(true);
+        else
+            LazerWalls.SetActive(false);
 
     }
 
