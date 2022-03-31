@@ -6,6 +6,12 @@ public class LevelManager : MonoBehaviour
 {
     public static LevelManager lManager;
 
+            //  Player spawn
+    [SerializeField]
+    GameObject PlayerSpawnPoint;
+    Vector3 spawnPoint;
+
+            //  Enemy spawn
     GameObject[] spawners;
 
     //  Tracking
@@ -18,24 +24,46 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     int maxAlive = 10;
 
+    [SerializeField]
+    GameObject LazerWalls;
+
     void Awake()
     {
         if (lManager != null)
         {
             Destroy(lManager);
+            lManager = this;
         }
         else
         {
             lManager = this;
 
         }
+        if (!LazerWalls)
+            Debug.Log("No lazers attached to Level manager!");
+          
     }
 
     void Start()
     {
-        spawners = GameObject.FindGameObjectsWithTag("Spawner");
+        //  Spawn player
+        spawnPoint = PlayerSpawnPoint.transform.position;
+        if (!PlayerSpawnPoint)
+        {
+            Debug.Log("Failed to find the spawnpoint");
+        }
+        if (Player.player != null)
+        {
+            Player.player.transform.position = spawnPoint;
+        }
+        else
+        {
+            Debug.Log("Failed to find the player");
+        }
 
-        Debug.Log(spawners.Length);
+        //  Set up enemy spawners
+        spawners = GameObject.FindGameObjectsWithTag("Spawner");
+        Debug.Log("Spawners on this level: " + spawners.Length);
     }
 
     void Update()
@@ -48,6 +76,11 @@ public class LevelManager : MonoBehaviour
         {
             UnauseSpawners();
         }
+
+        if (alive > 0)
+            LazerWalls.SetActive(true);
+        else
+            LazerWalls.SetActive(false);
 
     }
 
