@@ -43,3 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aefa75479f990c45a5bd683467f0358, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerSpawnPoint: {fileID: 0}
+  toSpawn: 200
+  maxAlive: 20
+  LazerWalls: {fileID: 0}
