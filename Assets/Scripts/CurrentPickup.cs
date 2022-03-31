@@ -5,11 +5,12 @@ using UnityEngine;
 public class CurrentPickup : MonoBehaviour
 {
     // if we have something more to pick up, here is the enum ^-^
-    public enum PickupObject { COIN, HP, };
+    public enum PickupObject { COIN, };
     public PickupObject currentObject;
     public int quantity;
     public AudioClip CoinPickup;
     //public AudioClip HealthPickupSound;
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Player")
@@ -22,12 +23,6 @@ public class CurrentPickup : MonoBehaviour
                 AudioManager.Instance.Play(CoinPickup);
             }
 
-            if (currentObject == PickupObject.HP && Player.player.health <= 100)
-            {
-                Player.player.health += quantity;
-                Debug.Log(Player.player.health);
-                //AudioManager.Instance.Play(HealthPickupSound);
-            }
 
             Destroy(gameObject);
         }
