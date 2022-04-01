@@ -6,6 +6,9 @@ public class Gun : MonoBehaviour
 {
     GameObject player;
 
+    public AudioClip GunShot;
+    public AudioClip GunShotAfter;
+
     [SerializeField]
     GameObject ProjectilePrefab;
     [SerializeField]
@@ -47,7 +50,8 @@ public class Gun : MonoBehaviour
         shootHeat -= 1;
         if (shootHeat == 0)
         {
-
+            AudioManager.Instance.Play(GunShot);
+            AudioManager.Instance.Play(GunShotAfter);
             StartCoroutine(Fire());
 
 
@@ -118,6 +122,7 @@ public class Gun : MonoBehaviour
 
             shootHeat = 2;   //  On the next frame gun will shoot
         }
+        
     }
 
     void SpawnProjectile(Vector3 direction)

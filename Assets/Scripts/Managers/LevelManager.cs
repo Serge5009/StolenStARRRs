@@ -6,7 +6,8 @@ public class LevelManager : MonoBehaviour
 {
     public static LevelManager lManager;
 
-            //  Player spawn
+
+    //  Player spawn
     [SerializeField]
     GameObject PlayerSpawnPoint;
     Vector3 spawnPoint;
@@ -29,6 +30,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     GameObject LazerWalls;
 
+    public AudioClip LazerWallsSoundOn;
+    public AudioClip LazerWallsSoundoff;
     void Awake()
     {
         if (lManager != null)
@@ -80,10 +83,27 @@ public class LevelManager : MonoBehaviour
         }
 
         if (activeSpawners > 0 || alive > 0)
-            LazerWalls.SetActive(true);
-        else
-            LazerWalls.SetActive(false);
+        {
+            if (!LazerWalls.active)
+            {
+                LazerWalls.SetActive(true);
+                AudioManager.Instance.Play(LazerWallsSoundOn);
+            }
+            //LazerWalls.SetActive(true);
+            //AudioManager.Instance.Play(LazerWallsSoundOn);
+        }
 
+        else
+        {
+            if (LazerWalls.active)
+            {
+                LazerWalls.SetActive(false);
+                AudioManager.Instance.Play(LazerWallsSoundOn);
+            }
+            //LazerWalls.SetActive(false);
+            //AudioManager.Instance.Play(LazerWallsSoundoff);
+
+        }
 
         if (activeSpawners < 0)
             Debug.Log("ERROR! > 0 active spawners, why?");
