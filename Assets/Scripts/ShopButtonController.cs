@@ -214,6 +214,12 @@ public class ShopButtonController : MonoBehaviour
             healthSprite.SetActive(false);
             healthSelected.SetActive(true);
             healthBuy.SetActive(false);
+
+            if(Input.GetKeyDown(KeyCode.Space))
+            {
+                UI_Shop.shop.BuyHealthUpgrade();
+                Debug.Log("i MADE IT!");
+            }
         }
     }
 }
