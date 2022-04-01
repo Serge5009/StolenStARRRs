@@ -73,6 +73,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentObject2: 0
   quantity2: 30
+  HealthPickupSound: {fileID: 8300000, guid: d3e075bafced6b545b9a03c67622be88, type: 3}
 --- !u!1 &4199828702915473934
 GameObject:
   m_ObjectHideFlags: 0
