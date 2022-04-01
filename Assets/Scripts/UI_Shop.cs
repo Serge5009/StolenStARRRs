@@ -136,11 +136,14 @@ public class UI_Shop : MonoBehaviour
                  
       if (Player.player.coins >= cost)
       {
+         Player.player.health += 10;
          Player.player.coins -= cost;
          cost = cost * 2;
-            HealthCost.text = cost.ToString();
-            HealthCost2.text = cost.ToString();
-            HealthCost3.text = cost.ToString();
+
+         HealthCost.text = cost.ToString();
+         HealthCost2.text = cost.ToString();
+         HealthCost3.text = cost.ToString();
+
         }
         
     }
