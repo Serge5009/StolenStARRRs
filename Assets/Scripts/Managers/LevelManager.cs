@@ -18,6 +18,8 @@ public class LevelManager : MonoBehaviour
 
     int totalSpawned;
     int alive;
+    [HideInInspector]
+    public int activeSpawners = 0;
 
     [SerializeField]
     int toSpawn = 20;
@@ -77,7 +79,7 @@ public class LevelManager : MonoBehaviour
             UnauseSpawners();
         }
 
-        if (alive > 0)
+        if (activeSpawners > 0 || alive > 0)
             LazerWalls.SetActive(true);
         else
             LazerWalls.SetActive(false);

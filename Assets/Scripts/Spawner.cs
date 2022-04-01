@@ -31,9 +31,16 @@ public class Spawner : MonoBehaviour
         timer = spawnRate;
     }
 
+    bool finished = false;
     void Update()
     {
-        if(isWorking && isActivated && spawned < spawnLimit)
+        if (spawned >= spawnLimit)
+        {
+            finished = true;
+            LevelManager.lManager.activeSpawners -= 1;
+        }
+
+        if (isWorking && isActivated && !finished)
             timer -= Time.deltaTime;    //  Timer works only if spawner is activated
 
         //if(!isActivated)
@@ -53,7 +60,7 @@ public class Spawner : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player" && !isActivated)
-            isActivated = true;
+            Activate();
     }
 
     IEnumerator Spawn()
@@ -68,6 +75,8 @@ public class Spawner : MonoBehaviour
 
     void Activate()
     {
+        LevelManager.lManager.activeSpawners += 1;
+
         isActivated = true;
         for (int i = 0; i < burstSpawn; i++)    //Spawn first enemies
             StartCoroutine(Spawn());
