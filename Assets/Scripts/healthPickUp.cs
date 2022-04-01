@@ -9,7 +9,7 @@ public class healthPickUp : MonoBehaviour
     public PickupObject currentObject2;
     public int quantity2;
     
-    //public AudioClip HealthPickupSound;
+    public AudioClip HealthPickupSound;
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
@@ -19,7 +19,7 @@ public class healthPickUp : MonoBehaviour
             {
                 Player.player.health += quantity2;
                 Debug.Log(Player.player.health);
-                //AudioManager.Instance.Play(HealthPickupSound);
+                AudioManager.Instance.Play(HealthPickupSound);
             }
 
             Destroy(gameObject);
