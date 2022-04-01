@@ -2555,6 +2555,14 @@ PrefabInstance:
       propertyPath: PlayerSpawnPoint
       value: 
       objectReference: {fileID: 7463371427479771526}
+    - target: {fileID: 3817187759447553190, guid: 0fc2a1d892fedc54e9765911bf03d03a, type: 3}
+      propertyPath: LazerWallsSoundOn
+      value: 
+      objectReference: {fileID: 8300000, guid: 3bc28d744863af0428eb6aaebe657b07, type: 3}
+    - target: {fileID: 3817187759447553190, guid: 0fc2a1d892fedc54e9765911bf03d03a, type: 3}
+      propertyPath: LazerWallsSoundoff
+      value: 
+      objectReference: {fileID: 8300000, guid: 21f2acbd9acc7b642a5b5d8fa10a44c1, type: 3}
     - target: {fileID: 4047320331941465378, guid: 0fc2a1d892fedc54e9765911bf03d03a, type: 3}
       propertyPath: m_RootOrder
       value: 4
