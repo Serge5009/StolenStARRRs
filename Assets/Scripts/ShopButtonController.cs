@@ -29,10 +29,17 @@ public class ShopButtonController : MonoBehaviour
     public GameObject RPGSelected;
 
 
+    [Space(5)]
+    [Header("Health")]
+    public GameObject healthSprite;
+    public GameObject healthSelected;
+
+
     public GameObject pistolBuy;
     public GameObject shotgunBuy;
     public GameObject akBuy;
     public GameObject RPGBuy;
+    public GameObject healthBuy;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,12 +53,12 @@ public class ShopButtonController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.DownArrow)) //checking input
         {
             //slection goes down
-            if(selection <= 4)
+            if(selection <= 5)
             {
                 selection++;
             }
 
-            if(selection > 4)
+            if(selection > 5)
             {
                 selection = 1;
             }
@@ -67,7 +74,7 @@ public class ShopButtonController : MonoBehaviour
 
             if (selection < 1)
             {
-                selection = 4;
+                selection = 5;
             }
         }
         if(selection == 1)
@@ -93,6 +100,10 @@ public class ShopButtonController : MonoBehaviour
             RPGSprite.SetActive(true);
             RPGSelected.SetActive(false);
             RPGBuy.SetActive(false);
+
+            healthSprite.SetActive(true);
+            healthSelected.SetActive(false);
+            healthBuy.SetActive(false);
         }
 
         if (selection == 2)
@@ -119,6 +130,10 @@ public class ShopButtonController : MonoBehaviour
             RPGSprite.SetActive(true);
             RPGSelected.SetActive(false);
             RPGBuy.SetActive(false);
+
+            healthSprite.SetActive(true);
+            healthSelected.SetActive(false);
+            healthBuy.SetActive(false);
         }
 
         if(selection == 3)
@@ -144,6 +159,10 @@ public class ShopButtonController : MonoBehaviour
             RPGSprite.SetActive(true);
             RPGSelected.SetActive(false);
             RPGBuy.SetActive(false);
+
+            healthSprite.SetActive(true);
+            healthSelected.SetActive(false);
+            healthBuy.SetActive(false);
         }
 
         if (selection == 4)
@@ -168,6 +187,38 @@ public class ShopButtonController : MonoBehaviour
             {
                 RPGBuy.SetActive(true);
                 UI_Shop.shop.BuyRPG();
+            }
+            healthSprite.SetActive(true);
+            healthSelected.SetActive(false);
+            healthBuy.SetActive(false);
+        }
+
+        if (selection == 5)
+        {
+            pistolSprite.SetActive(true);
+            pistolSelected.SetActive(false);
+            pistolBuy.SetActive(false);
+
+            shotgunSprite.SetActive(true);
+            shotgunSelected.SetActive(false);
+            shotgunBuy.SetActive(false);
+
+            akSprite.SetActive(true);
+            akSelected.SetActive(false);
+            akBuy.SetActive(false);
+
+            RPGSprite.SetActive(true);
+            RPGSelected.SetActive(false);
+            RPGBuy.SetActive(false);
+
+            healthSprite.SetActive(false);
+            healthSelected.SetActive(true);
+            healthBuy.SetActive(false);
+
+            if(Input.GetKeyDown(KeyCode.Space))
+            {
+                UI_Shop.shop.BuyHealthUpgrade();
+                Debug.Log("i MADE IT!");
             }
         }
     }

@@ -4,19 +4,24 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+
 public class UI_Shop : MonoBehaviour
 {
     public static UI_Shop shop;
     [SerializeField]
     Transform container;
-    private Transform shopItemTemplate;
-
+    
     public GameObject RPG;
     public GameObject shotgun;
     public GameObject pistol;
     public GameObject AK47;
-
+    public Text HealthCost;
+    public Text HealthCost2;
+    public Text HealthCost3;
+    public int cost = 100;
     public bool ShopShown = false;
+
+    private Transform shopItemTemplate;
     void Awake()
    {
         if (shop != null)
@@ -124,5 +129,22 @@ public class UI_Shop : MonoBehaviour
             Player.player.coins -= 100;
         }
 
+    }
+
+    public void BuyHealthUpgrade()
+    {
+                 
+      if (Player.player.coins >= cost)
+      {
+         Player.player.health += 10;
+         Player.player.coins -= cost;
+         cost = cost * 2;
+
+         HealthCost.text = cost.ToString();
+         HealthCost2.text = cost.ToString();
+         HealthCost3.text = cost.ToString();
+
+        }
+        
     }
 }
