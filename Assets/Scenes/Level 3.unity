@@ -5536,6 +5536,10 @@ PrefabInstance:
       propertyPath: maxAlive
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 3817187759447553190, guid: 0fc2a1d892fedc54e9765911bf03d03a, type: 3}
+      propertyPath: PlayerSpawnPoint
+      value: 
+      objectReference: {fileID: 624972889}
     - target: {fileID: 4047320331941465378, guid: 0fc2a1d892fedc54e9765911bf03d03a, type: 3}
       propertyPath: m_RootOrder
       value: 4
