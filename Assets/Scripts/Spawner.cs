@@ -34,7 +34,7 @@ public class Spawner : MonoBehaviour
     bool finished = false;
     void Update()
     {
-        if (spawned >= spawnLimit)
+        if (spawned >= spawnLimit && !finished)
         {
             finished = true;
             LevelManager.lManager.activeSpawners -= 1;

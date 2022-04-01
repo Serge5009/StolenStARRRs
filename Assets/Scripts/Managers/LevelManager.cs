@@ -84,6 +84,10 @@ public class LevelManager : MonoBehaviour
         else
             LazerWalls.SetActive(false);
 
+
+        if (activeSpawners < 0)
+            Debug.Log("ERROR! > 0 active spawners, why?");
+
     }
 
     void PauseSpawners()
