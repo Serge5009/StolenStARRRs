@@ -71,8 +71,11 @@ public class LevelManager : MonoBehaviour
         Debug.Log("Spawners on this level: " + spawners.Length);
     }
 
+    float timer = 0.0f;
     void Update()
     {
+        timer += Time.deltaTime;
+
         if(alive >= maxAlive || totalSpawned >= toSpawn)    //  Controls pausing/unpausing for enemy spawners                        
         {
             PauseSpawners();
@@ -87,7 +90,8 @@ public class LevelManager : MonoBehaviour
             if (!LazerWalls.active)
             {
                 LazerWalls.SetActive(true);
-                AudioManager.Instance.Play(LazerWallsSoundOn);
+                if (timer >= 2.0f)  //  To prevent sound om start
+                    AudioManager.Instance.Play(LazerWallsSoundOn);
             }
             //LazerWalls.SetActive(true);
             //AudioManager.Instance.Play(LazerWallsSoundOn);
@@ -98,7 +102,8 @@ public class LevelManager : MonoBehaviour
             if (LazerWalls.active)
             {
                 LazerWalls.SetActive(false);
-                AudioManager.Instance.Play(LazerWallsSoundOn);
+                if (timer >= 2.0f)  //  To prevent sound om start
+                    AudioManager.Instance.Play(LazerWallsSoundOn);
             }
             //LazerWalls.SetActive(false);
             //AudioManager.Instance.Play(LazerWallsSoundoff);
