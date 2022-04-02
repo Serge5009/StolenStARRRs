@@ -5,7 +5,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
    static private AudioManager _Instance;
-    const int NUM_AUDIOSOURCES = 7;
+    const int NUM_AUDIOSOURCES = 30;
     AudioSource[] Source = new AudioSource[NUM_AUDIOSOURCES];
     int currentAudioSourceID = 0;
    static public AudioManager Instance
