@@ -31,7 +31,7 @@ public class LevelManager : MonoBehaviour
     GameObject LazerWalls;
 
     public AudioClip LazerWallsSoundOn;
-    public AudioClip LazerWallsSoundoff;
+    public AudioClip LazerWallsSoundOff;
     void Awake()
     {
         if (lManager != null)
@@ -103,7 +103,7 @@ public class LevelManager : MonoBehaviour
             {
                 LazerWalls.SetActive(false);
                 if (timer >= 2.0f)  //  To prevent sound om start
-                    AudioManager.Instance.Play(LazerWallsSoundOn);
+                    AudioManager.Instance.Play(LazerWallsSoundOff);
             }
             //LazerWalls.SetActive(false);
             //AudioManager.Instance.Play(LazerWallsSoundoff);
