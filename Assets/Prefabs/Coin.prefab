@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 8858896780154246167}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.523, y: 0.17, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -100,7 +100,6 @@ MonoBehaviour:
   currentObject: 0
   quantity: 1
   CoinPickup: {fileID: 8300000, guid: c2932ddae5302ab47b528bc3728a5ac2, type: 3}
-  HealthPickupSound: {fileID: 8300000, guid: d3e075bafced6b545b9a03c67622be88, type: 3}
 --- !u!61 &8858896780154246154
 BoxCollider2D:
   m_ObjectHideFlags: 0
