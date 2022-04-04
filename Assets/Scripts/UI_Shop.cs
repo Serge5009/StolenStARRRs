@@ -89,22 +89,46 @@ public class UI_Shop : MonoBehaviour
 
     public void BuyRPG()
     {
+
         if(Player.player.coins >= 150)
         {
-            Player.player.GunPrefab = RPG;
-            Player.player.EquipWeapon();
-            Player.player.coins -= 150;
+            if (Player.player.GunPrefab == RPG)
+            {
+                Debug.Log("You already have this weapon");
+            }
+            else if(Player.player.GunPrefab != RPG)
+            {
+                Player.player.GunPrefab = RPG;
+                Player.player.EquipWeapon();
+                Player.player.coins -= 150;
+            }
         }
-       
+        else
+        {
+            Debug.Log("Sorry! not enough coins for RPG");
+        }
+
     }
 
     public void BuyPistol()
     {
         if (Player.player.coins >= 50)
         {
-            Player.player.GunPrefab = pistol;
-            Player.player.EquipWeapon();
-            Player.player.coins -= 50;
+            if(Player.player.GunPrefab == pistol)
+            {
+                Debug.Log("You already have this weapon");
+            }
+            else if(Player.player.GunPrefab != pistol)
+            {
+                Player.player.GunPrefab = pistol;
+                Player.player.EquipWeapon();
+                Player.player.coins -= 50;
+            }
+           
+        }
+        else
+        {
+            Debug.Log("Sorry! not enough coins for Pistol");
         }
         
     }
@@ -113,20 +137,42 @@ public class UI_Shop : MonoBehaviour
     {
         if (Player.player.coins >= 75)
         {
-            Player.player.GunPrefab = shotgun;
-            Player.player.EquipWeapon();
-            Player.player.coins -= 75;
+            if (Player.player.GunPrefab == shotgun)
+            {
+                Debug.Log("You already have this weapon");
+            }
+            else if (Player.player.GunPrefab != shotgun)
+            {
+                Player.player.GunPrefab = shotgun;
+                Player.player.EquipWeapon();
+                Player.player.coins -= 75;
+            }
         }
-       
+        else
+        {
+            Debug.Log("Sorry! not enough coins for Shotgun");
+        }
+
     }
 
     public void BuyAK()
     {
         if (Player.player.coins >= 100)
         {
-            Player.player.GunPrefab = AK47;
-            Player.player.EquipWeapon();
-            Player.player.coins -= 100;
+            if (Player.player.GunPrefab == AK47)
+            {
+                Debug.Log("You already have this weapon");
+            }
+            else if (Player.player.GunPrefab != AK47)
+            {
+                Player.player.GunPrefab = AK47;
+                Player.player.EquipWeapon();
+                Player.player.coins -= 100;
+            }
+        }
+        else
+        {
+            Debug.Log("Sorry! not enough coins for AK");
         }
 
     }
@@ -144,7 +190,12 @@ public class UI_Shop : MonoBehaviour
          HealthCost2.text = cost.ToString();
          HealthCost3.text = cost.ToString();
 
+      }
+        else
+        {
+            Debug.Log("Sorry! not enough coins for Health Upgrade");
         }
-        
+
     }
+
 }
