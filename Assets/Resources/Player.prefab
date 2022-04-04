@@ -324,7 +324,7 @@ MonoBehaviour:
   health: 100
   Scenename: PirateHub
   moveDirection: {x: 0, y: 0, z: 0}
-  coins: 1000000
+  coins: 100000
 --- !u!50 &8147820335979402412
 Rigidbody2D:
   serializedVersion: 4
