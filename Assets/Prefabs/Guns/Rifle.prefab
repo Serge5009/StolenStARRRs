@@ -75,9 +75,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fc73ad1361d16e45aca23871d0bc1ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GunShot: {fileID: 8300000, guid: 7d0dd07a28759d346bf96695d3418af9, type: 3}
+  GunShotAfter: {fileID: 0}
   ProjectilePrefab: {fileID: 8274613288791820710, guid: 1bdce93cadc35d5408662a4483b025fc, type: 3}
   bulletSpeed: 16
   fireRate: 8
+  scatter: 0.01
+  burstTime: 0
+  burstShoots: 1
   bulletSpawn: {fileID: 648325949346844041}
 --- !u!1 &3459668419346005877
 GameObject:
