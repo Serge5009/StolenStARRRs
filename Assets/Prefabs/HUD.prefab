@@ -521,6 +521,32 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &642609458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6652834601502361389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1194f9bdde030a5479bc5e089b8f7566, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMoney: {fileID: 6250988584557703797}
+--- !u!114 &642609459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6652834601502361389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7828fdb303d01af4dbb6cd540b10a52b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMoney: {fileID: 6250988584557703797}
 --- !u!1 &8314690004594017414
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,13 +592,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1699690218408526468}
     m_Modifications:
+    - target: {fileID: 787115281346889209, guid: 2ee79f965d61be34e9dd8f622db08907, type: 3}
+      propertyPath: m_text
+      value: Save Game
+      objectReference: {fileID: 0}
+    - target: {fileID: 787115281346889210, guid: 2ee79f965d61be34e9dd8f622db08907, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 787115281971833640, guid: 2ee79f965d61be34e9dd8f622db08907, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 787115281971833640, guid: 2ee79f965d61be34e9dd8f622db08907, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 642609458}
+    - target: {fileID: 787115281971833640, guid: 2ee79f965d61be34e9dd8f622db08907, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SaveGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 787115281971833640, guid: 2ee79f965d61be34e9dd8f622db08907, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameSave, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 787115281971833642, guid: 2ee79f965d61be34e9dd8f622db08907, type: 3}
+      propertyPath: m_Name
+      value: Save Game
       objectReference: {fileID: 0}
     - target: {fileID: 787115283069639184, guid: 2ee79f965d61be34e9dd8f622db08907, type: 3}
       propertyPath: m_Pivot.x
@@ -667,5 +713,10 @@ PrefabInstance:
 --- !u!224 &6652834601502361388 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 787115283069639184, guid: 2ee79f965d61be34e9dd8f622db08907, type: 3}
+  m_PrefabInstance: {fileID: 6250988584587517244}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6652834601502361389 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 787115283069639185, guid: 2ee79f965d61be34e9dd8f622db08907, type: 3}
   m_PrefabInstance: {fileID: 6250988584587517244}
   m_PrefabAsset: {fileID: 0}
