@@ -312,7 +312,8 @@ public class UI_Shop : MonoBehaviour
       if (Player.player.coins >= HCost)
       {
          Player.player.health += 10;
-         Player.player.coins -= HCost;
+            Debug.Log("Player Health now:" + Player.player.health);
+            Player.player.coins -= HCost;
          HCost = HCost * 2;
 
          HealthCost.text = HCost.ToString();
