@@ -13255,6 +13255,10 @@ PrefabInstance:
       value: SpawnPoint
       objectReference: {fileID: 0}
     - target: {fileID: 9050965660049943170, guid: 7da2297cf96aad34290297a6022573ff, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050965660049943170, guid: 7da2297cf96aad34290297a6022573ff, type: 3}
       propertyPath: m_TagString
       value: Spawner
       objectReference: {fileID: 0}

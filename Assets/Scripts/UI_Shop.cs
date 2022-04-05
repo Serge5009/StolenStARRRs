@@ -7,6 +7,8 @@ using TMPro;
 
 public class UI_Shop : MonoBehaviour
 {
+    Projectile projScript;
+
     public static UI_Shop shop;
     [SerializeField]
     Transform container;
@@ -45,7 +47,12 @@ public class UI_Shop : MonoBehaviour
     public Text HealthCost;
     public Text HealthCost2;
     public Text HealthCost3;
-    public int cost = 100;
+    public Text attackCost;
+    public Text attackCost2;
+    public Text attackCost3;
+
+    public int HCost = 100;
+    public int ACost = 100;
     public bool ShopShown = false;
 
     private Transform shopItemTemplate;
@@ -71,10 +78,13 @@ public class UI_Shop : MonoBehaviour
     //public int cost1 = 200;
    
 
-    private void Start()
+    void Start()
     {
+        // projScript = GetComponent<Projectile>();
+        projScript = GameObject.Find("Reference").GetComponent<Projectile>();
+        if (!projScript)
+            Debug.Log("Error connecting script");
 
-       
     }
 
     private void Update()
@@ -299,15 +309,16 @@ public class UI_Shop : MonoBehaviour
     public void BuyHealthUpgrade()
     {
                  
-      if (Player.player.coins >= cost)
+      if (Player.player.coins >= HCost)
       {
          Player.player.health += 10;
-         Player.player.coins -= cost;
-         cost = cost * 2;
+            Debug.Log("Player Health now:" + Player.player.health);
+            Player.player.coins -= HCost;
+         HCost = HCost * 2;
 
-         HealthCost.text = cost.ToString();
-         HealthCost2.text = cost.ToString();
-         HealthCost3.text = cost.ToString();
+         HealthCost.text = HCost.ToString();
+         HealthCost2.text = HCost.ToString();
+         HealthCost3.text = HCost.ToString();
 
       }
         else
@@ -315,6 +326,27 @@ public class UI_Shop : MonoBehaviour
             Debug.Log("Sorry! not enough coins for Health Upgrade");
         }
 
+    }
+
+    public void BuyAttackUpgrade()
+    {
+        if (Player.player.coins >= ACost)
+        {
+
+            projScript.damage += 1;
+            Debug.Log("Player Damage now" + projScript.damage);
+            Player.player.coins -= ACost;
+            ACost = ACost * 2;
+
+            attackCost.text = ACost.ToString();
+            attackCost2.text = ACost.ToString();
+            attackCost3.text = ACost.ToString();
+
+        }
+        else
+        {
+            Debug.Log("Sorry! not enough coins for attack Upgrade");
+        }
     }
 
 }
