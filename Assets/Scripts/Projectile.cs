@@ -7,9 +7,9 @@ public class Projectile : MonoBehaviour
     [SerializeField]
     float lifeExpect = 5.0f;    //  Over this time bullet will die
 
-    public float damage = 10.0f;
+    public float damage = 10.0f; 
 
-
+    
     //  Interaction settings:
 
     [SerializeField]
@@ -30,6 +30,7 @@ public class Projectile : MonoBehaviour
     [HideInInspector]
     public bool isExplosive = false;    //  Will be automatically set to true if explosive script is attached
 
+    
     protected void Start()
     {
     }
