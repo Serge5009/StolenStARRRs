@@ -15,9 +15,17 @@ public class OptionsLoad : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (PlayerPrefs.HasKey("resolution"))
+        {
+            resolution.value = PlayerPrefs.GetInt("resolution");
+        }
+        else
+        {
+            resolution.value = 20;
+        }
+
         volume.value = PlayerPrefs.GetFloat("volume");
         quality.value = PlayerPrefs.GetInt("quality");
-        resolution.value = PlayerPrefs.GetInt("resolution");
 
         if (PlayerPrefs.GetInt("fullscreen") == 1)
         {
