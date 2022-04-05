@@ -53,5 +53,6 @@ public class Enemy : MonoBehaviour
     public void GetDamage(float hp)
     {
         health -= hp;   // Does it need any explanation? 
+        Debug.Log("Enemy Health is: " + health);
     }
 }

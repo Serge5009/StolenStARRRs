@@ -34,12 +34,20 @@ public class ShopButtonController : MonoBehaviour
     public GameObject healthSprite;
     public GameObject healthSelected;
 
+    [Space(5)]
+    [Header("attack")]
+    public GameObject attackSprite;
+    public GameObject attackSelected;
 
+    [Space(5)]
     public GameObject pistolBuy;
     public GameObject shotgunBuy;
     public GameObject akBuy;
     public GameObject RPGBuy;
     public GameObject healthBuy;
+    public GameObject attackBuy;
+
+    const int MAX_SELECTION = 6;
     // Start is called before the first frame update
     void Start()
     {
@@ -53,12 +61,12 @@ public class ShopButtonController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.DownArrow)) //checking input
         {
             //slection goes down
-            if(selection <= 5)
+            if(selection <= MAX_SELECTION)
             {
                 selection++;
             }
 
-            if(selection > 5)
+            if(selection > MAX_SELECTION)
             {
                 selection = 1;
             }
@@ -74,7 +82,7 @@ public class ShopButtonController : MonoBehaviour
 
             if (selection < 1)
             {
-                selection = 5;
+                selection = MAX_SELECTION;
             }
         }
         if(selection == 1)
@@ -104,6 +112,10 @@ public class ShopButtonController : MonoBehaviour
             healthSprite.SetActive(true);
             healthSelected.SetActive(false);
             healthBuy.SetActive(false);
+
+            attackSprite.SetActive(true);
+            attackSelected.SetActive(false);
+            attackBuy.SetActive(false);
         }
 
         if (selection == 2)
@@ -134,6 +146,10 @@ public class ShopButtonController : MonoBehaviour
             healthSprite.SetActive(true);
             healthSelected.SetActive(false);
             healthBuy.SetActive(false);
+
+            attackSprite.SetActive(true);
+            attackSelected.SetActive(false);
+            attackBuy.SetActive(false);
         }
 
         if(selection == 3)
@@ -163,6 +179,10 @@ public class ShopButtonController : MonoBehaviour
             healthSprite.SetActive(true);
             healthSelected.SetActive(false);
             healthBuy.SetActive(false);
+
+            attackSprite.SetActive(true);
+            attackSelected.SetActive(false);
+            attackBuy.SetActive(false);
         }
 
         if (selection == 4)
@@ -191,6 +211,10 @@ public class ShopButtonController : MonoBehaviour
             healthSprite.SetActive(true);
             healthSelected.SetActive(false);
             healthBuy.SetActive(false);
+
+            attackSprite.SetActive(true);
+            attackSelected.SetActive(false);
+            attackBuy.SetActive(false);
         }
 
         if (selection == 5)
@@ -218,7 +242,42 @@ public class ShopButtonController : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.Space))
             {
                 UI_Shop.shop.BuyHealthUpgrade();
-                Debug.Log("i MADE IT!");
+                //Debug.Log("i MADE IT!");
+            }
+            attackSprite.SetActive(true);
+            attackSelected.SetActive(false);
+            attackBuy.SetActive(false);
+        }
+
+        if (selection == 6)
+        {
+            pistolSprite.SetActive(true);
+            pistolSelected.SetActive(false);
+            pistolBuy.SetActive(false);
+
+            shotgunSprite.SetActive(true);
+            shotgunSelected.SetActive(false);
+            shotgunBuy.SetActive(false);
+
+            akSprite.SetActive(true);
+            akSelected.SetActive(false);
+            akBuy.SetActive(false);
+
+            RPGSprite.SetActive(true);
+            RPGSelected.SetActive(false);
+            RPGBuy.SetActive(false);
+
+            healthSprite.SetActive(true);
+            healthSelected.SetActive(false);
+            healthBuy.SetActive(false);
+
+            attackSprite.SetActive(false);
+            attackSelected.SetActive(true);
+            attackBuy.SetActive(false);
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                UI_Shop.shop.BuyAttackUpgrade();
             }
         }
     }
