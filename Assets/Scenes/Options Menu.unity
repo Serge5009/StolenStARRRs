@@ -1282,6 +1282,7 @@ GameObject:
   - component: {fileID: 345457685}
   - component: {fileID: 345457690}
   - component: {fileID: 345457684}
+  - component: {fileID: 345457691}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1410,6 +1411,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1973687369}
+--- !u!114 &345457691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345457683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47bf9419fc60dd94db29759245bbf99a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volume: {fileID: 1307362559}
+  quality: {fileID: 1584934812}
+  resolution: {fileID: 2064617564}
+  fullscreen: {fileID: 320307888}
 --- !u!1 &396944591
 GameObject:
   m_ObjectHideFlags: 0
@@ -3509,7 +3526,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: -1
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -3539,7 +3556,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1327960743}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 345457691}
+        m_TargetAssemblyTypeName: OptionsSave, Assembly-CSharp
+        m_MethodName: SaveOptions
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1327960743
 MonoBehaviour:
   m_ObjectHideFlags: 0
