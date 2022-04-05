@@ -27,19 +27,25 @@ public class OptionsLoad : MonoBehaviour
         volume.value = PlayerPrefs.GetFloat("volume");
         quality.value = PlayerPrefs.GetInt("quality");
 
-        if (PlayerPrefs.GetInt("fullscreen") == 1)
+        if (PlayerPrefs.HasKey("fullscreen"))
         {
-            fullscreen.isOn = true;
+            if (PlayerPrefs.GetInt("fullscreen") == 1)
+            {
+                fullscreen.isOn = true;
+            }
+            else
+            {
+                fullscreen.isOn = false;
+            }
+            Debug.Log("Loaded quality: " + PlayerPrefs.GetFloat("quality"));
+            Debug.Log("Loaded volume: " + PlayerPrefs.GetFloat("volume"));
+            Debug.Log("Loaded resolution: " + PlayerPrefs.GetFloat("resolution"));
         }
         else
         {
-            fullscreen.isOn = false;
+            fullscreen.isOn = true;
+            Debug.Log("Loaded fullscreen: " + PlayerPrefs.GetFloat("fullscreen"));
         }
-        Debug.Log("Loaded quality: " + PlayerPrefs.GetFloat("quality"));
-        Debug.Log("Loaded volume: " + PlayerPrefs.GetFloat("volume"));
-        Debug.Log("Loaded resolution: " + PlayerPrefs.GetFloat("resolution"));
-        Debug.Log("Loaded fullscreen: " + PlayerPrefs.GetFloat("fullscreen"));
-
     }
 
     // Update is called once per frame
