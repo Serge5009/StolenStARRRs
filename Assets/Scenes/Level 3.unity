@@ -36486,6 +36486,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3150171526666345657, guid: ac59987896f8fc04fbcbb621753da9f5, type: 3}
+      propertyPath: playerMoney
+      value: 
+      objectReference: {fileID: 1336866961}
+    - target: {fileID: 5604169386148443027, guid: ac59987896f8fc04fbcbb621753da9f5, type: 3}
+      propertyPath: playerMoney
+      value: 
+      objectReference: {fileID: 1336866961}
     - target: {fileID: 8314690004594017414, guid: ac59987896f8fc04fbcbb621753da9f5, type: 3}
       propertyPath: m_Name
       value: HUD
@@ -36497,6 +36505,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1699690218408526468, guid: ac59987896f8fc04fbcbb621753da9f5, type: 3}
   m_PrefabInstance: {fileID: 1336866959}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1336866961 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6250988584557703797, guid: ac59987896f8fc04fbcbb621753da9f5, type: 3}
+  m_PrefabInstance: {fileID: 1336866959}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1338124712 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9050965660049943172, guid: 7da2297cf96aad34290297a6022573ff, type: 3}
