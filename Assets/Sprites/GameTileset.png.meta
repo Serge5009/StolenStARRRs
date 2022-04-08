@@ -659,6 +659,12 @@ TextureImporter:
   - first:
       213: -4154406421635851535
     second: GameTileset_218
+  - first:
+      213: 2960125391511875890
+    second: GameTileset_219
+  - first:
+      213: 9205570046025496614
+    second: GameTileset_220
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -5342,6 +5348,48 @@ TextureImporter:
       bones: []
       spriteID: 1fa1bc9de559856c0800000000000000
       internalID: -4154406421635851535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameTileset_219
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 222
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 231fda33c5a741920800000000000000
+      internalID: 2960125391511875890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameTileset_220
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 174
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62873540f21c0cf70800000000000000
+      internalID: 9205570046025496614
       vertices: []
       indices: 
       edges: []
