@@ -333,7 +333,11 @@ public class UI_Shop : MonoBehaviour
         if (Player.player.coins >= ACost)
         {
 
-            projScript.damage += 1;
+            //projScript.damage += 1;
+
+            PowerUpsController powerControl = Player.player.gameObject.GetComponent<PowerUpsController>();
+            powerControl.bonusATK += 5;
+
             Debug.Log("Player Damage now" + projScript.damage);
             Player.player.coins -= ACost;
             ACost = ACost * 2;
