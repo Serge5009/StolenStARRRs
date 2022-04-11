@@ -280,6 +280,7 @@ GameObject:
   - component: {fileID: 8147820335979402412}
   - component: {fileID: 971332701}
   - component: {fileID: 5580628577253133890}
+  - component: {fileID: 3143159989790056922}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -324,7 +325,7 @@ MonoBehaviour:
   health: 100
   Scenename: PirateHub
   moveDirection: {x: 0, y: 0, z: 0}
-  coins: 0
+  coins: 100000000
 --- !u!50 &8147820335979402412
 Rigidbody2D:
   serializedVersion: 4
@@ -413,3 +414,16 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &3143159989790056922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8211571826743374633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4096326f11c746438746082d46981c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bonusATK: 0
