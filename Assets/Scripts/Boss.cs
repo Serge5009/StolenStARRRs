@@ -26,7 +26,6 @@ public class Boss : Enemy
         {
             NextPhase();
         }
-
     }
 
     void NextPhase()
@@ -39,13 +38,12 @@ public class Boss : Enemy
             Destroy(gameObject);    //  RIP F
         }
 
-
+        phaseCallbacks.Invoke();
     }
 
     public override void GetDamage(float hp)
     {
         phaseHP[currentPhase] -= hp;
-        Debug.Log("Current phase is " + currentPhase + " Health is " + phaseHP[currentPhase]);
-
+        //Debug.Log("Current phase is " + currentPhase + " Health is " + phaseHP[currentPhase]);
     }
 }

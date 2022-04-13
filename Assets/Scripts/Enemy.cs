@@ -53,6 +53,6 @@ public class Enemy : MonoBehaviour
     public virtual void GetDamage(float hp)
     {
         health -= hp;   // Does it need any explanation? 
-        Debug.Log("Enemy Health is: " + health);
+        //Debug.Log("Enemy Health is: " + health);
     }
 }

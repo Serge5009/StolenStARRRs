@@ -51,6 +51,15 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
+        SpawnPlayer();
+
+        //  Set up enemy spawners
+        spawners = GameObject.FindGameObjectsWithTag("Spawner");
+        Debug.Log("Spawners on this level: " + spawners.Length);
+    }
+
+    public void SpawnPlayer()
+    {
         //  Spawn player
         spawnPoint = PlayerSpawnPoint.transform.position;
         if (!PlayerSpawnPoint)
@@ -66,9 +75,6 @@ public class LevelManager : MonoBehaviour
             Debug.Log("Failed to find the player");
         }
 
-        //  Set up enemy spawners
-        spawners = GameObject.FindGameObjectsWithTag("Spawner");
-        Debug.Log("Spawners on this level: " + spawners.Length);
     }
 
     float timer = 0.0f;
