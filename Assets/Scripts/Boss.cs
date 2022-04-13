@@ -35,10 +35,17 @@ public class Boss : Enemy
 
         if(currentPhase >= phaseHP.Length)
         {
-            Destroy(gameObject);    //  RIP F
+            Die();
         }
 
         phaseCallbacks.Invoke();
+    }
+
+    protected override void Die()
+    {
+        base.SpawnDrop();
+
+        Destroy(gameObject);
     }
 
     public override void GetDamage(float hp)

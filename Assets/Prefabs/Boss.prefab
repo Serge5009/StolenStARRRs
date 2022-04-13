@@ -47,8 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   basicHealth: 100
   health: 100
-  coinDrop: {fileID: 0}
-  healthDrop: {fileID: 0}
+  coinDrop: {fileID: 8858896780154246167, guid: d1467711022d13e40b0d90d0ffc08864, type: 3}
+  healthDrop: {fileID: 2976462168705380571, guid: 2fcbee4fe6961f44a9c25d156f8f5151, type: 3}
   itemWeight: 0
   phaseHP:
   - 100
