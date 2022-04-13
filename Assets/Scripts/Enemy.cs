@@ -13,13 +13,13 @@ public class Enemy : MonoBehaviour
 
     public int itemWeight;
     
-    void Start()
+    protected void Start()
     {
         itemWeight = Random.Range(0, 11);
         health = basicHealth;
     }
 
-    void Update()
+    protected void Update()
     {
         // if AI health less then 0
         if(health <= 0)
@@ -50,7 +50,7 @@ public class Enemy : MonoBehaviour
 
     }
 
-    public void GetDamage(float hp)
+    public virtual void GetDamage(float hp)
     {
         health -= hp;   // Does it need any explanation? 
         Debug.Log("Enemy Health is: " + health);
