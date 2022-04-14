@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
     public GameObject coinDrop;
     public GameObject healthDrop;
 
-    public int itemWeight;
+    private int itemWeight;
     
     protected void Start()
     {
@@ -52,11 +52,13 @@ public class Enemy : MonoBehaviour
         {
             Instantiate(healthDrop, transform.position, Quaternion.identity);
         }
+        /*
         else if (itemWeight == 7) // if its 7 drop both
         {
             Instantiate(coinDrop, transform.position, Quaternion.identity);
             Instantiate(healthDrop, transform.position, Quaternion.identity);
         }
+        */
         //Debug.Log(itemWeight);
     }
 

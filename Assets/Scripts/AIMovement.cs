@@ -7,7 +7,7 @@ public class AIMovement : MonoBehaviour
     [SerializeField]
     float stopDistance = 1.0f;
 
-    public float speed = 0.0f; // tokyo drift?
+    public float speed = 0.0f; 
     private Transform target;
 
     Animator animator;
