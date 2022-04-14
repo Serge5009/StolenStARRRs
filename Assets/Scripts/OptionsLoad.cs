@@ -7,7 +7,8 @@ using TMPro;
 
 public class OptionsLoad : MonoBehaviour
 {
-    public Slider volume;
+    public Slider volume1;
+    public Slider volume2;
     public TMP_Dropdown quality;
     public TMP_Dropdown resolution;
     public Toggle fullscreen;
@@ -24,7 +25,8 @@ public class OptionsLoad : MonoBehaviour
             resolution.value = 20;
         }
 
-        volume.value = PlayerPrefs.GetFloat("volume");
+        volume1.value = PlayerPrefs.GetFloat("volume1");
+        volume2.value = PlayerPrefs.GetFloat("volume2");
         quality.value = PlayerPrefs.GetInt("quality");
 
         if (PlayerPrefs.HasKey("fullscreen"))
@@ -38,7 +40,8 @@ public class OptionsLoad : MonoBehaviour
                 fullscreen.isOn = false;
             }
             Debug.Log("Loaded quality: " + PlayerPrefs.GetFloat("quality"));
-            Debug.Log("Loaded volume: " + PlayerPrefs.GetFloat("volume"));
+            Debug.Log("Loaded volume: " + PlayerPrefs.GetFloat("volume1"));
+            Debug.Log("Loaded volume: " + PlayerPrefs.GetFloat("volume2"));
             Debug.Log("Loaded resolution: " + PlayerPrefs.GetFloat("resolution"));
         }
         else
