@@ -12,6 +12,9 @@ public class Enemy : MonoBehaviour
     float[] weight;
     [SerializeField]
     GameObject[] dropPrefab;
+
+    [SerializeField]
+    int numDrops = 1;
     
     protected void Start()
     {
@@ -41,7 +44,8 @@ public class Enemy : MonoBehaviour
 
         //Debug.Log("Dead!");
 
-        SpawnDrop();
+        for(int i = 0; i < numDrops; i++)   //  Multiple drops
+            SpawnDrop();
 
         Destroy(gameObject);    //  RIP F        
     }
