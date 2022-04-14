@@ -8,6 +8,8 @@ using UnityEngine.UI;
 
 public class OptionsMenu : MonoBehaviour
 {
+    public Slider slider1;
+    public Slider slider2;
     public AudioMixer audioMixer;
 
     public TMPro.TMP_Dropdown resolutionDropdown;
@@ -46,9 +48,16 @@ public class OptionsMenu : MonoBehaviour
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
 
-    public void SetVolume(float volume)
+    public void SetVolume()
     {
-        audioMixer.SetFloat("volume", volume);
+        audioMixer.SetFloat("music", slider1.value);
+        Debug.Log("Music float updated");
+    }
+
+    public void SetVolumeMusic()
+    {
+        audioMixer.SetFloat("sfx", slider2.value);
+        Debug.Log("SFX float updated");
     }
 
     public void SetQuality(int qualityIndex)

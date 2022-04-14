@@ -6,15 +6,19 @@ using UnityEngine.UI;
 
 public class OptionsSave : MonoBehaviour
 {
-    public Slider volume;
+    public Slider volume1;
+    public Slider volume2;
     public TMP_Dropdown quality;
     public TMP_Dropdown resolution;
     public Toggle fullscreen;
 
     public void SaveOptions()
     {
-        PlayerPrefs.SetFloat("volume", volume.value);
-        Debug.Log("Saved volume: " + PlayerPrefs.GetFloat("volume"));
+        PlayerPrefs.SetFloat("volume1", volume1.value);
+        Debug.Log("Saved volume: " + PlayerPrefs.GetFloat("volume1"));
+
+        PlayerPrefs.SetFloat("volume2", volume2.value);
+        Debug.Log("Saved volume: " + PlayerPrefs.GetFloat("volume2"));
 
         PlayerPrefs.SetInt("quality", quality.value);
         Debug.Log("Saved quality: " + PlayerPrefs.GetInt("quality"));
