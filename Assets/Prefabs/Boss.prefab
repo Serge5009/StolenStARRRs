@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6077871794712172640}
   - component: {fileID: 6077871794712172643}
   - component: {fileID: 6077871794712172642}
+  - component: {fileID: 2048816762}
   m_Layer: 7
   m_Name: Boss
   m_TagString: Enemy
@@ -47,9 +48,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   basicHealth: 100
   health: 100
-  coinDrop: {fileID: 8858896780154246167, guid: d1467711022d13e40b0d90d0ffc08864, type: 3}
-  healthDrop: {fileID: 2976462168705380571, guid: 2fcbee4fe6961f44a9c25d156f8f5151, type: 3}
-  itemWeight: 0
+  weight: []
+  dropPrefab: []
+  minDrops: 0
+  maxDrops: 5
   phaseHP:
   - 100
   - 30
@@ -84,6 +86,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.3, y: 1.3}
   m_EdgeRadius: 0
+--- !u!114 &2048816762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6077871794712172645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac32cf324dd85942af8428f5fd6a45e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agroRange: 7
+  speed: 3
+  wanderRange: 3
+  maxDistance: 5
 --- !u!1 &6077871794763803469
 GameObject:
   m_ObjectHideFlags: 0
