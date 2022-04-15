@@ -47,6 +47,9 @@ public class Player : MonoBehaviour
     [SerializeField]
     public string Scenename;
 
+    [SerializeField]
+    GameObject cameraPrefab;
+
     //  Directions:
     public Vector3 moveDirection;
     Vector3 shootDirection;
@@ -54,20 +57,9 @@ public class Player : MonoBehaviour
     // loot mechanic
     public int coins;
 
+    
     void Awake()
     {
-        //if(player != null)
-        //{
-        //    Destroy(player.gameObject);
-        //}
-        //else
-        //{
-        //    player = this;
-            
-        //}
-
-
-
         GameObject gunObj = Instantiate(GunPrefab, transform.position, Quaternion.identity);    //  Create a gun from prefab
         gunObj.transform.parent = gameObject.transform;                                         //  Make it as a child of the player
         gun = gunObj.GetComponent<Gun>();                                                       //  Get reference to gun script
@@ -79,6 +71,7 @@ public class Player : MonoBehaviour
             Debug.Log("No animator attached to player");
         }
 
+        Instantiate(cameraPrefab, transform.position, Quaternion.identity);    //  Instantiate a camera from prefab
     }
 
     void Start()
