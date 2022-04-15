@@ -134,9 +134,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   basicHealth: 100
   health: 100
-  coinDrop: {fileID: 8858896780154246167, guid: d1467711022d13e40b0d90d0ffc08864, type: 3}
-  healthDrop: {fileID: 2976462168705380571, guid: 2fcbee4fe6961f44a9c25d156f8f5151, type: 3}
-  itemWeight: 0
+  weight:
+  - 10
+  - 1
+  - 3
+  dropPrefab:
+  - {fileID: 8858896780154246167, guid: d1467711022d13e40b0d90d0ffc08864, type: 3}
+  - {fileID: 8858896780154246167, guid: e995ce978507a7e44993ab469ed90819, type: 3}
+  - {fileID: 2976462168705380571, guid: 2fcbee4fe6961f44a9c25d156f8f5151, type: 3}
+  numDrops: 5
 --- !u!61 &7765704686394764510
 BoxCollider2D:
   m_ObjectHideFlags: 0
