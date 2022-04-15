@@ -14,8 +14,10 @@ public class Enemy : MonoBehaviour
     GameObject[] dropPrefab;
 
     [SerializeField]
-    int numDrops = 1;
-    
+    int minDrops = 0;
+    [SerializeField]
+    int maxDrops = 5;
+
     protected void Start()
     {
         health = basicHealth;
@@ -44,6 +46,7 @@ public class Enemy : MonoBehaviour
 
         //Debug.Log("Dead!");
 
+        int numDrops = Random.Range(minDrops, maxDrops);
         for(int i = 0; i < numDrops; i++)   //  Multiple drops
             SpawnDrop();
 
