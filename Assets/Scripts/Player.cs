@@ -57,10 +57,11 @@ public class Player : MonoBehaviour
     // loot mechanic
     public int coins;
 
-    
+    //  Adjusting spawn position for gun
+    Vector3 gunDisplacement = new Vector3(0.0f, 0.8f, 0.0f);
     void Awake()
     {
-        GameObject gunObj = Instantiate(GunPrefab, transform.position, Quaternion.identity);    //  Create a gun from prefab
+        GameObject gunObj = Instantiate(GunPrefab, transform.position + gunDisplacement, Quaternion.identity);    //  Create a gun from prefab
         gunObj.transform.parent = gameObject.transform;                                         //  Make it as a child of the player
         gun = gunObj.GetComponent<Gun>();                                                       //  Get reference to gun script
 
