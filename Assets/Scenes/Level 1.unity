@@ -4986,7 +4986,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9050965660049943171, guid: 7da2297cf96aad34290297a6022573ff, type: 3}
       propertyPath: spawnLimit
-      value: 20
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 9050965660049943172, guid: 7da2297cf96aad34290297a6022573ff, type: 3}
       propertyPath: m_RootOrder

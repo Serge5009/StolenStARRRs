@@ -80,27 +80,34 @@ public class Player : MonoBehaviour
             Debug.Log("No animator attached to player");
         }
 
-        mainCamera = Instantiate(cameraPrefab, transform.position + cameraPosition, Quaternion.identity);    //  Instantiate a camera from prefab
+        //mainCamera = Instantiate(cameraPrefab, transform.position + cameraPosition, Quaternion.identity);    //  Instantiate a camera from prefab
     }
 
     void Start()
-    {
-        
+    {       
         moveDirection = new Vector3(0.0f, 0.0f, 0.0f);
         shootDirection = new Vector3(0.0f, 0.0f, 0.0f);
     }
 
-    
     void Update()
     {
-        CheckInput();
+        if(mainCamera == null)  //  Fixing level transitions
+        {
+            SpawnCamera();
+        }
 
+        CheckInput();
         Death();
     }
 
     private void LateUpdate()
     {
         CameraFollow();
+    }
+
+    void SpawnCamera()
+    {
+        mainCamera = Instantiate(cameraPrefab, transform.position + cameraPosition, Quaternion.identity);    //  Instantiate a camera from prefab
     }
 
     public void Death()
