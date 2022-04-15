@@ -47,6 +47,17 @@ public class Player : MonoBehaviour
     [SerializeField]
     public string Scenename;
 
+    [SerializeField]
+    GameObject cameraPrefab;
+    [SerializeField]
+    Vector3 cameraPosition;
+    [SerializeField]
+    float maxCameraDistance = 30;
+    [SerializeField]
+    float cameraSpeed = 2.0f;
+    [HideInInspector]
+    public GameObject mainCamera;
+
     //  Directions:
     public Vector3 moveDirection;
     Vector3 shootDirection;
@@ -54,21 +65,11 @@ public class Player : MonoBehaviour
     // loot mechanic
     public int coins;
 
+    //  Adjusting spawn position for gun
+    Vector3 gunDisplacement = new Vector3(0.0f, 0.0f, 0.0f);
     void Awake()
     {
-        //if(player != null)
-        //{
-        //    Destroy(player.gameObject);
-        //}
-        //else
-        //{
-        //    player = this;
-            
-        //}
-
-
-
-        GameObject gunObj = Instantiate(GunPrefab, transform.position, Quaternion.identity);    //  Create a gun from prefab
+        GameObject gunObj = Instantiate(GunPrefab, transform.position + gunDisplacement, Quaternion.identity);    //  Create a gun from prefab
         gunObj.transform.parent = gameObject.transform;                                         //  Make it as a child of the player
         gun = gunObj.GetComponent<Gun>();                                                       //  Get reference to gun script
 
@@ -79,6 +80,7 @@ public class Player : MonoBehaviour
             Debug.Log("No animator attached to player");
         }
 
+        mainCamera = Instantiate(cameraPrefab, transform.position + cameraPosition, Quaternion.identity);    //  Instantiate a camera from prefab
     }
 
     void Start()
@@ -96,6 +98,10 @@ public class Player : MonoBehaviour
         Death();
     }
 
+    private void LateUpdate()
+    {
+        CameraFollow();
+    }
 
     public void Death()
     {
@@ -171,5 +177,11 @@ public class Player : MonoBehaviour
         GameObject gunObj = Instantiate(GunPrefab, transform.position, Quaternion.identity);
         gunObj.transform.parent = gameObject.transform;
         gun = gunObj.GetComponent<Gun>();
+    }
+
+    void CameraFollow()
+    {
+        var newPos = Vector2.Lerp(mainCamera.transform.position, transform.position, Time.deltaTime * cameraSpeed);
+        mainCamera.transform.position = new Vector3(newPos.x, newPos.y, cameraPosition.z); ;
     }
 }
