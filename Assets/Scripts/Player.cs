@@ -51,6 +51,12 @@ public class Player : MonoBehaviour
     GameObject cameraPrefab;
     [SerializeField]
     Vector3 cameraPosition;
+    [SerializeField]
+    float maxCameraDistance = 30;
+    [SerializeField]
+    float cameraSpeed = 2.0f;
+    [HideInInspector]
+    public GameObject mainCamera;
 
     //  Directions:
     public Vector3 moveDirection;
@@ -74,7 +80,7 @@ public class Player : MonoBehaviour
             Debug.Log("No animator attached to player");
         }
 
-        Instantiate(cameraPrefab, transform.position + cameraPosition, Quaternion.identity);    //  Instantiate a camera from prefab
+        mainCamera = Instantiate(cameraPrefab, transform.position + cameraPosition, Quaternion.identity);    //  Instantiate a camera from prefab
     }
 
     void Start()
@@ -92,6 +98,10 @@ public class Player : MonoBehaviour
         Death();
     }
 
+    private void LateUpdate()
+    {
+        CameraFollow();
+    }
 
     public void Death()
     {
@@ -167,5 +177,11 @@ public class Player : MonoBehaviour
         GameObject gunObj = Instantiate(GunPrefab, transform.position, Quaternion.identity);
         gunObj.transform.parent = gameObject.transform;
         gun = gunObj.GetComponent<Gun>();
+    }
+
+    void CameraFollow()
+    {
+        var newPos = Vector2.Lerp(mainCamera.transform.position, transform.position, Time.deltaTime * cameraSpeed);
+        mainCamera.transform.position = new Vector3(newPos.x, newPos.y, cameraPosition.z); ;
     }
 }
