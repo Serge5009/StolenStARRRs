@@ -241,6 +241,7 @@ MonoBehaviour:
   health: 100
   Scenename: PirateHub
   cameraPrefab: {fileID: 4306382246302613127, guid: b58598ceb0cddd742967ce87bc3365e4, type: 3}
+  cameraPosition: {x: 0, y: 0, z: -10}
   moveDirection: {x: 0, y: 0, z: 0}
   coins: 100000000
 --- !u!50 &8147820335979402412

@@ -49,6 +49,8 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     GameObject cameraPrefab;
+    [SerializeField]
+    Vector3 cameraPosition;
 
     //  Directions:
     public Vector3 moveDirection;
@@ -58,7 +60,7 @@ public class Player : MonoBehaviour
     public int coins;
 
     //  Adjusting spawn position for gun
-    Vector3 gunDisplacement = new Vector3(0.0f, 0.8f, 0.0f);
+    Vector3 gunDisplacement = new Vector3(0.0f, 0.0f, 0.0f);
     void Awake()
     {
         GameObject gunObj = Instantiate(GunPrefab, transform.position + gunDisplacement, Quaternion.identity);    //  Create a gun from prefab
@@ -72,7 +74,7 @@ public class Player : MonoBehaviour
             Debug.Log("No animator attached to player");
         }
 
-        Instantiate(cameraPrefab, transform.position, Quaternion.identity);    //  Instantiate a camera from prefab
+        Instantiate(cameraPrefab, transform.position + cameraPosition, Quaternion.identity);    //  Instantiate a camera from prefab
     }
 
     void Start()
