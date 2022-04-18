@@ -102,6 +102,7 @@ MonoBehaviour:
   speed: 3
   wanderRange: 3
   maxDistance: 5
+  player: {fileID: 8211571826743374633, guid: 9b17df04abc863a4aba91a61ceba63fb, type: 3}
 --- !u!1 &6077871794763803469
 GameObject:
   m_ObjectHideFlags: 0

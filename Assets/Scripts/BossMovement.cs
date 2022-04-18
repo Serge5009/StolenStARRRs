@@ -19,7 +19,13 @@ public class BossMovement : MonoBehaviour
     [SerializeField]
     float maxDistance;
 
+    /*
+    [SerializeField]
+    GameObject player;
+    */
     Vector2 wayPoint;
+
+   // Vector2 dodge;
 
     private Transform target;
     private float distanceToPlayer;
@@ -27,7 +33,7 @@ public class BossMovement : MonoBehaviour
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        
+       
         SetPath();
     }
 
@@ -40,10 +46,11 @@ public class BossMovement : MonoBehaviour
         if (distanceToPlayer < agroRange)
         {
             Chase();
+            //GetAway();
         }
         else
         {
-             Wander();
+            Wander();
         }
     }
 
@@ -52,7 +59,6 @@ public class BossMovement : MonoBehaviour
     void Chase()
     {
         transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime); //actual chase happening here .d   
-
 
     }
 
@@ -68,7 +74,14 @@ public class BossMovement : MonoBehaviour
 
     void SetPath()
     {
-        wayPoint = new Vector2(Random.Range(-maxDistance, maxDistance), Random.Range(-maxDistance, maxDistance)); //setting max distance that can boss wander
+        wayPoint = new Vector2(Random.Range(-maxDistance, maxDistance), Random.Range(-maxDistance, maxDistance)); //random path creation
 
     }
+
+    /*
+    void GetAway()
+    {
+        
+    }
+    */
 }
