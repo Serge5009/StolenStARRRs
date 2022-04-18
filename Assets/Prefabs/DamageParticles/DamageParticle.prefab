@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 5066048397264932216}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -96,9 +96,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activateOnSpawn: 1
-  maxHorizontal: 1
+  maxHorizontal: 2
   minVertical: 1
-  maxVertical: 2
+  maxVertical: 3
   gravity: 9.8
   minDown: 0
-  maxDown: -1
+  maxDown: -2

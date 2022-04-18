@@ -36,12 +36,15 @@ public class DamageParticle : MonoBehaviour
 
         bool isParticleFound = false;
         int acriveParticle = 0;
+
+        Vector3 spawnPos = new Vector3(transform.position.x, transform.position.y, 0.01f);  //  Adjusting Z axis to spawn behing the obstacles
+
         while (!isParticleFound)    //  Loop thru all positions untill got a match
         {
             if (weight[acriveParticle] > randInt)    //  If random value is within this prefab's weight
             {
                 isParticleFound = true;
-                Instantiate(particlePrefab[acriveParticle], transform.position, Quaternion.identity);   //  Spawn drop
+                Instantiate(particlePrefab[acriveParticle], spawnPos, Quaternion.identity);   //  Spawn drop
             }
             else
             {
