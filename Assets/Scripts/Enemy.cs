@@ -24,7 +24,7 @@ public class Enemy : MonoBehaviour
 
         if(weight.Length != dropPrefab.Length)
         {
-            Debug.Log("Attantion!!! Weight and dropPrefab arrays MUST be the same lenght");
+            Debug.Log("Attention!!! Weight and dropPrefab arrays MUST be the same lenght");
         }
     }
 
