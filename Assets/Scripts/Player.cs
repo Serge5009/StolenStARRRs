@@ -67,6 +67,9 @@ public class Player : MonoBehaviour
 
     //  Adjusting spawn position for gun
     Vector3 gunDisplacement = new Vector3(0.0f, 0.0f, 0.0f);
+
+    DamageParticle particles;
+
     void Awake()
     {
         GameObject gunObj = Instantiate(GunPrefab, transform.position + gunDisplacement, Quaternion.identity);    //  Create a gun from prefab
@@ -79,6 +82,10 @@ public class Player : MonoBehaviour
         {
             Debug.Log("No animator attached to player");
         }
+
+        particles = gameObject.GetComponent<DamageParticle>();
+        if (!particles)
+            Debug.Log("No particle spawner attached to player");
 
         //mainCamera = Instantiate(cameraPrefab, transform.position + cameraPosition, Quaternion.identity);    //  Instantiate a camera from prefab
     }
@@ -171,9 +178,11 @@ public class Player : MonoBehaviour
         {
             AudioManager.Instance.Play(LowHealth);
         }
+
+        particles.OnGetDamage();    //  Call damage particle spawn
     }
 
-    
+
     public void EquipWeapon()
     {
         if(gun.gameObject)

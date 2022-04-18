@@ -31,7 +31,7 @@ public class Enemy : MonoBehaviour
 
         particles = gameObject.GetComponent<DamageParticle>();
         if (!particles)
-            Debug.Log("No particle spawner attached to player");
+            Debug.Log("No particle spawner attached to enemy");
     }
 
     protected void Update()

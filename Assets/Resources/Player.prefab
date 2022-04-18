@@ -198,6 +198,7 @@ GameObject:
   - component: {fileID: 971332701}
   - component: {fileID: 5580628577253133890}
   - component: {fileID: 3143159989790056922}
+  - component: {fileID: 8840294197394960292}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -348,3 +349,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bonusATK: 0
+--- !u!114 &8840294197394960292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8211571826743374633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17abb0bcd106d39489522bacedd85e92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particlePrefab:
+  - {fileID: 5066048397264932216, guid: c117c366fce3c6e469dcc3a0cfbe2901, type: 3}
+  weight:
+  - 1
+  minParticles: 5
+  maxParticles: 15
