@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6056393642674429571
+--- !u!1 &8326599006886425505
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6056393642674429574}
-  - component: {fileID: 6056393642674429569}
-  - component: {fileID: 6056393642674429568}
-  - component: {fileID: -2500629414263166203}
-  - component: {fileID: -1972061321414942321}
+  - component: {fileID: 8326599006886425508}
+  - component: {fileID: 8326599006886425510}
+  - component: {fileID: 8326599006886425511}
+  - component: {fileID: -5611834994896439075}
+  - component: {fileID: -7755142544451609955}
   m_Layer: 0
-  m_Name: FireParticle
+  m_Name: SmokeBounce
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6056393642674429574
+--- !u!4 &8326599006886425508
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6056393642674429571}
+  m_GameObject: {fileID: 8326599006886425505}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.507861, y: 3.0805528, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalPosition: {x: 3.72, y: 0.73, z: 0}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &6056393642674429569
+--- !u!212 &8326599006886425510
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6056393642674429571}
+  m_GameObject: {fileID: 8326599006886425505}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -74,28 +74,28 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7385853225347951261, guid: 29e70cf050e637a4aab915f26a8c8f81, type: 3}
+  m_Sprite: {fileID: 1852463963076404655, guid: 943a2160813d66f4884a1fb85adf54f1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &6056393642674429568
+--- !u!95 &8326599006886425511
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6056393642674429571}
+  m_GameObject: {fileID: 8326599006886425505}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 39545a21cc8b3cf4da5641fe6388256d, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7a3e8a2ce6521ce4a90a4ffa2775b42e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -104,36 +104,36 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-2500629414263166203
+--- !u!114 &-5611834994896439075
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6056393642674429571}
+  m_GameObject: {fileID: 8326599006886425505}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c696ef40ac446b94c9d177ca5d46e524, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   activateOnSpawn: 1
-  maxHorizontal: 4
-  minVertical: 2
-  maxVertical: 6
-  gravity: 9.8
+  maxHorizontal: 5
+  minVertical: 0
+  maxVertical: 3
+  gravity: 0
   minDown: 0
-  maxDown: -2
---- !u!114 &-1972061321414942321
+  maxDown: 0
+--- !u!114 &-7755142544451609955
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6056393642674429571}
+  m_GameObject: {fileID: 8326599006886425505}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4817d9f862f98594eb6489737d7b0b41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   minTime: 0.5
-  maxTime: 7
+  maxTime: 2
