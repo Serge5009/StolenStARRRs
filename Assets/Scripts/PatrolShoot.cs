@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PatrolShoot : MonoBehaviour
 {
+
+    // almost the same ode of Serhi`s Enemy Shoot script
+
     [SerializeField]
     GameObject ProjectilePrefab;
     [SerializeField]
@@ -45,12 +48,12 @@ public class PatrolShoot : MonoBehaviour
 
     }
 
-   
 
     void Fire()
     {
-        cooldown += 1 / fireRate;
-        if (Vector2.Distance(transform.position, player.transform.position) < agroRange)
+
+        cooldown += 1 / fireRate; // coldown outside if statement so enemy will not shoot multiple bullets 
+        if (Vector2.Distance(transform.position, player.transform.position) < agroRange) // setting agro range here
         {
             Aim();
 

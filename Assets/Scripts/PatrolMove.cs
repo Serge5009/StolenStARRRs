@@ -87,8 +87,8 @@ public class PatrolMove : MonoBehaviour
         }
         else
         {
-            Debug.Log("Whatever it is imma leave it alone cuz i am a smart AI");
-            SetPath();
+            Debug.Log("Whatever it is imma leave it alone cuz i am a smart AI"); 
+            SetPath(); // bouncing
         }
     }
 }
