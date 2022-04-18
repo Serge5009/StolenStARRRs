@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6698047674194814840}
   - component: {fileID: 6698047674194814843}
   - component: {fileID: 6698047674194814842}
+  - component: {fileID: 1649512319}
   m_Layer: 0
   m_Name: Explosion
   m_TagString: Untagged
@@ -102,3 +103,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1649512319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6698047674194814853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57e65e0fd8490ca4b887f43e5ed598e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particlePrefab:
+  - {fileID: 6056393642674429571, guid: cab29b57645d30b4da1fdb8262f4807d, type: 3}
+  weight:
+  - 1
+  minParticles: 5
+  maxParticles: 15
+  lifetime: 0.7
