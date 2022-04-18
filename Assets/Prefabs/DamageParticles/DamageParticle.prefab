@@ -100,5 +100,5 @@ MonoBehaviour:
   minVertical: 1
   maxVertical: 2
   gravity: 9.8
-  minDown: 1
-  maxDown: 1
+  minDown: 0
+  maxDown: -1

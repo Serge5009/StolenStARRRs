@@ -18,6 +18,8 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     int maxDrops = 5;
 
+    DamageParticle particles;
+
     protected void Start()
     {
         health = basicHealth;
@@ -26,6 +28,10 @@ public class Enemy : MonoBehaviour
         {
             Debug.Log("Attention!!! Weight and dropPrefab arrays MUST be the same lenght");
         }
+
+        particles = gameObject.GetComponent<DamageParticle>();
+        if (!particles)
+            Debug.Log("No particle spawner attached to player");
     }
 
     protected void Update()
@@ -82,5 +88,7 @@ public class Enemy : MonoBehaviour
     {
         health -= hp;   // Does it need any explanation? 
         //Debug.Log("Enemy Health is: " + health);
+
+        particles.OnGetDamage();    //  Call damage particle spawn
     }
 }
