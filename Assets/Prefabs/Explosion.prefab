@@ -117,8 +117,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particlePrefab:
   - {fileID: 6056393642674429571, guid: cab29b57645d30b4da1fdb8262f4807d, type: 3}
+  - {fileID: 8326599006886425505, guid: 80389fabd2ec7ec46bfdfca97191cb24, type: 3}
   weight:
+  - 4
   - 1
-  minParticles: 5
-  maxParticles: 15
+  minParticles: 10
+  maxParticles: 25
   lifetime: 0.7

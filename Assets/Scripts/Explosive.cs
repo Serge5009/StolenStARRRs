@@ -16,11 +16,14 @@ public class Explosive : MonoBehaviour
     [SerializeField]
     float explosionTriggerDelay = 1.0f; //  Once per X seconds will check for enemies in radius
 
-        //  Explision settings
+        //  Explosion settings
     float damage;
     [SerializeField]
     float explosionRad = 2.0f;
     float distDmgFactor = 0.67f;
+
+    [SerializeField]
+    GameObject explosionPrefab;
 
     GameObject[] enemies;
 
@@ -109,6 +112,7 @@ public class Explosive : MonoBehaviour
             }
         }
 
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
 
         StartCoroutine(RemoveBullet());
 
