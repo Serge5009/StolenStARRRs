@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ProjectilePrefab: {fileID: 2633034724039367268, guid: 949226d810d9c0b4083473358b9e893b, type: 3}
-  bulletSpeed: 2.5
+  bulletSpeed: 10
   fireRate: 1
   scatter: 0.2
   agroRange: 4
