@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6056393642674429569}
   - component: {fileID: 6056393642674429568}
   - component: {fileID: -2500629414263166203}
+  - component: {fileID: -1972061321414942321}
   m_Layer: 0
   m_Name: FireParticle
   m_TagString: Untagged
@@ -122,3 +123,17 @@ MonoBehaviour:
   gravity: 9.8
   minDown: 0
   maxDown: -2
+--- !u!114 &-1972061321414942321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6056393642674429571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4817d9f862f98594eb6489737d7b0b41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minTime: 0.5
+  maxTime: 7

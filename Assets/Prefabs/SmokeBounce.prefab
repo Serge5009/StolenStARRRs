@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8326599006886425510}
   - component: {fileID: 8326599006886425511}
   - component: {fileID: -5611834994896439075}
+  - component: {fileID: -7755142544451609955}
   m_Layer: 0
   m_Name: SmokeBounce
   m_TagString: Untagged
@@ -118,7 +119,21 @@ MonoBehaviour:
   activateOnSpawn: 1
   maxHorizontal: 5
   minVertical: 0
-  maxVertical: 2
+  maxVertical: 3
   gravity: 0
   minDown: 0
   maxDown: 0
+--- !u!114 &-7755142544451609955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8326599006886425505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4817d9f862f98594eb6489737d7b0b41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minTime: 0.5
+  maxTime: 2
