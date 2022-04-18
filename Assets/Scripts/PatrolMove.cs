@@ -28,30 +28,37 @@ public class PatrolMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        FindPlayer();
 
-        SetPath();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        float distanceToPlayer = Vector2.Distance(transform.position, target.position); //getting the distance between boss and player
-        Debug.Log("Distance: " + distanceToPlayer);
-
-        if(distanceToPlayer > stopDistance)
+        if(target == null)
         {
-            if (distanceToPlayer < agroRange)
+            FindPlayer();
+        }
+        else
+        {
+            float distanceToPlayer = Vector2.Distance(transform.position, target.position); //getting the distance between boss and player
+            Debug.Log("Distance: " + distanceToPlayer);
+            
+            if (distanceToPlayer > stopDistance)
             {
-                Chase();
-            }
-            else
-            {
-                Wander();
+                if (distanceToPlayer < agroRange)
+                {
+                    Chase();
+                }
+                else
+                {
+                    Wander();
+                }
             }
         }
-       
         
+       
     }
 
 
@@ -89,6 +96,16 @@ public class PatrolMove : MonoBehaviour
         {
             Debug.Log("Whatever it is imma leave it alone cuz i am a smart AI"); 
             SetPath(); // bouncing
+        }
+    }
+
+    void FindPlayer()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            target = player.GetComponent<Transform>();
+            SetPath();
         }
     }
 }
