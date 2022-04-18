@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class PatrolMove : MonoBehaviour
 {
-
+    [SerializeField]
     float stopDistance = 2.0f;
-    const float Chase_Range = 3.0f;
+
+    
     [SerializeField]
     float agroRange;
 
@@ -23,6 +24,7 @@ public class PatrolMove : MonoBehaviour
 
     private Transform target;
     private float distanceToPlayer;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -75,5 +77,18 @@ public class PatrolMove : MonoBehaviour
     {
         wayPoint = new Vector2(Random.Range(-maxDistance, maxDistance), Random.Range(-maxDistance, maxDistance)); //setting max distance that can boss wander
 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Player")
+        {
+            Debug.Log("Here is the player"); // shouldnt be the case >.<
+        }
+        else
+        {
+            Debug.Log("Whatever it is imma leave it alone cuz i am a smart AI");
+            SetPath();
+        }
     }
 }
