@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewEnemyMove : MonoBehaviour
+public class PatrolMove : MonoBehaviour
 {
 
     float stopDistance = 2.0f;
@@ -37,14 +37,19 @@ public class NewEnemyMove : MonoBehaviour
         float distanceToPlayer = Vector2.Distance(transform.position, target.position); //getting the distance between boss and player
         Debug.Log("Distance: " + distanceToPlayer);
 
-        if (distanceToPlayer < agroRange)
+        if(distanceToPlayer > stopDistance)
         {
-            Chase();
+            if (distanceToPlayer < agroRange)
+            {
+                Chase();
+            }
+            else
+            {
+                Wander();
+            }
         }
-        else
-        {
-            Wander();
-        }
+       
+        
     }
 
 
