@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyShooting : MonoBehaviour
+public class PatrolShoot : MonoBehaviour
 {
     [SerializeField]
     GameObject ProjectilePrefab;
@@ -19,12 +19,15 @@ public class EnemyShooting : MonoBehaviour
     Vector3 shootDirection;
     float cooldown;
 
+    [SerializeField]
+    float agroRange;
+
     void Start()
     {
         fireRate += Random.Range(fireRate / -5, fireRate / 5);  //  Randomizing firerate
         cooldown = 1 / fireRate;
         player = GameObject.FindGameObjectWithTag("Player");
-        if(!player)
+        if (!player)
         {
             Debug.Log("Enemy couldn't locate player");
         }
@@ -33,28 +36,32 @@ public class EnemyShooting : MonoBehaviour
     void Update()
     {
         cooldown -= Time.deltaTime; //  Tick cooldown timer
-       
+
 
         if (cooldown <= 0)
         {
-            Shoot(); //shooting for regular enemies;
+            Fire();
         }
 
     }
 
-    void Shoot()
+   
+
+    void Fire()
     {
+        if (Vector2.Distance(transform.position, player.transform.position) < agroRange)
+        {
+            Aim();
 
-        Aim();
+            cooldown += 1 / fireRate;
 
-        cooldown += 1 / fireRate;
+            GameObject proj = Instantiate(ProjectilePrefab, transform.position, Quaternion.identity);
+            Projectile bullet = proj.GetComponent<Projectile>();
 
-        GameObject proj = Instantiate(ProjectilePrefab, transform.position, Quaternion.identity);
-        Projectile bullet = proj.GetComponent<Projectile>();
+            bullet.SetSpeed(shootDirection * bulletSpeed);
+        }
 
-        bullet.SetSpeed(shootDirection * bulletSpeed);
     }
-
 
     void Aim()
     {
