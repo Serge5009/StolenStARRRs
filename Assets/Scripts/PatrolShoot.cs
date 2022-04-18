@@ -17,20 +17,21 @@ public class PatrolShoot : MonoBehaviour
     [SerializeField]        //  0 - all bullets fly in one direction | 1 - 360 degree scatter
     float scatter = 0.01f;  //  Reccomended values between 0 and 0.3
 
-    GameObject player;
+    
 
     Vector3 shootDirection;
     float cooldown;
 
     [SerializeField]
     float agroRange;
-
+    private Transform target;
     void Start()
     {
        // fireRate += Random.Range(fireRate / -5, fireRate / 5);  //  Randomizing firerate
         cooldown = 1 / fireRate;
-        player = GameObject.FindGameObjectWithTag("Player");
-        if (!player)
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        target = player.GetComponent<Transform>();
+        if (player == null)
         {
             Debug.Log("Enemy couldn't locate player");
         }
@@ -38,13 +39,25 @@ public class PatrolShoot : MonoBehaviour
 
     void Update()
     {
-        cooldown -= Time.deltaTime; //  Tick cooldown timer
 
-
-        if (cooldown <= 0)
+        if (target == null)
         {
-            Fire();
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            target = player.GetComponent<Transform>();
+            if (player == null)
+            {
+                Debug.Log("Enemy couldn't locate player");
+            }
         }
+        else
+        {
+            cooldown -= Time.deltaTime; //  Tick cooldown timer
+            if (cooldown <= 0)
+            {
+                Fire();
+            }
+        }
+       
 
     }
 
@@ -53,7 +66,7 @@ public class PatrolShoot : MonoBehaviour
     {
 
         cooldown += 1 / fireRate; // coldown outside if statement so enemy will not shoot multiple bullets 
-        if (Vector2.Distance(transform.position, player.transform.position) < agroRange) // setting agro range here
+        if (Vector2.Distance(transform.position, target.position) < agroRange) // setting agro range here
         {
             Aim();
 
@@ -67,7 +80,7 @@ public class PatrolShoot : MonoBehaviour
 
     void Aim()
     {
-        shootDirection = player.transform.position - transform.position;
+        shootDirection = target.position - transform.position;
         shootDirection = Vector3.Normalize(shootDirection);
 
         //  Apply scatter
