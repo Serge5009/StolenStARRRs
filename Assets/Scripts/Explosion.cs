@@ -22,7 +22,9 @@ public class Explosion : MonoBehaviour
 
         int numDrops = Random.Range(minParticles, maxParticles);
         for (int i = 0; i < numDrops; i++)   //  Multiple drops
-            SpawnParticle();
+        {
+            StartCoroutine(SpawnParticle());
+        }           
     }
 
     void Update()
@@ -34,8 +36,11 @@ public class Explosion : MonoBehaviour
         }
     }
 
-    void SpawnParticle()
+    IEnumerator SpawnParticle()
     {
+        float delay = Random.Range(0.0f, lifetime * 0.8f);  //  Particles will not spawn in the last moments of explosion
+        yield return new WaitForSeconds(delay);
+
         float weigtSum = 0;       //  Get a sum of all weight for drops
         foreach (float i in weight)
             weigtSum += i;
@@ -45,7 +50,7 @@ public class Explosion : MonoBehaviour
         bool isParticleFound = false;
         int acriveParticle = 0;
 
-        Vector3 spawnPos = new Vector3(transform.position.x, transform.position.y, 0.01f);  //  Adjusting Z axis to spawn behing the obstacles
+        Vector3 spawnPos = new Vector3(transform.position.x, transform.position.y + 0.5f, 0.01f);  //  Adjusting Z axis to spawn behing the obstacles
 
         while (!isParticleFound)    //  Loop thru all positions untill got a match
         {
