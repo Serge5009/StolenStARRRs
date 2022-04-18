@@ -24,7 +24,7 @@ public class PatrolShoot : MonoBehaviour
 
     void Start()
     {
-        fireRate += Random.Range(fireRate / -5, fireRate / 5);  //  Randomizing firerate
+       // fireRate += Random.Range(fireRate / -5, fireRate / 5);  //  Randomizing firerate
         cooldown = 1 / fireRate;
         player = GameObject.FindGameObjectWithTag("Player");
         if (!player)
@@ -49,11 +49,10 @@ public class PatrolShoot : MonoBehaviour
 
     void Fire()
     {
+        cooldown += 1 / fireRate;
         if (Vector2.Distance(transform.position, player.transform.position) < agroRange)
         {
             Aim();
-
-            cooldown += 1 / fireRate;
 
             GameObject proj = Instantiate(ProjectilePrefab, transform.position, Quaternion.identity);
             Projectile bullet = proj.GetComponent<Projectile>();
