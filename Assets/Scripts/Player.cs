@@ -184,6 +184,16 @@ public class Player : MonoBehaviour
             
         }
 
+        //  Gun switch
+        if(Input.GetKeyDown("e"))
+        {
+            SwitchWeapon(true);
+        }
+        else if (Input.GetKeyDown("q"))
+        {
+            SwitchWeapon(false);
+        }
+
     }
 
     public void GetDamage(float hp)
