@@ -172,7 +172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stopDistance: 1.5
   agroRange: 4
-  speed: 2
+  speed: 3
   wanderRange: 2
   maxDistance: 7
 --- !u!114 &260375105730173318
