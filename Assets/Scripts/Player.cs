@@ -193,7 +193,6 @@ public class Player : MonoBehaviour
         {
             SwitchWeapon(false);
         }
-
     }
 
     public void GetDamage(float hp)
@@ -224,11 +223,25 @@ public class Player : MonoBehaviour
     {
         if(side)
         {
-            activeGun++;
+            if (activeGun == GUN_TYPES.HEAVY_GUN)
+                activeGun = GUN_TYPES.LIGHT_GUN;
+            else if (activeGun == GUN_TYPES.LIGHT_GUN)
+                activeGun = GUN_TYPES.MELEE_GUN;
+            else if (activeGun == GUN_TYPES.MELEE_GUN)
+                activeGun = GUN_TYPES.HEAVY_GUN;
+            else
+                Debug.Log("Error switching the gun!");
         }
         else
         {
-            activeGun--;
+            if (activeGun == GUN_TYPES.HEAVY_GUN)
+                activeGun = GUN_TYPES.MELEE_GUN;
+            else if (activeGun == GUN_TYPES.MELEE_GUN)
+                activeGun = GUN_TYPES.LIGHT_GUN;
+            else if (activeGun == GUN_TYPES.LIGHT_GUN)
+                activeGun = GUN_TYPES.HEAVY_GUN;
+            else
+                Debug.Log("Error switching the gun!");
         }
 
         EquipWeapon();
