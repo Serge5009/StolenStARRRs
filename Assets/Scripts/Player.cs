@@ -47,9 +47,9 @@ public class Player : MonoBehaviour
     Gun gun;
     public bool diagonalShooting = false;
 
-    public GUN_TYPES activeGun = GUN_TYPES.LIGHT_GUN;
-    public GameObject GunPrefab;
-    public GameObject[] GunPrefabs = new GameObject[(int)GUN_TYPES.NUM_GUN_TYPES];
+    public GUN_TYPES activeGun = GUN_TYPES.LIGHT_GUN;                               //  Active gun ID
+    public GameObject GunPrefab;        //  IMPORTANT!!! THIS IS TO BE DELETED!!!                                   !!!!!
+    public GameObject[] GunPrefabs = new GameObject[(int)GUN_TYPES.NUM_GUN_TYPES];  //  List of owned guns that can be used in this run
 
 
     Animator animator;
@@ -209,21 +209,21 @@ public class Player : MonoBehaviour
 
     public void EquipWeapon()
     {
-        if(gun != null)
+        if(gun != null)     //  If gun exists - delete it
         {
             Destroy(gun.gameObject);
         }
 
-        GameObject gunObj = Instantiate(GunPrefabs[((int)activeGun)], transform.position + gunDisplacement, Quaternion.identity);    //  Create a gun from prefab
-        gunObj.transform.parent = gameObject.transform;                                         //  Make it as a child of the player
-        gun = gunObj.GetComponent<Gun>();                                                       //  Get reference to gun script
+        GameObject gunObj = Instantiate(GunPrefabs[((int)activeGun)], transform.position + gunDisplacement, Quaternion.identity);   //  Create a gun from prefab
+        gunObj.transform.parent = gameObject.transform;                                                                             //  Make it as a child of the player
+        gun = gunObj.GetComponent<Gun>();                                                                                           //  Get reference to gun script
     }
 
     void SwitchWeapon(bool side)    //  If side = true - will go down the list
     {
         if(side)
         {
-            if (activeGun == GUN_TYPES.HEAVY_GUN)
+            if (activeGun == GUN_TYPES.HEAVY_GUN)       //  Yeah, it's done by basic if/else's )))
                 activeGun = GUN_TYPES.LIGHT_GUN;
             else if (activeGun == GUN_TYPES.LIGHT_GUN)
                 activeGun = GUN_TYPES.MELEE_GUN;
@@ -244,7 +244,7 @@ public class Player : MonoBehaviour
                 Debug.Log("Error switching the gun!");
         }
 
-        EquipWeapon();
+        EquipWeapon();  //  Activate the new gun after it was selected
     }
 
     void CameraFollow()
