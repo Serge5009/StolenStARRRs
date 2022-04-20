@@ -7,11 +7,16 @@ using TMPro;
 
 public class UI_Shop : MonoBehaviour
 {
-    Projectile projScript;
+    
 
     public static UI_Shop shop;
     [SerializeField]
     Transform container;
+    [SerializeField]
+    Transform LightContainer;
+    [SerializeField]
+    Transform MeleeContainer;
+
     [SerializeField]
     Transform buyCheckPistol;
     [SerializeField]
@@ -40,13 +45,46 @@ public class UI_Shop : MonoBehaviour
     [SerializeField]
     Transform buyCheckShotgun3;
 
+    [SerializeField]
+    Transform buyCheckBanana;
+    [SerializeField]
+    Transform buyCheckBanana2;
+    [SerializeField]
+    Transform buyCheckBanana3;
+
+    [SerializeField]
+    Transform buyCheckBlunder;
+    [SerializeField]
+    Transform buyCheckBlunder2;
+    [SerializeField]
+    Transform buyCheckBlunder3;
+
+    [SerializeField]
+    Transform buyCheckKnife;
+    [SerializeField]
+    Transform buyCheckKnife2;
+    [SerializeField]
+    Transform buyCheckKinfe3;
+
+    [SerializeField]
+    Transform buyCheckRifle;
+    [SerializeField]
+    Transform buyCheckRifle2;
+    [SerializeField]
+    Transform buyCheckRifle3;
+
     public GameObject RPG;
     public GameObject shotgun;
     public GameObject pistol;
     public GameObject AK47;
+    public GameObject Banana;
+    public GameObject Blunder;
+    public GameObject Knife;
+
     public Text HealthCost;
     public Text HealthCost2;
     public Text HealthCost3;
+
     public Text attackCost;
     public Text attackCost2;
     public Text attackCost3;
@@ -69,7 +107,7 @@ public class UI_Shop : MonoBehaviour
         }
         
        //container = transform.Find("container");
-       if(!container)
+       if(!container || !LightContainer || !MeleeContainer)
         {
             Debug.Log("Just checking container");
         }
@@ -80,10 +118,7 @@ public class UI_Shop : MonoBehaviour
 
     void Start()
     {
-        // projScript = GetComponent<Projectile>();
-        projScript = GameObject.Find("Reference").GetComponent<Projectile>();
-        if (!projScript)
-            Debug.Log("Error connecting script");
+        
 
     }
 
@@ -154,22 +189,7 @@ public class UI_Shop : MonoBehaviour
         }
 
     }
-    /*
-    private void CreateItemButton(Sprite itemSprite, string itemName, int itemCost, int posIndex)
-    {
-        Transform shopItemTransform = Instantiate(shopItemTemplate, container);
-        RectTransform shopItemRectTransform = shopItemTransform.GetComponent<RectTransform>();
-
-        float shopItemHeight = 30f;
-        shopItemRectTransform.anchoredPosition = new Vector2(0, -shopItemHeight * posIndex);
-
-        shopItemTransform.Find("itemName").GetComponent<TextMeshPro>().SetText(itemName);
-        shopItemTransform.Find("costText").GetComponent<TextMeshPro>().SetText(itemCost.ToString());
-
-        shopItemTransform.Find("ItemImage").GetComponent<Image>().sprite = itemSprite;
-
-    }
-    */
+   
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
