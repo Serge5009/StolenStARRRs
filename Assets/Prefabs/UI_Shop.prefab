@@ -8430,6 +8430,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5852721981849249817}
+  - component: {fileID: 809483900}
   m_Layer: 5
   m_Name: LightContainer
   m_TagString: Untagged
@@ -8461,6 +8462,33 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &809483900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5852721981849249816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a6cebbe991a84428ca25c54e95adc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PistolSprite: {fileID: 5852721982951657335}
+  PistolSelected: {fileID: 5852721981350159334}
+  BananaSprite: {fileID: 5852721982479334667}
+  BananaSelected: {fileID: 5852721982832188337}
+  BlusterSprite: {fileID: 5852721982588650974}
+  BlusterSelected: {fileID: 5852721981524726385}
+  KnifeSprite: {fileID: 5852721982688002730}
+  KnifeSelected: {fileID: 5852721983101012834}
+  BackSprite: {fileID: 5852721983096908474}
+  BackSelected: {fileID: 5852721983025827674}
+  PistolBuy: {fileID: 5852721981955937328}
+  BananaBuy: {fileID: 5852721981697356273}
+  BlusterBuy: {fileID: 5852721981756731018}
+  KnifeBuy: {fileID: 5852721982445072392}
+  BackBuy: {fileID: 5852721982712349875}
 --- !u!1 &5852721981858309221
 GameObject:
   m_ObjectHideFlags: 0
@@ -11323,8 +11351,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 25, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -25.0021, y: 0}
+  m_SizeDelta: {x: 300.0041, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5852721982097883192
 CanvasRenderer:
@@ -11354,7 +11382,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Heavy
+  m_text: Heavy Class
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -11511,6 +11539,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5852721982104008683}
+  - component: {fileID: 181433066}
   m_Layer: 5
   m_Name: container
   m_TagString: Untagged
@@ -11540,6 +11569,27 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &181433066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5852721982104008682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebc515917e55cd242ba6c65e5e3f6ac7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HeavySprite: {fileID: 5852721983041027629}
+  HeavySelected: {fileID: 5852721982864050009}
+  LightSprite: {fileID: 5852721983282022714}
+  LightSelected: {fileID: 5852721982225905573}
+  MeleeSprite: {fileID: 5852721981893602186}
+  MeleeSelected: {fileID: 5852721982897839754}
+  HContainerBuy: {fileID: 5852721982691558133}
+  LContainerBuy: {fileID: 5852721982176851034}
+  MContainerBuy: {fileID: 5852721981716846002}
 --- !u!1 &5852721982111857594
 GameObject:
   m_ObjectHideFlags: 0
@@ -12318,8 +12368,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 25, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -25.0021, y: 0}
+  m_SizeDelta: {x: 300.0041, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5852721982171076865
 CanvasRenderer:
@@ -12349,7 +12399,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Heavy
+  m_text: Heavy Class
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -12790,6 +12840,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5852721982184360957}
+  - component: {fileID: 1908401487}
   m_Layer: 5
   m_Name: Heavycontainer
   m_TagString: Untagged
@@ -12821,6 +12872,33 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1908401487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5852721982184360956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f636a6dde799c4f4bbbaaa69cbef718b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RifleSprite: {fileID: 5852721981456276777}
+  RifleSelected: {fileID: 5852721983278061637}
+  shotgunSprite: {fileID: 5852721982581374778}
+  shotgunSelected: {fileID: 5852721982011158653}
+  akSprite: {fileID: 5852721982736990085}
+  akSelected: {fileID: 5852721981426944468}
+  RPGSprite: {fileID: 5852721982112591592}
+  RPGSelected: {fileID: 5852721981975603336}
+  BackSprite: {fileID: 5852721981629428958}
+  BackSelected: {fileID: 5852721982468909768}
+  RifleBuy: {fileID: 5852721981573314823}
+  shotgunBuy: {fileID: 5852721981592006421}
+  akBuy: {fileID: 5852721982836926618}
+  RPGBuy: {fileID: 5852721982111857594}
+  BackBuy: {fileID: 5852721982164475552}
 --- !u!1 &5852721982198035838
 GameObject:
   m_ObjectHideFlags: 0
@@ -13136,6 +13214,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5852721982212815531}
+  - component: {fileID: 969772099}
   m_Layer: 5
   m_Name: MeleeContainer
   m_TagString: Untagged
@@ -13165,6 +13244,27 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &969772099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5852721982212815530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 970167a6fd8693045b46451fe39690a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HealthSprite: {fileID: 5852721982565886980}
+  HealthSelected: {fileID: 5852721981604331671}
+  AttackSprite: {fileID: 5852721981204018525}
+  AttackSelected: {fileID: 5852721982201256510}
+  BackSprite: {fileID: 5852721982321975921}
+  BackSelected: {fileID: 5852721982832060097}
+  HealthBuy: {fileID: 5852721982309275310}
+  AttackBuy: {fileID: 5852721982294928597}
+  BackBuy: {fileID: 5852721981764495144}
 --- !u!1 &5852721982221575636
 GameObject:
   m_ObjectHideFlags: 0
@@ -16579,7 +16679,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000024319, y: -5}
+  m_AnchoredPosition: {x: -0.000024319, y: 0}
   m_SizeDelta: {x: 500, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5852721982543662499

@@ -87,7 +87,7 @@ public class ContainerButton : MonoBehaviour
             MContainerBuy.SetActive(false);
         }
 
-        if (selection_Container == 2)
+        if (selection_Container == 3)
         {
             HeavySprite.SetActive(false);
             HeavySelected.SetActive(true);
@@ -108,7 +108,7 @@ public class ContainerButton : MonoBehaviour
 
         }
 
-        if (selection_Container == 3)
+        if (selection_Container == 2)
         {
             MeleeSprite.SetActive(false);
             MeleeSelected.SetActive(true);
