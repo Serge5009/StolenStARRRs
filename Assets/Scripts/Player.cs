@@ -48,7 +48,7 @@ public class Player : MonoBehaviour
     public bool diagonalShooting = false;
 
     public GUN_TYPES activeGun = GUN_TYPES.LIGHT_GUN;                               //  Active gun ID
-    public GameObject GunPrefab;        //  IMPORTANT!!! THIS IS TO BE DELETED!!!                                   !!!!!
+    //public GameObject GunPrefab;        //  IMPORTANT!!! THIS IS TO BE DELETED!!!                                   !!!!!
     public GameObject[] GunPrefabs = new GameObject[(int)GUN_TYPES.NUM_GUN_TYPES];  //  List of owned guns that can be used in this run
 
 

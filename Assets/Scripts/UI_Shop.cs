@@ -140,7 +140,7 @@ public class UI_Shop : MonoBehaviour
 
     private void Update()
     {
-        if(Player.player.GunPrefab == RPG)
+        if(Player.player.GunPrefabs[((int)Player.GUN_TYPES.HEAVY_GUN)] == RPG)
         {
             PistolSetFalse();
             ShotgunSetFalse();
@@ -151,7 +151,7 @@ public class UI_Shop : MonoBehaviour
             KnifeSetFalse();
         
         }
-        else if(Player.player.GunPrefab == pistol)
+        else if(Player.player.GunPrefabs[((int)Player.GUN_TYPES.LIGHT_GUN)] == pistol)
         {
             RPGSetFalse();
             ShotgunSetFalse();
@@ -160,9 +160,9 @@ public class UI_Shop : MonoBehaviour
             BananaSetFalse();
             BlunderSetFalse();
             KnifeSetFalse();
-
+            PistolSetActive();
         }
-        else if(Player.player.GunPrefab == shotgun)
+        else if(Player.player.GunPrefabs[((int)Player.GUN_TYPES.HEAVY_GUN)] == shotgun)
         {
             RPGSetFalse();
             PistolSetFalse();
@@ -172,7 +172,7 @@ public class UI_Shop : MonoBehaviour
             BlunderSetFalse();
             KnifeSetFalse();
         }
-        else if(Player.player.GunPrefab == AK47)
+        else if(Player.player.GunPrefabs[((int)Player.GUN_TYPES.HEAVY_GUN)] == AK47)
         {
             RPGSetFalse();
             PistolSetFalse();
@@ -183,7 +183,7 @@ public class UI_Shop : MonoBehaviour
             KnifeSetFalse();
 
         }
-        else if (Player.player.GunPrefab == Rifle)
+        else if (Player.player.GunPrefabs[((int)Player.GUN_TYPES.HEAVY_GUN)] == Rifle)
         {
             RPGSetFalse();
             PistolSetFalse();
@@ -194,7 +194,7 @@ public class UI_Shop : MonoBehaviour
             KnifeSetFalse();
 
         }
-        else if (Player.player.GunPrefab == Banana)
+        else if (Player.player.GunPrefabs[((int)Player.GUN_TYPES.LIGHT_GUN)] == Banana)
         {
             RPGSetFalse();
             PistolSetFalse();
@@ -205,7 +205,7 @@ public class UI_Shop : MonoBehaviour
             KnifeSetFalse();
 
         }
-        else if (Player.player.GunPrefab == Blunder)
+        else if (Player.player.GunPrefabs[((int)Player.GUN_TYPES.LIGHT_GUN)] == Blunder)
         {
             RPGSetFalse();
             PistolSetFalse();
@@ -216,7 +216,7 @@ public class UI_Shop : MonoBehaviour
             KnifeSetFalse();
 
         }
-        else if (Player.player.GunPrefab == Knife)
+        else if (Player.player.GunPrefabs[((int)Player.GUN_TYPES.LIGHT_GUN)] == Knife)
         {
             RPGSetFalse();
             PistolSetFalse();
@@ -298,7 +298,6 @@ public class UI_Shop : MonoBehaviour
 
     public void Back()
     {
-       
         CloseHeavyShop();
         CloseMeleeShop();
         CloseLightShop();
@@ -309,14 +308,14 @@ public class UI_Shop : MonoBehaviour
 
         if(Player.player.coins >= 150)
         {
-            if (Player.player.GunPrefab == RPG)
+            if (Player.player.GunPrefabs[((int)Player.GUN_TYPES.HEAVY_GUN)] == RPG)
             {
                 Debug.Log("You already have this weapon");
                 
             }
-            else if(Player.player.GunPrefab != RPG)
+            else if(Player.player.GunPrefabs[((int)Player.GUN_TYPES.HEAVY_GUN)] != RPG)
             {
-                Player.player.GunPrefab = RPG;
+                Player.player.GunPrefabs[((int)Player.GUN_TYPES.HEAVY_GUN)] = RPG;
                 Player.player.EquipWeapon();
                 Player.player.coins -= 150;
 
@@ -334,14 +333,14 @@ public class UI_Shop : MonoBehaviour
     {
         if (Player.player.coins >= 50)
         {
-            if(Player.player.GunPrefab == pistol)
+            if(Player.player.GunPrefabs[((int)Player.GUN_TYPES.LIGHT_GUN)] == pistol)
             {
                 Debug.Log("You already have this weapon");
 
             }
-            else if(Player.player.GunPrefab != pistol)
+            else if(Player.player.GunPrefabs[((int)Player.GUN_TYPES.LIGHT_GUN)] != pistol)
             {
-                Player.player.GunPrefab = pistol;
+                Player.player.GunPrefabs[((int)Player.GUN_TYPES.LIGHT_GUN)] = pistol;
                 Player.player.EquipWeapon();
                 Player.player.coins -= 50;
 
@@ -361,14 +360,14 @@ public class UI_Shop : MonoBehaviour
     {
         if (Player.player.coins >= 100)
         {
-            if (Player.player.GunPrefab == Banana)
+            if (Player.player.GunPrefabs[((int)Player.GUN_TYPES.LIGHT_GUN)] == Banana)
             {
                 Debug.Log("You already have this weapon");
 
             }
-            else if (Player.player.GunPrefab != Banana)
+            else if (Player.player.GunPrefabs[((int)Player.GUN_TYPES.LIGHT_GUN)] != Banana)
             {
-                Player.player.GunPrefab = Banana;
+                Player.player.GunPrefabs[((int)Player.GUN_TYPES.LIGHT_GUN)] = Banana;
                 Player.player.EquipWeapon();
                 Player.player.coins -= 100;
 
@@ -388,14 +387,14 @@ public class UI_Shop : MonoBehaviour
     {
         if (Player.player.coins >= 150)
         {
-            if (Player.player.GunPrefab == Blunder)
+            if (Player.player.GunPrefabs[((int)Player.GUN_TYPES.LIGHT_GUN)] == Blunder)
             {
                 Debug.Log("You already have this weapon");
 
             }
-            else if (Player.player.GunPrefab != Blunder)
+            else if (Player.player.GunPrefabs[((int)Player.GUN_TYPES.LIGHT_GUN)] != Blunder)
             {
-                Player.player.GunPrefab = Blunder;
+                Player.player.GunPrefabs[((int)Player.GUN_TYPES.LIGHT_GUN)] = Blunder;
                 Player.player.EquipWeapon();
                 Player.player.coins -= 150;
 
@@ -415,14 +414,14 @@ public class UI_Shop : MonoBehaviour
     {
         if (Player.player.coins >= 250)
         {
-            if (Player.player.GunPrefab == Knife)
+            if (Player.player.GunPrefabs[((int)Player.GUN_TYPES.LIGHT_GUN)] == Knife)
             {
                 Debug.Log("You already have this weapon");
 
             }
-            else if (Player.player.GunPrefab != Knife)
+            else if (Player.player.GunPrefabs[((int)Player.GUN_TYPES.LIGHT_GUN)] != Knife)
             {
-                Player.player.GunPrefab = Knife;
+                Player.player.GunPrefabs[((int)Player.GUN_TYPES.LIGHT_GUN)] = Knife;
                 Player.player.EquipWeapon();
                 Player.player.coins -= 250;
 
@@ -441,14 +440,14 @@ public class UI_Shop : MonoBehaviour
     {
         if (Player.player.coins >= 75)
         {
-            if (Player.player.GunPrefab == shotgun)
+            if (Player.player.GunPrefabs[((int)Player.GUN_TYPES.HEAVY_GUN)] == shotgun)
             {
                 Debug.Log("You already have this weapon");
                 
             }
-            else if (Player.player.GunPrefab != shotgun)
+            else if (Player.player.GunPrefabs[((int)Player.GUN_TYPES.HEAVY_GUN)] != shotgun)
             {
-                Player.player.GunPrefab = shotgun;
+                Player.player.GunPrefabs[((int)Player.GUN_TYPES.HEAVY_GUN)] = shotgun;
                 Player.player.EquipWeapon();
                 Player.player.coins -= 75;
 
@@ -466,15 +465,15 @@ public class UI_Shop : MonoBehaviour
     {
         if (Player.player.coins >= 100)
         {
-            if (Player.player.GunPrefab == AK47)
+            if (Player.player.GunPrefabs[((int)Player.GUN_TYPES.HEAVY_GUN)] == AK47)
             {
                 Debug.Log("You already have this weapon");
 
                
             }
-            else if (Player.player.GunPrefab != AK47)
+            else if (Player.player.GunPrefabs[((int)Player.GUN_TYPES.HEAVY_GUN)] != AK47)
             {
-                Player.player.GunPrefab = AK47;
+                Player.player.GunPrefabs[((int)Player.GUN_TYPES.HEAVY_GUN)] = AK47;
                 Player.player.EquipWeapon();
                 Player.player.coins -= 100;
 
@@ -492,14 +491,14 @@ public class UI_Shop : MonoBehaviour
     {
         if (Player.player.coins >= 150)
         {
-            if (Player.player.GunPrefab == Rifle)
+            if (Player.player.GunPrefabs[((int)Player.GUN_TYPES.HEAVY_GUN)] == Rifle)
             {
                 Debug.Log("You already have this weapon");
 
             }
-            else if (Player.player.GunPrefab != Rifle)
+            else if (Player.player.GunPrefabs[((int)Player.GUN_TYPES.HEAVY_GUN)] != Rifle)
             {
-                Player.player.GunPrefab = Rifle;
+                Player.player.GunPrefabs[((int)Player.GUN_TYPES.HEAVY_GUN)] = Rifle;
                 Player.player.EquipWeapon();
                 Player.player.coins -= 150;
 
