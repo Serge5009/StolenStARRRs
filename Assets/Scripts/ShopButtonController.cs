@@ -5,6 +5,7 @@ using UnityEngine;
 public class ShopButtonController : MonoBehaviour
 {
     float selection;
+
     [Space(5)]
     [Header("Pistol")]
     public GameObject pistolSprite; //declaring pistol button sprite (default)
@@ -46,12 +47,22 @@ public class ShopButtonController : MonoBehaviour
     public GameObject RPGBuy;
     public GameObject healthBuy;
     public GameObject attackBuy;
+    public GameObject BananaBuy;
+    public GameObject BlusterBuy;
+    public GameObject KnifeBuy;
+    public GameObject RifleBuy;
+
+    [Space(5)]
+    public GameObject HContainerBuy;
+    public GameObject LContainerBuy;
+    public GameObject MContainerBuy;
 
     const int MAX_SELECTION = 6;
     // Start is called before the first frame update
     void Start()
     {
         selection = 0; // selection starts with 0
+       
         
     }
 
@@ -64,11 +75,13 @@ public class ShopButtonController : MonoBehaviour
             if(selection <= MAX_SELECTION)
             {
                 selection++;
+                
             }
 
             if(selection > MAX_SELECTION)
             {
                 selection = 1;
+                
             }
         }
 
