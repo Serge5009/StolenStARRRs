@@ -4,10 +4,33 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+public enum LIGHT_WEAPONS
+{
+    PISTOL,
+    BLUNDERBUSS,
+    BANANA,
+    KNIFE,
+
+    NUM_LIGHT_WEAPONS
+}
+
+public enum HEAVY_WEAPONS
+{
+    AK,
+    RIFLE,
+    ROCKET,
+    SHOTGUN,
+
+    NUM_HEAVY_WEAPONS
+}
+
+
+
 
 public class UI_Shop : MonoBehaviour
 {
-    
+    LIGHT_WEAPONS activeLight;
+    HEAVY_WEAPONS activeHeavy;
 
     public static UI_Shop shop;
     [Space(5)]
@@ -140,92 +163,64 @@ public class UI_Shop : MonoBehaviour
 
     private void Update()
     {
-        if(Player.player.GunPrefabs[((int)Player.GUN_TYPES.HEAVY_GUN)] == RPG)
+        //  Heavy
+        if(activeHeavy == HEAVY_WEAPONS.ROCKET)
         {
-            PistolSetFalse();
             ShotgunSetFalse();
             AKSetFalse();
             RifleSetFalse();
-            BananaSetFalse();
-            BlunderSetFalse();
-            KnifeSetFalse();
-        
+            RPGSetActive();
         }
-        else if(Player.player.GunPrefabs[((int)Player.GUN_TYPES.LIGHT_GUN)] == pistol)
+        if(activeHeavy == HEAVY_WEAPONS.SHOTGUN)
         {
-            RPGSetFalse();
-            ShotgunSetFalse();
+            ShotgunSetActive();
             AKSetFalse();
             RifleSetFalse();
+            RPGSetFalse();
+        }
+        if(activeHeavy == HEAVY_WEAPONS.AK)
+        {
+            ShotgunSetFalse();
+            AKSetActive();
+            RifleSetFalse();
+            RPGSetFalse();
+        }
+        if (activeHeavy == HEAVY_WEAPONS.RIFLE)
+        {
+            ShotgunSetFalse();
+            AKSetFalse();
+            RifleSetActive();
+            RPGSetFalse();
+        }
+
+        //  Light
+        if (activeLight == LIGHT_WEAPONS.PISTOL)
+        {
             BananaSetFalse();
             BlunderSetFalse();
             KnifeSetFalse();
             PistolSetActive();
         }
-        else if(Player.player.GunPrefabs[((int)Player.GUN_TYPES.HEAVY_GUN)] == shotgun)
+        if (activeLight == LIGHT_WEAPONS.BANANA)
         {
-            RPGSetFalse();
-            PistolSetFalse();
-            AKSetFalse();
-            RifleSetFalse();
-            BananaSetFalse();
+            BananaSetActive();
             BlunderSetFalse();
             KnifeSetFalse();
-        }
-        else if(Player.player.GunPrefabs[((int)Player.GUN_TYPES.HEAVY_GUN)] == AK47)
-        {
-            RPGSetFalse();
             PistolSetFalse();
-            ShotgunSetFalse();
-            RifleSetFalse();
+        }
+        if (activeLight == LIGHT_WEAPONS.BLUNDERBUSS)
+        {
+            BananaSetFalse();
+            BlunderSetActive();
+            KnifeSetFalse();
+            PistolSetFalse();
+        }
+        if (activeLight == LIGHT_WEAPONS.KNIFE)
+        {
             BananaSetFalse();
             BlunderSetFalse();
-            KnifeSetFalse();
-
-        }
-        else if (Player.player.GunPrefabs[((int)Player.GUN_TYPES.HEAVY_GUN)] == Rifle)
-        {
-            RPGSetFalse();
+            KnifeSetActive();
             PistolSetFalse();
-            ShotgunSetFalse();
-            AKSetFalse();
-            BananaSetFalse();
-            BlunderSetFalse();
-            KnifeSetFalse();
-
-        }
-        else if (Player.player.GunPrefabs[((int)Player.GUN_TYPES.LIGHT_GUN)] == Banana)
-        {
-            RPGSetFalse();
-            PistolSetFalse();
-            ShotgunSetFalse();
-            AKSetFalse();
-            RifleSetFalse();
-            BlunderSetFalse();
-            KnifeSetFalse();
-
-        }
-        else if (Player.player.GunPrefabs[((int)Player.GUN_TYPES.LIGHT_GUN)] == Blunder)
-        {
-            RPGSetFalse();
-            PistolSetFalse();
-            ShotgunSetFalse();
-            AKSetFalse();
-            RifleSetFalse();
-            BananaSetFalse();
-            KnifeSetFalse();
-
-        }
-        else if (Player.player.GunPrefabs[((int)Player.GUN_TYPES.LIGHT_GUN)] == Knife)
-        {
-            RPGSetFalse();
-            PistolSetFalse();
-            ShotgunSetFalse();
-            AKSetFalse();
-            RifleSetFalse();
-            BananaSetFalse();
-            BlunderSetFalse();
-
         }
 
     }
@@ -319,7 +314,7 @@ public class UI_Shop : MonoBehaviour
                 Player.player.EquipWeapon();
                 Player.player.coins -= 150;
 
-                RPGSetActive();
+                activeHeavy = HEAVY_WEAPONS.ROCKET;
             }
         }
         else
@@ -344,9 +339,9 @@ public class UI_Shop : MonoBehaviour
                 Player.player.EquipWeapon();
                 Player.player.coins -= 50;
 
-                PistolSetActive();
+                activeLight = LIGHT_WEAPONS.PISTOL;
             }
-           
+
         }
         else
         {
@@ -371,7 +366,7 @@ public class UI_Shop : MonoBehaviour
                 Player.player.EquipWeapon();
                 Player.player.coins -= 100;
 
-                BananaSetActive();
+                activeLight = LIGHT_WEAPONS.BANANA;
             }
 
         }
@@ -398,7 +393,7 @@ public class UI_Shop : MonoBehaviour
                 Player.player.EquipWeapon();
                 Player.player.coins -= 150;
 
-                BlunderSetActive();
+                activeLight = LIGHT_WEAPONS.BLUNDERBUSS;
             }
 
         }
@@ -425,7 +420,7 @@ public class UI_Shop : MonoBehaviour
                 Player.player.EquipWeapon();
                 Player.player.coins -= 250;
 
-                KnifeSetActive();
+                activeLight = LIGHT_WEAPONS.KNIFE;
             }
 
         }
@@ -451,7 +446,7 @@ public class UI_Shop : MonoBehaviour
                 Player.player.EquipWeapon();
                 Player.player.coins -= 75;
 
-                ShotgunSetActive();
+                activeHeavy = HEAVY_WEAPONS.SHOTGUN;
             }
         }
         else
@@ -477,7 +472,7 @@ public class UI_Shop : MonoBehaviour
                 Player.player.EquipWeapon();
                 Player.player.coins -= 100;
 
-                AKSetActive();
+                activeHeavy = HEAVY_WEAPONS.AK;
             }
         }
         else
@@ -502,7 +497,7 @@ public class UI_Shop : MonoBehaviour
                 Player.player.EquipWeapon();
                 Player.player.coins -= 150;
 
-                RifleSetActive();
+                activeHeavy = HEAVY_WEAPONS.RIFLE;
             }
         }
         else
