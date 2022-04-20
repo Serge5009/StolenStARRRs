@@ -10,6 +10,7 @@ public class UI_Shop : MonoBehaviour
     
 
     public static UI_Shop shop;
+    [Space(5)]
     [SerializeField]
     Transform Container;
     [SerializeField]
@@ -19,6 +20,7 @@ public class UI_Shop : MonoBehaviour
     [SerializeField]
     Transform MeleeContainer;
 
+    [Space(5)]
     [SerializeField]
     Transform buyCheckPistol;
     [SerializeField]
@@ -26,6 +28,7 @@ public class UI_Shop : MonoBehaviour
     [SerializeField]
     Transform buyCheckPistol3;
 
+    [Space(5)]
     [SerializeField]
     Transform buyCheckAK;
     [SerializeField]
@@ -33,6 +36,7 @@ public class UI_Shop : MonoBehaviour
     [SerializeField]
     Transform buyCheckAK3;
 
+    [Space(5)]
     [SerializeField]
     Transform buyCheckRPG;
     [SerializeField]
@@ -40,6 +44,7 @@ public class UI_Shop : MonoBehaviour
     [SerializeField]
     Transform buyCheckRPG3;
 
+    [Space(5)]
     [SerializeField]
     Transform buyCheckShotgun;
     [SerializeField]
@@ -47,6 +52,7 @@ public class UI_Shop : MonoBehaviour
     [SerializeField]
     Transform buyCheckShotgun3;
 
+    [Space(5)]
     [SerializeField]
     Transform buyCheckBanana;
     [SerializeField]
@@ -54,6 +60,7 @@ public class UI_Shop : MonoBehaviour
     [SerializeField]
     Transform buyCheckBanana3;
 
+    [Space(5)]
     [SerializeField]
     Transform buyCheckBlunder;
     [SerializeField]
@@ -61,6 +68,7 @@ public class UI_Shop : MonoBehaviour
     [SerializeField]
     Transform buyCheckBlunder3;
 
+    [Space(5)]
     [SerializeField]
     Transform buyCheckKnife;
     [SerializeField]
@@ -68,6 +76,7 @@ public class UI_Shop : MonoBehaviour
     [SerializeField]
     Transform buyCheckKnife3;
 
+    [Space(5)]
     [SerializeField]
     Transform buyCheckRifle;
     [SerializeField]
@@ -75,6 +84,7 @@ public class UI_Shop : MonoBehaviour
     [SerializeField]
     Transform buyCheckRifle3;
 
+    [Space(5)]
     public GameObject RPG;
     public GameObject shotgun;
     public GameObject pistol;
@@ -84,14 +94,17 @@ public class UI_Shop : MonoBehaviour
     public GameObject Knife;
     public GameObject Rifle;
 
+    [Space(5)]
     public Text HealthCost;
     public Text HealthCost2;
     public Text HealthCost3;
 
+    [Space(5)]
     public Text attackCost;
     public Text attackCost2;
     public Text attackCost3;
 
+    [Space(5)]
     public int HCost = 100;
     public int ACost = 100;
     public bool ShopShown = false;
