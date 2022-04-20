@@ -282,6 +282,15 @@ public class UI_Shop : MonoBehaviour
         MeleeContainer.gameObject.SetActive(false);
         ShopShown = false;
     }
+
+    public void Back()
+    {
+       
+        CloseHeavyShop();
+        CloseMeleeShop();
+        CloseLightShop();
+        Container.gameObject.SetActive(true);
+    }
     public void BuyRPG()
     {
 
