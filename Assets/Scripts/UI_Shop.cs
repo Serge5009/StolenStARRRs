@@ -253,7 +253,7 @@ public class UI_Shop : MonoBehaviour
     void CloseHeavyShop()
     {
         HeavyContainer.gameObject.SetActive(false);
-        ShopShown = false;
+        //ShopShown = false;
     }
 
     public void OpenLightShop()
@@ -267,7 +267,7 @@ public class UI_Shop : MonoBehaviour
     void CloseLightShop()
     {
         LightContainer.gameObject.SetActive(false);
-        ShopShown = false;
+        //ShopShown = false;
     }
     public void OpenMeleeShop()
     {
@@ -280,7 +280,7 @@ public class UI_Shop : MonoBehaviour
     void CloseMeleeShop()
     {
         MeleeContainer.gameObject.SetActive(false);
-        ShopShown = false;
+        //ShopShown = false;
     }
 
     public void Back()
