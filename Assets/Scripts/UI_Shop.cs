@@ -11,7 +11,9 @@ public class UI_Shop : MonoBehaviour
 
     public static UI_Shop shop;
     [SerializeField]
-    Transform container;
+    Transform Container;
+    [SerializeField]
+    Transform HeavyContainer;
     [SerializeField]
     Transform LightContainer;
     [SerializeField]
@@ -108,7 +110,7 @@ public class UI_Shop : MonoBehaviour
         }
         
        //container = transform.Find("container");
-       if(!container || !LightContainer || !MeleeContainer)
+       if(!HeavyContainer || !LightContainer || !MeleeContainer)
         {
             Debug.Log("Just checking container");
         }
@@ -131,6 +133,9 @@ public class UI_Shop : MonoBehaviour
             ShotgunSetFalse();
             AKSetFalse();
             RifleSetFalse();
+            BananaSetFalse();
+            BlunderSetFalse();
+            KnifeSetFalse();
         
         }
         else if(Player.player.GunPrefab == pistol)
@@ -139,6 +144,9 @@ public class UI_Shop : MonoBehaviour
             ShotgunSetFalse();
             AKSetFalse();
             RifleSetFalse();
+            BananaSetFalse();
+            BlunderSetFalse();
+            KnifeSetFalse();
 
         }
         else if(Player.player.GunPrefab == shotgun)
@@ -147,6 +155,9 @@ public class UI_Shop : MonoBehaviour
             PistolSetFalse();
             AKSetFalse();
             RifleSetFalse();
+            BananaSetFalse();
+            BlunderSetFalse();
+            KnifeSetFalse();
         }
         else if(Player.player.GunPrefab == AK47)
         {
@@ -154,6 +165,53 @@ public class UI_Shop : MonoBehaviour
             PistolSetFalse();
             ShotgunSetFalse();
             RifleSetFalse();
+            BananaSetFalse();
+            BlunderSetFalse();
+            KnifeSetFalse();
+
+        }
+        else if (Player.player.GunPrefab == Rifle)
+        {
+            RPGSetFalse();
+            PistolSetFalse();
+            ShotgunSetFalse();
+            AKSetFalse();
+            BananaSetFalse();
+            BlunderSetFalse();
+            KnifeSetFalse();
+
+        }
+        else if (Player.player.GunPrefab == Banana)
+        {
+            RPGSetFalse();
+            PistolSetFalse();
+            ShotgunSetFalse();
+            AKSetFalse();
+            RifleSetFalse();
+            BlunderSetFalse();
+            KnifeSetFalse();
+
+        }
+        else if (Player.player.GunPrefab == Blunder)
+        {
+            RPGSetFalse();
+            PistolSetFalse();
+            ShotgunSetFalse();
+            AKSetFalse();
+            RifleSetFalse();
+            BananaSetFalse();
+            KnifeSetFalse();
+
+        }
+        else if (Player.player.GunPrefab == Knife)
+        {
+            RPGSetFalse();
+            PistolSetFalse();
+            ShotgunSetFalse();
+            AKSetFalse();
+            RifleSetFalse();
+            BananaSetFalse();
+            BlunderSetFalse();
 
         }
 
@@ -164,7 +222,7 @@ public class UI_Shop : MonoBehaviour
         if (collision.tag == "Player")
         {
             Debug.Log("checking player collision");
-            container.gameObject.SetActive(true);
+            Container.gameObject.SetActive(true);
             ShopShown = true;
         }
 
@@ -175,12 +233,55 @@ public class UI_Shop : MonoBehaviour
         if (collision.tag == "Player")
         {
             Debug.Log("checking player collision");
-            container.gameObject.SetActive(false);
+            Container.gameObject.SetActive(false);
+            CloseLightShop();
+            CloseMeleeShop();
+            CloseHeavyShop();
             ShopShown = false;
         }
 
     }
 
+    public void OpenHeavyShop()
+    {
+        HeavyContainer.gameObject.SetActive(true);
+        ShopShown = true;
+        CloseLightShop();
+        CloseMeleeShop();
+        Container.gameObject.SetActive(false);
+    }
+    void CloseHeavyShop()
+    {
+        HeavyContainer.gameObject.SetActive(false);
+        ShopShown = false;
+    }
+
+    public void OpenLightShop()
+    {
+        LightContainer.gameObject.SetActive(true);
+        ShopShown = true;
+        CloseHeavyShop();
+        CloseMeleeShop();
+        Container.gameObject.SetActive(false);
+    }
+    void CloseLightShop()
+    {
+        LightContainer.gameObject.SetActive(false);
+        ShopShown = false;
+    }
+    public void OpenMeleeShop()
+    {
+        MeleeContainer.gameObject.SetActive(true);
+        ShopShown = true;
+        CloseHeavyShop();
+        CloseLightShop();
+        Container.gameObject.SetActive(false);
+    }
+    void CloseMeleeShop()
+    {
+        MeleeContainer.gameObject.SetActive(false);
+        ShopShown = false;
+    }
     public void BuyRPG()
     {
 
@@ -197,9 +298,7 @@ public class UI_Shop : MonoBehaviour
                 Player.player.EquipWeapon();
                 Player.player.coins -= 150;
 
-                buyCheckRPG.gameObject.SetActive(true);
-                buyCheckRPG2.gameObject.SetActive(true);
-                buyCheckRPG3.gameObject.SetActive(true);
+                RPGSetActive();
             }
         }
         else
@@ -217,8 +316,6 @@ public class UI_Shop : MonoBehaviour
             {
                 Debug.Log("You already have this weapon");
 
-                
-
             }
             else if(Player.player.GunPrefab != pistol)
             {
@@ -226,9 +323,7 @@ public class UI_Shop : MonoBehaviour
                 Player.player.EquipWeapon();
                 Player.player.coins -= 50;
 
-                buyCheckPistol.gameObject.SetActive(true);
-                buyCheckPistol2.gameObject.SetActive(true);
-                buyCheckPistol3.gameObject.SetActive(true);
+                PistolSetActive();
             }
            
         }
@@ -240,6 +335,86 @@ public class UI_Shop : MonoBehaviour
        
     }
 
+    public void BuyBanana()
+    {
+        if (Player.player.coins >= 100)
+        {
+            if (Player.player.GunPrefab == Banana)
+            {
+                Debug.Log("You already have this weapon");
+
+            }
+            else if (Player.player.GunPrefab != Banana)
+            {
+                Player.player.GunPrefab = Banana;
+                Player.player.EquipWeapon();
+                Player.player.coins -= 100;
+
+                BananaSetActive();
+            }
+
+        }
+        else
+        {
+            Debug.Log("Sorry! not enough coins for Banana");
+        }
+
+
+    }
+
+    public void BuyBlunder()
+    {
+        if (Player.player.coins >= 150)
+        {
+            if (Player.player.GunPrefab == Blunder)
+            {
+                Debug.Log("You already have this weapon");
+
+            }
+            else if (Player.player.GunPrefab != Blunder)
+            {
+                Player.player.GunPrefab = Blunder;
+                Player.player.EquipWeapon();
+                Player.player.coins -= 150;
+
+                BlunderSetActive();
+            }
+
+        }
+        else
+        {
+            Debug.Log("Sorry! not enough coins for Blunder");
+        }
+
+
+    }
+
+    public void BuyKnife()
+    {
+        if (Player.player.coins >= 250)
+        {
+            if (Player.player.GunPrefab == Knife)
+            {
+                Debug.Log("You already have this weapon");
+
+            }
+            else if (Player.player.GunPrefab != Knife)
+            {
+                Player.player.GunPrefab = Knife;
+                Player.player.EquipWeapon();
+                Player.player.coins -= 250;
+
+                KnifeSetActive();
+            }
+
+        }
+        else
+        {
+            Debug.Log("Sorry! not enough coins for Knife");
+        }
+
+
+    }
     public void BuyShotgun()
     {
         if (Player.player.coins >= 75)
@@ -255,9 +430,7 @@ public class UI_Shop : MonoBehaviour
                 Player.player.EquipWeapon();
                 Player.player.coins -= 75;
 
-                buyCheckShotgun.gameObject.SetActive(true);
-                buyCheckShotgun2.gameObject.SetActive(true);
-                buyCheckShotgun3.gameObject.SetActive(true);
+                ShotgunSetActive();
             }
         }
         else
@@ -283,9 +456,7 @@ public class UI_Shop : MonoBehaviour
                 Player.player.EquipWeapon();
                 Player.player.coins -= 100;
 
-                buyCheckAK.gameObject.SetActive(true);
-                buyCheckAK2.gameObject.SetActive(true);
-                buyCheckAK3.gameObject.SetActive(true);
+                AKSetActive();
             }
         }
         else
@@ -310,9 +481,7 @@ public class UI_Shop : MonoBehaviour
                 Player.player.EquipWeapon();
                 Player.player.coins -= 150;
 
-                buyCheckRifle.gameObject.SetActive(true);
-                buyCheckRifle2.gameObject.SetActive(true);
-                buyCheckRifle3.gameObject.SetActive(true);
+                RifleSetActive();
             }
         }
         else
@@ -369,13 +538,20 @@ public class UI_Shop : MonoBehaviour
         }
     }
 
+    //rifle
     void RifleSetFalse()
     {
         buyCheckRifle.gameObject.SetActive(false);
         buyCheckRifle2.gameObject.SetActive(false);
         buyCheckRifle3.gameObject.SetActive(false);
     }
-
+    void RifleSetActive()
+    {
+        buyCheckRifle.gameObject.SetActive(true);
+        buyCheckRifle2.gameObject.SetActive(true);
+        buyCheckRifle3.gameObject.SetActive(true);
+    }
+    //rpg
     void RPGSetFalse()
     {
         buyCheckRPG.gameObject.SetActive(false);
@@ -383,6 +559,13 @@ public class UI_Shop : MonoBehaviour
         buyCheckRPG3.gameObject.SetActive(false);
     }
 
+    void RPGSetActive()
+    {
+        buyCheckRPG.gameObject.SetActive(true);
+        buyCheckRPG2.gameObject.SetActive(true);
+        buyCheckRPG3.gameObject.SetActive(true);
+    }
+    //pistol
     void PistolSetFalse()
     {
         buyCheckPistol.gameObject.SetActive(false);
@@ -390,6 +573,13 @@ public class UI_Shop : MonoBehaviour
         buyCheckPistol3.gameObject.SetActive(false);
     }
 
+    void PistolSetActive()
+    {
+        buyCheckPistol.gameObject.SetActive(true);
+        buyCheckPistol2.gameObject.SetActive(true);
+        buyCheckPistol3.gameObject.SetActive(true);
+    }
+    //shotgun
     void ShotgunSetFalse()
     {
         buyCheckShotgun.gameObject.SetActive(false);
@@ -397,6 +587,13 @@ public class UI_Shop : MonoBehaviour
         buyCheckShotgun3.gameObject.SetActive(false);
     }
 
+    void ShotgunSetActive()
+    {
+        buyCheckShotgun.gameObject.SetActive(true);
+        buyCheckShotgun2.gameObject.SetActive(true);
+        buyCheckShotgun3.gameObject.SetActive(true);
+    }
+    //ak
     void AKSetFalse()
     {
         buyCheckAK.gameObject.SetActive(false);
@@ -404,6 +601,13 @@ public class UI_Shop : MonoBehaviour
         buyCheckAK3.gameObject.SetActive(false);
     }
 
+    void AKSetActive()
+    {
+        buyCheckAK.gameObject.SetActive(true);
+        buyCheckAK2.gameObject.SetActive(true);
+        buyCheckAK3.gameObject.SetActive(true);
+    }
+    //banana
     void BananaSetFalse()
     {
         buyCheckBanana.gameObject.SetActive(false);
@@ -411,6 +615,13 @@ public class UI_Shop : MonoBehaviour
         buyCheckBanana3.gameObject.SetActive(false);
     }
 
+    void BananaSetActive()
+    {
+        buyCheckBanana.gameObject.SetActive(true);
+        buyCheckBanana2.gameObject.SetActive(true);
+        buyCheckBanana3.gameObject.SetActive(true);
+    }
+    //blunder
     void BlunderSetFalse()
     {
         buyCheckBlunder.gameObject.SetActive(false);
@@ -418,10 +629,24 @@ public class UI_Shop : MonoBehaviour
         buyCheckBlunder3.gameObject.SetActive(false);
     }
 
+    void BlunderSetActive()
+    {
+        buyCheckBlunder.gameObject.SetActive(true);
+        buyCheckBlunder2.gameObject.SetActive(true);
+        buyCheckBlunder3.gameObject.SetActive(true);
+    }
+    //knife
     void KnifeSetFalse()
     {
         buyCheckKnife.gameObject.SetActive(false);
         buyCheckKnife2.gameObject.SetActive(false);
         buyCheckKnife3.gameObject.SetActive(false);
+    }
+
+    void KnifeSetActive()
+    {
+        buyCheckKnife.gameObject.SetActive(true);
+        buyCheckKnife2.gameObject.SetActive(true);
+        buyCheckKnife3.gameObject.SetActive(true);
     }
 }
