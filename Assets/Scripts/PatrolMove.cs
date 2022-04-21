@@ -20,6 +20,9 @@ public class PatrolMove : MonoBehaviour
     [SerializeField]
     float maxDistance;
 
+    [SerializeField]
+    float Max_DistanceLimit;
+
     Vector2 wayPoint;
 
     private Transform target;
@@ -36,6 +39,7 @@ public class PatrolMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if(target == null)
         {
             FindPlayer();
@@ -56,6 +60,14 @@ public class PatrolMove : MonoBehaviour
                     Wander();
                 }
             }
+
+            /*
+            if(distanceToPlayer < Max_DistanceLimit)
+            {
+                Chase();
+            }
+            */
+            
         }
         
        

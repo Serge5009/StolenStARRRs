@@ -6,6 +6,8 @@ public class TutorialSpawner : MonoBehaviour
 {
     [SerializeField]
     GameObject BossPrefab;
+
+    bool isTriggered = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,9 +22,10 @@ public class TutorialSpawner : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.tag == "Player" && !isTriggered)
         {
             Instantiate(BossPrefab, transform.position, Quaternion.identity);
+            isTriggered = true;
         }
            
     }
