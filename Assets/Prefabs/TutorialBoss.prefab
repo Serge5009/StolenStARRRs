@@ -99,8 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40c31abb24c6a17449a126ce09980a64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  basicHealth: 10000
-  health: 10000
+  basicHealth: 1000
+  health: 1000
   weight:
   - 0
   - 1
@@ -174,7 +174,7 @@ MonoBehaviour:
   agroRange: 4
   speed: 2
   wanderRange: 2
-  maxDistance: 4
+  maxDistance: 7
   Max_DistanceLimit: 8
 --- !u!114 &260375105730173318
 MonoBehaviour:

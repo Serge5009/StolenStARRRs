@@ -24,6 +24,7 @@ public class PatrolMove : MonoBehaviour
     float Max_DistanceLimit;
 
     Vector2 wayPoint;
+    Vector2 SpawnPoint;
 
     private Transform target;
     private float distanceToPlayer;
@@ -31,8 +32,8 @@ public class PatrolMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SpawnPoint = this.gameObject.transform.localPosition;
         FindPlayer();
-
 
     }
 
@@ -94,7 +95,7 @@ public class PatrolMove : MonoBehaviour
 
     void SetPath()
     {
-        wayPoint = new Vector2(Random.Range(-maxDistance, maxDistance), Random.Range(-maxDistance, maxDistance)); //setting max distance that can boss wander
+        wayPoint = SpawnPoint + new Vector2(Random.Range(-maxDistance, maxDistance), Random.Range(-maxDistance, maxDistance)); //setting max distance that can boss wander
 
     }
 
