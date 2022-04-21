@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 66643344}
   - component: {fileID: 66643345}
   - component: {fileID: 1998725433}
+  - component: {fileID: 3129179539124351493}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Enemy
@@ -134,9 +135,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   basicHealth: 100
   health: 100
-  coinDrop: {fileID: 8858896780154246167, guid: d1467711022d13e40b0d90d0ffc08864, type: 3}
-  healthDrop: {fileID: 2976462168705380571, guid: 2fcbee4fe6961f44a9c25d156f8f5151, type: 3}
-  itemWeight: 0
+  weight:
+  - 10
+  - 1
+  - 3
+  dropPrefab:
+  - {fileID: 8858896780154246167, guid: d1467711022d13e40b0d90d0ffc08864, type: 3}
+  - {fileID: 8858896780154246167, guid: e995ce978507a7e44993ab469ed90819, type: 3}
+  - {fileID: 2976462168705380571, guid: 2fcbee4fe6961f44a9c25d156f8f5151, type: 3}
+  minDrops: 0
+  maxDrops: 5
 --- !u!61 &7765704686394764510
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -265,6 +273,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3129179539124351493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7765704686394764498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17abb0bcd106d39489522bacedd85e92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particlePrefab:
+  - {fileID: 5066048397264932216, guid: c117c366fce3c6e469dcc3a0cfbe2901, type: 3}
+  weight:
+  - 1
+  minParticles: 2
+  maxParticles: 3
 --- !u!1 &7765704687353541735
 GameObject:
   m_ObjectHideFlags: 0

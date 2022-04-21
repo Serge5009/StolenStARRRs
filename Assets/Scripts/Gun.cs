@@ -138,6 +138,9 @@ public class Gun : MonoBehaviour
         Projectile bullet = proj.GetComponent<Projectile>();
         Player parent = player.GetComponent<Player>();
 
+        PowerUpsController powerControl = player.gameObject.GetComponent<PowerUpsController>();
+        bullet.damage += powerControl.bonusATK;     //  applying bonus damage
+
         bullet.SetSpeed(direction * bulletSpeed + parent.moveDirection * parent.speed);
         //bullet.SetInteraction(false, true, true, true);
     }

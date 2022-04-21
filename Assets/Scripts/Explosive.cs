@@ -16,11 +16,14 @@ public class Explosive : MonoBehaviour
     [SerializeField]
     float explosionTriggerDelay = 1.0f; //  Once per X seconds will check for enemies in radius
 
-        //  Explision settings
+        //  Explosion settings
     float damage;
     [SerializeField]
     float explosionRad = 2.0f;
     float distDmgFactor = 0.67f;
+
+    [SerializeField]
+    GameObject explosionPrefab;
 
     GameObject[] enemies;
 
@@ -80,6 +83,9 @@ public class Explosive : MonoBehaviour
 
     public void Explode()
     {
+        if (exploded)
+            return;
+
         if (projScript.damageEnemy)
         {
             enemies = GameObject.FindGameObjectsWithTag("Enemy");   //  Save all existing enemies to one list
@@ -109,6 +115,7 @@ public class Explosive : MonoBehaviour
             }
         }
 
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
 
         StartCoroutine(RemoveBullet());
 
@@ -116,13 +123,13 @@ public class Explosive : MonoBehaviour
 
     IEnumerator KnockbackFix(Rigidbody2D rb)    //SOS
     {
-        Debug.Log("111111");
+        //Debug.Log("111111");
         yield return new WaitForSeconds(0.5f);
 
-        Debug.Log("222222");
+        //Debug.Log("222222");
         rb.velocity = new Vector2(0.0f, 0.0f);
 
-        Debug.Log("333333");
+        //Debug.Log("333333");
 
     }
 

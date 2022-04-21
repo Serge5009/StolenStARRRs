@@ -19,7 +19,6 @@ public class EnemyShooting : MonoBehaviour
     Vector3 shootDirection;
     float cooldown;
 
-
     void Start()
     {
         fireRate += Random.Range(fireRate / -5, fireRate / 5);  //  Randomizing firerate
@@ -34,13 +33,18 @@ public class EnemyShooting : MonoBehaviour
     void Update()
     {
         cooldown -= Time.deltaTime; //  Tick cooldown timer
+       
 
         if (cooldown <= 0)
-            Shoot();
+        {
+            Shoot(); //shooting for regular enemies;
+        }
+
     }
 
     void Shoot()
     {
+
         Aim();
 
         cooldown += 1 / fireRate;
@@ -50,6 +54,7 @@ public class EnemyShooting : MonoBehaviour
 
         bullet.SetSpeed(shootDirection * bulletSpeed);
     }
+
 
     void Aim()
     {

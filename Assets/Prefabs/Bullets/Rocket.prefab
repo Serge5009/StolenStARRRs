@@ -74,6 +74,7 @@ MonoBehaviour:
   explosionTriggerRad: 2.5
   explosionTriggerDelay: 0.5
   explosionRad: 3
+  explosionPrefab: {fileID: 6698047674194814853, guid: a4e44cdc9662fe94186bc41eca1227c9, type: 3}
 --- !u!61 &418357319
 BoxCollider2D:
   m_ObjectHideFlags: 0
