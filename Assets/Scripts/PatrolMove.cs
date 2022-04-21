@@ -48,7 +48,7 @@ public class PatrolMove : MonoBehaviour
         else
         {
             float distanceToPlayer = Vector2.Distance(transform.position, target.position); //getting the distance between boss and player
-            Debug.Log("Distance: " + distanceToPlayer);
+            //Debug.Log("Distance: " + distanceToPlayer);
             
             if (distanceToPlayer > stopDistance)
             {
