@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4183588284621117683}
   - component: {fileID: 4183588284621117682}
   - component: {fileID: 4183588284621117693}
+  - component: {fileID: -1736889213205623384}
   m_Layer: 0
   m_Name: EnemyParticle1
   m_TagString: Untagged
@@ -102,3 +103,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-1736889213205623384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4183588284621117692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c696ef40ac446b94c9d177ca5d46e524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activateOnSpawn: 1
+  maxHorizontal: 2
+  minVertical: 1
+  maxVertical: 3
+  gravity: 9.8
+  minDown: 0
+  maxDown: -2
