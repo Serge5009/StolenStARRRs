@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentObject: 0
   quantity: 5
-  CoinPickup: {fileID: 0}
+  CoinPickup: {fileID: 8300000, guid: 098c31d513e8f9745bf2d984fed8b6aa, type: 3}
 --- !u!61 &8858896780154246154
 BoxCollider2D:
   m_ObjectHideFlags: 0
