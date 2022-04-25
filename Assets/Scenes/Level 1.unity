@@ -23071,6 +23071,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1618489103}
     m_Modifications:
+    - target: {fileID: 7046387093098406776, guid: 7da2297cf96aad34290297a6022573ff, type: 3}
+      propertyPath: m_Size.y
+      value: 0.85
+      objectReference: {fileID: 0}
     - target: {fileID: 9050965660049943170, guid: 7da2297cf96aad34290297a6022573ff, type: 3}
       propertyPath: m_Name
       value: SpawnPoint
