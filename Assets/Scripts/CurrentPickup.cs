@@ -27,4 +27,20 @@ public class CurrentPickup : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.tag == "Player")
+        {
+            // continue with else if when we have more to pick up 
+            if (currentObject == PickupObject.COIN)
+            {
+                Player.player.coins += quantity;
+                Debug.Log(Player.player.coins);
+                AudioManager.Instance.Play(CoinPickup);
+            }
+
+            Destroy(gameObject);
+        }
+    }
 }
