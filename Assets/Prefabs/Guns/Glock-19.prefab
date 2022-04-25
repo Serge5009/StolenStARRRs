@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fc73ad1361d16e45aca23871d0bc1ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GunShot: {fileID: 8300000, guid: ffa4fabfa2ad7264b8fcb1bd13aa93f1, type: 3}
+  GunShot: {fileID: 8300000, guid: 41d00ecb280975f4d9485c7247222fed, type: 3}
   GunShotAfter: {fileID: 0}
   ProjectilePrefab: {fileID: 8274613288791820710, guid: 724d468bd8f4e2f42a18c7e0890e642b, type: 3}
   bulletSpeed: 16

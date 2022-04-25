@@ -1229,7 +1229,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8595799261600611515, guid: 079fef773c1ad0f41a0748f301fac8f3, type: 3}
       propertyPath: LevelToStart
-      value: Level 2
+      value: Level 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 079fef773c1ad0f41a0748f301fac8f3, type: 3}
