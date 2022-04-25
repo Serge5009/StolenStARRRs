@@ -20,7 +20,11 @@ public class PatrolMove : MonoBehaviour
     [SerializeField]
     float maxDistance;
 
+    [SerializeField]
+    float Max_DistanceLimit;
+
     Vector2 wayPoint;
+    Vector2 SpawnPoint;
 
     private Transform target;
     private float distanceToPlayer;
@@ -28,14 +32,15 @@ public class PatrolMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SpawnPoint = this.gameObject.transform.localPosition;
         FindPlayer();
-
 
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if(target == null)
         {
             FindPlayer();
@@ -43,7 +48,7 @@ public class PatrolMove : MonoBehaviour
         else
         {
             float distanceToPlayer = Vector2.Distance(transform.position, target.position); //getting the distance between boss and player
-            Debug.Log("Distance: " + distanceToPlayer);
+            //Debug.Log("Distance: " + distanceToPlayer);
             
             if (distanceToPlayer > stopDistance)
             {
@@ -56,6 +61,14 @@ public class PatrolMove : MonoBehaviour
                     Wander();
                 }
             }
+
+            /*
+            if(distanceToPlayer < Max_DistanceLimit)
+            {
+                Chase();
+            }
+            */
+            
         }
         
        
@@ -82,7 +95,7 @@ public class PatrolMove : MonoBehaviour
 
     void SetPath()
     {
-        wayPoint = new Vector2(Random.Range(-maxDistance, maxDistance), Random.Range(-maxDistance, maxDistance)); //setting max distance that can boss wander
+        wayPoint = SpawnPoint + new Vector2(Random.Range(-maxDistance, maxDistance), Random.Range(-maxDistance, maxDistance)); //setting max distance that can boss wander
 
     }
 

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 260375105730173321}
   - component: {fileID: 260375105730173318}
   m_Layer: 7
-  m_Name: PatrolEnemy
+  m_Name: TutorialBoss
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,12 +99,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40c31abb24c6a17449a126ce09980a64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  basicHealth: 100
-  health: 100
+  basicHealth: 3000
+  health: 3000
   weight:
-  - 10
+  - 0
   - 1
-  - 3
+  - 0
   dropPrefab:
   - {fileID: 8858896780154246167, guid: d1467711022d13e40b0d90d0ffc08864, type: 3}
   - {fileID: 8858896780154246167, guid: e995ce978507a7e44993ab469ed90819, type: 3}
@@ -142,10 +142,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.2}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -156,7 +156,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.2}
+  m_Size: {x: 1, y: 0.7}
   m_EdgeRadius: 0
 --- !u!114 &260375105730173321
 MonoBehaviour:
@@ -172,9 +172,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stopDistance: 1.5
   agroRange: 4
-  speed: 3
+  speed: 2
   wanderRange: 2
   maxDistance: 7
+  Max_DistanceLimit: 8
 --- !u!114 &260375105730173318
 MonoBehaviour:
   m_ObjectHideFlags: 0
