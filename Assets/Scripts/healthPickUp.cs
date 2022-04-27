@@ -15,12 +15,17 @@ public class healthPickUp : MonoBehaviour
         if (collision.tag == "Player")
         {
 
-            if (currentObject2 == PickupObject.HP && Player.player.health <= 100)
+            if (Player.player.health >= 70)
+            {
+                Player.player.health += 100 - Player.player.health;
+            }
+            else
             {
                 Player.player.health += quantity2;
                 Debug.Log(Player.player.health);
                 AudioManager.Instance.Play(HealthPickupSound);
             }
+
 
             Destroy(gameObject);
         }
@@ -31,11 +36,19 @@ public class healthPickUp : MonoBehaviour
         if (collision.transform.tag == "Player")
         {
             // continue with else if when we have more to pick up 
-            if (currentObject2 == PickupObject.HP)
+            if (currentObject2 == PickupObject.HP && Player.player.health <= 100)
             {
-                Player.player.health += quantity2;
-                Debug.Log(Player.player.health);
-                AudioManager.Instance.Play(HealthPickupSound);
+                if(Player.player.health >= 70)
+                {
+                    Player.player.health += 100 - Player.player.health;
+                }
+                else
+                {
+                    Player.player.health += quantity2;
+                    Debug.Log(Player.player.health);
+                    AudioManager.Instance.Play(HealthPickupSound);
+                }
+               
             }
 
             Destroy(gameObject);
