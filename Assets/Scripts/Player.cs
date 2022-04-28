@@ -120,6 +120,7 @@ public class Player : MonoBehaviour
 
         CheckInput();
         Death();
+        Debug.Log("player health:  " + health);
     }
 
     private void LateUpdate()
