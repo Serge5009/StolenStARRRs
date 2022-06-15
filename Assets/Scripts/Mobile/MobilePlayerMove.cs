@@ -5,7 +5,7 @@ using UnityEngine;
 public class MobilePlayerMove : MonoBehaviour
 {
     public MovementJoystick movementJoystick;
-
+    
     public float playerSpeed;
     private Rigidbody2D rb;
     // Start is called before the first frame update

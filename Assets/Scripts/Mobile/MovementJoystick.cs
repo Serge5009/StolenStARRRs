@@ -50,4 +50,6 @@ public class MovementJoystick : MonoBehaviour
         Joystick.transform.position = JoystickOrjinalPos;
         JoystickBG.transform.position = JoystickOrjinalPos;
     }
+
+    
 }

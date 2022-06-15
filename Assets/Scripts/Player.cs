@@ -60,6 +60,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     public string Scenename;
 
+   
     [SerializeField]
     GameObject cameraPrefab;
     [SerializeField]
