@@ -199,6 +199,7 @@ GameObject:
   - component: {fileID: 5580628577253133890}
   - component: {fileID: 3143159989790056922}
   - component: {fileID: 8840294197394960292}
+  - component: {fileID: -8204278448889502509}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -251,7 +252,7 @@ MonoBehaviour:
   cameraSpeed: 3
   mainCamera: {fileID: 0}
   moveDirection: {x: 0, y: 0, z: 0}
-  coins: 100000000
+  coins: 0
 --- !u!50 &8147820335979402412
 Rigidbody2D:
   serializedVersion: 4
@@ -371,3 +372,17 @@ MonoBehaviour:
   - 1
   minParticles: 5
   maxParticles: 15
+--- !u!114 &-8204278448889502509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8211571826743374633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d22944e022fd7d48a0a5a3fb5d5f10c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementJoystick: {fileID: 0}
+  playerSpeed: 6

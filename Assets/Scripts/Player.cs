@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+   
     public enum GUN_TYPES
     {
         HEAVY_GUN,
@@ -122,6 +123,8 @@ public class Player : MonoBehaviour
         Death();
         Debug.Log("player health:  " + health);
     }
+
+   
 
     private void LateUpdate()
     {
